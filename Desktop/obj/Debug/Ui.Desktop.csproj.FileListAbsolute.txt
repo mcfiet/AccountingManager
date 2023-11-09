@@ -1,0 +1,82 @@
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\Ui.Desktop.csproj.AssemblyReference.cache
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\MainWindow.g.cs
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\App.g.cs
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\MainWindow.baml
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\Ui.Desktop.csproj.GenerateResource.cache
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\Ui.Desktop.csproj.CoreCompileInputs.cache
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\Ui.Desktop.csproj.CopyComplete
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\bin\Debug\Ui.Desktop.exe.config
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\bin\Debug\Ui.Desktop.exe
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\bin\Debug\Ui.Desktop.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\bin\Debug\Business.Model.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\bin\Debug\Business.Model.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\Ui.Desktop_MarkupCompile.cache
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\Ui.Desktop_MarkupCompile.lref
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\Ui.Desktop.g.resources
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\De.HsFlensburg.ClientApp078.Ui.Desktop.Properties.Resources.resources
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\Ui.Desktop.exe
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\Ui.Desktop.pdb
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\bin\Debug\Ui.Desktop.exe.config
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\bin\Debug\Ui.Desktop.exe
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\bin\Debug\Ui.Desktop.pdb
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\bin\Debug\Logic.Ui.dll
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\bin\Debug\Business.Model.dll
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\bin\Debug\Logic.Ui.pdb
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\bin\Debug\Business.Model.pdb
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\Ui.Desktop.csproj.AssemblyReference.cache
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\MainWindow.g.cs
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\App.g.cs
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\Ui.Desktop_MarkupCompile.cache
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\Ui.Desktop_MarkupCompile.lref
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\MainWindow.baml
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\Ui.Desktop.g.resources
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\De.HsFlensburg.ClientApp078.Ui.Desktop.Properties.Resources.resources
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\Ui.Desktop.csproj.GenerateResource.cache
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\Ui.Desktop.csproj.CoreCompileInputs.cache
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\Ui.Desktop.csproj.CopyComplete
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\Ui.Desktop.exe
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\Ui.Desktop.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\bin\Debug\Logic.Ui.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\bin\Debug\Logic.Ui.pdb
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\NewClientWindow.g.cs
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\NewClientWindow.baml
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\bin\Debug\Services.SerializationService.dll
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\bin\Debug\Services.SerializationService.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\bin\Debug\Services.SerializationService.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\bin\Debug\Services.SerializationService.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\NewClientWindow.g.cs
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\NewClientWindow.baml
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\App.baml
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\bin\Debug\Services.MessageBus.dll
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\bin\Debug\Services.MessageBus.pdb
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Desktop\obj\Debug\GeneratedInternalTypeHelper.g.cs
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\bin\Debug\Ui.Desktop.exe.config
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\bin\Debug\Ui.Desktop.exe
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\bin\Debug\Ui.Desktop.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\bin\Debug\Business.Model.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\bin\Debug\Logic.Ui.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\bin\Debug\Services.MessageBus.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\bin\Debug\Services.SerializationService.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\bin\Debug\Services.MessageBus.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\bin\Debug\Business.Model.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\bin\Debug\Logic.Ui.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\bin\Debug\Services.SerializationService.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\obj\Debug\Ui.Desktop.csproj.AssemblyReference.cache
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\obj\Debug\MainWindow.g.cs
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\obj\Debug\NewClientWindow.g.cs
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\obj\Debug\App.g.cs
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\obj\Debug\GeneratedInternalTypeHelper.g.cs
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\obj\Debug\Ui.Desktop_MarkupCompile.cache
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\obj\Debug\Ui.Desktop_MarkupCompile.lref
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\obj\Debug\App.baml
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\obj\Debug\MainWindow.baml
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\obj\Debug\NewClientWindow.baml
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\obj\Debug\Ui.Desktop.g.resources
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\obj\Debug\De.HsFlensburg.ClientApp078.Ui.Desktop.Properties.Resources.resources
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\obj\Debug\Ui.Desktop.csproj.GenerateResource.cache
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\obj\Debug\Ui.Desktop.csproj.CoreCompileInputs.cache
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\obj\Debug\Ui.Desktop.csproj.CopyComplete
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\obj\Debug\Ui.Desktop.exe
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\obj\Debug\Ui.Desktop.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\obj\Debug\NewArticleWindow.g.cs
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Desktop\obj\Debug\NewArticleWindow.baml

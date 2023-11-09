@@ -1,0 +1,5 @@
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\MessageBus\bin\Debug\Services.MessageBus.dll
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\MessageBus\bin\Debug\Services.MessageBus.pdb
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\MessageBus\obj\Debug\Services.MessageBus.csproj.CoreCompileInputs.cache
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\MessageBus\obj\Debug\Services.MessageBus.dll
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\MessageBus\obj\Debug\Services.MessageBus.pdb

@@ -1,0 +1,37 @@
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Ui\bin\Debug\Logic.Ui.dll
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Ui\bin\Debug\Logic.Ui.pdb
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Ui\bin\Debug\Business.Model.dll
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Ui\bin\Debug\Business.Model.pdb
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Ui\obj\Debug\Logic.Ui.csproj.AssemblyReference.cache
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Ui\obj\Debug\Logic.Ui.csproj.CoreCompileInputs.cache
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Ui\obj\Debug\Logic.Ui.csproj.CopyComplete
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Ui\obj\Debug\Logic.Ui.dll
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Ui\obj\Debug\Logic.Ui.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Ui\bin\Debug\Logic.Ui.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Ui\bin\Debug\Logic.Ui.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Ui\bin\Debug\Business.Model.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Ui\bin\Debug\Business.Model.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Ui\obj\Debug\Logic.Ui.csproj.AssemblyReference.cache
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Ui\obj\Debug\Logic.Ui.csproj.CoreCompileInputs.cache
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Ui\obj\Debug\Logic.Ui.csproj.CopyComplete
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Ui\obj\Debug\Logic.Ui.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Ui\obj\Debug\Logic.Ui.pdb
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Ui\bin\Debug\Services.SerializationService.dll
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Ui\bin\Debug\Services.SerializationService.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Ui\bin\Debug\Services.SerializationService.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Ui\bin\Debug\Services.SerializationService.pdb
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Ui\bin\Debug\Services.MessageBus.dll
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Ui\bin\Debug\Services.MessageBus.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Ui\obj\Debug\Logic.Ui.csproj.AssemblyReference.cache
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Ui\obj\Debug\Logic.Ui.csproj.CoreCompileInputs.cache
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Ui\obj\Debug\Logic.Ui.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Ui\obj\Debug\Logic.Ui.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Ui\bin\Debug\Logic.Ui.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Ui\bin\Debug\Logic.Ui.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Ui\bin\Debug\Business.Model.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Ui\bin\Debug\Services.MessageBus.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Ui\bin\Debug\Services.SerializationService.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Ui\bin\Debug\Services.MessageBus.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Ui\bin\Debug\Business.Model.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Ui\bin\Debug\Services.SerializationService.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Ui\obj\Debug\Logic.Ui.csproj.CopyComplete

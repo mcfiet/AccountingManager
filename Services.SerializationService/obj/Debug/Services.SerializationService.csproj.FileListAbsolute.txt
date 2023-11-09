@@ -1,0 +1,27 @@
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Services.SerializationService\bin\Debug\Services.SerializationService.dll
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Services.SerializationService\bin\Debug\Services.SerializationService.pdb
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Services.SerializationService\bin\Debug\Business.Model.dll
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Services.SerializationService\bin\Debug\Business.Model.pdb
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Services.SerializationService\obj\Debug\Services.SerializationService.csproj.AssemblyReference.cache
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Services.SerializationService\obj\Debug\Services.SerializationService.csproj.CoreCompileInputs.cache
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Services.SerializationService\obj\Debug\Services.SerializationService.csproj.CopyComplete
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Services.SerializationService\obj\Debug\Services.SerializationService.dll
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Services.SerializationService\obj\Debug\Services.SerializationService.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Services.SerializationService\bin\Debug\Services.SerializationService.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Services.SerializationService\bin\Debug\Services.SerializationService.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Services.SerializationService\bin\Debug\Business.Model.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Services.SerializationService\bin\Debug\Business.Model.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Services.SerializationService\obj\Debug\Services.SerializationService.csproj.AssemblyReference.cache
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Services.SerializationService\obj\Debug\Services.SerializationService.csproj.CoreCompileInputs.cache
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Services.SerializationService\obj\Debug\Services.SerializationService.csproj.CopyComplete
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Services.SerializationService\obj\Debug\Services.SerializationService.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Services.SerializationService\obj\Debug\Services.SerializationService.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Services.SerializationService\bin\Debug\Services.SerializationService.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Services.SerializationService\bin\Debug\Services.SerializationService.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Services.SerializationService\bin\Debug\Business.Model.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Services.SerializationService\bin\Debug\Business.Model.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Services.SerializationService\obj\Debug\Services.SerializationService.csproj.AssemblyReference.cache
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Services.SerializationService\obj\Debug\Services.SerializationService.csproj.CoreCompileInputs.cache
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Services.SerializationService\obj\Debug\Services.SerializationService.csproj.CopyComplete
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Services.SerializationService\obj\Debug\Services.SerializationService.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Services.SerializationService\obj\Debug\Services.SerializationService.pdb

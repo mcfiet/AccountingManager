@@ -1,0 +1,17 @@
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Model\obj\Debug\Business.Model.csproj.CoreCompileInputs.cache
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Model\bin\Debug\Business.Model.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Model\bin\Debug\Business.Model.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Model\obj\Debug\Business.Model.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Model\obj\Debug\Business.Model.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Model\obj\Debug\Business.Model.csproj.AssemblyReference.cache
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Model\bin\Debug\Business.Model.dll
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Model\bin\Debug\Business.Model.pdb
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Model\obj\Debug\Business.Model.csproj.CoreCompileInputs.cache
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Model\obj\Debug\Business.Model.dll
+E:\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\WOCHE 01\Programm\ClientApp078\Model\obj\Debug\Business.Model.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Model\bin\Debug\Business.Model.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Model\bin\Debug\Business.Model.pdb
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Model\obj\Debug\Business.Model.csproj.AssemblyReference.cache
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Model\obj\Debug\Business.Model.csproj.CoreCompileInputs.cache
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Model\obj\Debug\Business.Model.dll
+G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Model\obj\Debug\Business.Model.pdb
