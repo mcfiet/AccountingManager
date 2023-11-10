@@ -25,3 +25,12 @@ G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\A
 G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Services.SerializationService\obj\Debug\Services.SerializationService.csproj.CopyComplete
 G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Services.SerializationService\obj\Debug\Services.SerializationService.dll
 G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Services.SerializationService\obj\Debug\Services.SerializationService.pdb
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.SerializationService\bin\Debug\Services.SerializationService.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.SerializationService\bin\Debug\Services.SerializationService.pdb
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.SerializationService\bin\Debug\Business.Model.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.SerializationService\bin\Debug\Business.Model.pdb
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.SerializationService\obj\Debug\Services.SerializationService.csproj.AssemblyReference.cache
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.SerializationService\obj\Debug\Services.SerializationService.csproj.CoreCompileInputs.cache
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.SerializationService\obj\Debug\Services.SerializationService.csproj.CopyComplete
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.SerializationService\obj\Debug\Services.SerializationService.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.SerializationService\obj\Debug\Services.SerializationService.pdb

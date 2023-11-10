@@ -35,3 +35,7 @@ G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\A
 G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Ui\bin\Debug\Business.Model.pdb
 G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Ui\bin\Debug\Services.SerializationService.pdb
 G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Ui\obj\Debug\Logic.Ui.csproj.CopyComplete
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\obj\Debug\Logic.Ui.csproj.AssemblyReference.cache
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\obj\Debug\Logic.Ui.csproj.CoreCompileInputs.cache
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\obj\Debug\Logic.Ui.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\obj\Debug\Logic.Ui.pdb
