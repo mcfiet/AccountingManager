@@ -19,8 +19,15 @@ namespace De.HsFlensburg.ClientApp078.Ui.Desktop.MessageBusLogic
 
         private void InitMessenger()
         {
+            ServiceBus.Instance.Register<OpenNewOfferWindowMessage>(this, OpenNewOfferWindow);
             ServiceBus.Instance.Register<OpenNewClientWindowMessage>(this, OpenNewClientWindow);
             ServiceBus.Instance.Register<OpenNewArticleWindowMessage>(this, OpenNewArticleWindow);
+        }
+
+        private void OpenNewOfferWindow()
+        {
+            NewOfferWindow myWindow = new NewOfferWindow();
+            myWindow.ShowDialog();
         }
 
         private void OpenNewClientWindow()

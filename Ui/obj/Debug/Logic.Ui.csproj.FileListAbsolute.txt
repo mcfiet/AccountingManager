@@ -39,3 +39,16 @@ E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\obj\Debug\Logic.Ui.cs
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\obj\Debug\Logic.Ui.csproj.CoreCompileInputs.cache
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\obj\Debug\Logic.Ui.dll
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\obj\Debug\Logic.Ui.pdb
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\obj\Debug\Logic.Ui.csproj.AssemblyReference.cache
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\obj\Debug\Logic.Ui.csproj.CoreCompileInputs.cache
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\obj\Debug\Logic.Ui.dll
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\obj\Debug\Logic.Ui.pdb
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\Logic.Ui.dll
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\Logic.Ui.pdb
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\Business.Model.dll
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\Services.MessageBus.dll
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\Services.SerializationService.dll
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\Services.MessageBus.pdb
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\Business.Model.pdb
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\Services.SerializationService.pdb
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\obj\Debug\Logic.Ui.csproj.CopyComplete

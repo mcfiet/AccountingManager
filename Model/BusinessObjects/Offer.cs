@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
 {
-    public class Offer: INotifyPropertyChanged
+    [Serializable]
+    public class Offer : INotifyPropertyChanged
     {
         private int offerNr;
         public int OfferNr

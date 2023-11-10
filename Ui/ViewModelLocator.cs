@@ -13,30 +13,37 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui
 
         public MainWindowViewModel TheMainWindowViewModel { get; set; }
 
-        public ClientCollectionViewModel TheClientCollectionViewModel { get; set; }
+        //public ClientCollectionViewModel TheClientCollectionViewModel { get; set; }
         public NewClientWindowViewModel TheNewClientWindowViewModel { get; set; }
 
 
-        public ArticleCollectionViewModel TheArticleCollectionViewModel { get; set; }
+        //public ArticleCollectionViewModel TheArticleCollectionViewModel { get; set; }
         public NewArticleWindowViewModel TheNewArticleWindowViewModel { get; set; }
 
-        public OfferCollectionViewModel TheOfferCollectionViewModel { get; set; }
+        //public OfferCollectionViewModel TheOfferCollectionViewModel { get; set; }
         public NewOfferWindowViewModel TheNewOfferWindowViewmodel { get; set; }
+
+        public AdministrationViewModel TheAdministrationViewModel { get; set; }
 
 
         public ViewModelLocator()
         {
 
-            TheMainWindowViewModel = new MainWindowViewModel(TheClientCollectionViewModel, TheArticleCollectionViewModel);
+           
 
-            TheClientCollectionViewModel = new ClientCollectionViewModel();
-            TheNewClientWindowViewModel = new NewClientWindowViewModel(TheClientCollectionViewModel);
+            //TheClientCollectionViewModel = new ClientCollectionViewModel();
 
-            TheArticleCollectionViewModel = new ArticleCollectionViewModel();
-            TheNewArticleWindowViewModel = new NewArticleWindowViewModel(TheArticleCollectionViewModel);
+            //TheArticleCollectionViewModel = new ArticleCollectionViewModel();
 
-            TheOfferCollectionViewModel = new OfferCollectionViewModel();
-            TheNewOfferWindowViewmodel = new NewOfferWindowViewModel(TheOfferCollectionViewModel);
+            //TheOfferCollectionViewModel = new OfferCollectionViewModel();
+
+            TheAdministrationViewModel = new AdministrationViewModel();
+
+            TheNewOfferWindowViewmodel = new NewOfferWindowViewModel(TheAdministrationViewModel.Offers);
+            TheNewClientWindowViewModel = new NewClientWindowViewModel(TheAdministrationViewModel.Clients);
+            TheNewArticleWindowViewModel = new NewArticleWindowViewModel(TheAdministrationViewModel.Articles);
+
+            TheMainWindowViewModel = new MainWindowViewModel(TheAdministrationViewModel);
         }
     }
 }

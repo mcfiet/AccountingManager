@@ -1,4 +1,5 @@
-﻿using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
+﻿using De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects;
+using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,23 +15,26 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public String Reference { get; set; }
         public String Date { get; set; }
         public String Text { get; set; }
-        public ICommand AddOffer;
-        public OfferCollectionViewModel offerCollectionViewModel;
 
-        public NewOfferWindowViewModel(OfferCollectionViewModel viewModelCollection)
+        public ICommand AddOffer;
+        public OfferCollection offerCollection;
+
+        public NewOfferWindowViewModel(OfferCollection givenOfferCollection)
         {
             AddOffer = new RelayCommand(AddOfferMethod);
-            offerCollectionViewModel = viewModelCollection;
+            offerCollection = givenOfferCollection;
         }
 
         private void AddOfferMethod()
         {
-            OfferViewModel cvm = new OfferViewModel();
-            cvm.OfferNr = OfferNr;
-            cvm.Reference = Reference;
-            cvm.Date = Date;
-            cvm.Text = Text;
-            offerCollectionViewModel.Add(cvm);
+            Offer cvm = new Offer
+            {
+                OfferNr = OfferNr,
+                Reference = Reference,
+                Date = Date,
+                Text = Text
+            };
+            offerCollection.Add(cvm);
         }
     }
 }

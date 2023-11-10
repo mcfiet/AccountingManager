@@ -31,10 +31,5 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
                 }
             }
         }
-
-        public static implicit operator OfferCollectionViewModel(NewOfferWindowViewModel v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

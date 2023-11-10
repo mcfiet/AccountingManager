@@ -1,9 +1,11 @@
-﻿using De.HsFlensburg.ClientApp078.Logic.Ui.MessageBusMessages;
+﻿using De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects;
+using De.HsFlensburg.ClientApp078.Logic.Ui.MessageBusMessages;
 using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
 using De.HsFlensburg.ClientApp078.Services.MessageBus;
 using De.HsFlensburg.ClientApp078.Services.SerializationService;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,24 +21,43 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public ICommand SaveCommand { get; }
         public ICommand LoadCommand { get; }
 
+        public ICommand OpenNewOfferWindowCommand { get; }
         public ICommand OpenNewClientWindowCommand { get; }
         public ICommand OpenNewArticleWindowCommand { get; }
 
 
-        public ArticleCollectionViewModel MyList { get; set; }
+        public OfferCollection OfferList { get; set; }
+        public ClientCollection ClientList { get; set; }
+        public ArticleCollection ArticleList { get; set; }
 
-        public MainWindowViewModel(ClientCollectionViewModel viewModelCollection, ArticleCollectionViewModel articleModelCollection)
+
+        public AdministrationViewModel AdministrationViewModel { get; set; }   
+
+        public MainWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
             
             SaveCommand = new RelayCommand(SaveModel);
             LoadCommand = new RelayCommand(LoadModel);
 
+            OpenNewOfferWindowCommand = new RelayCommand(OpenNewOfferWindowMethod);
             OpenNewClientWindowCommand = new RelayCommand(OpenNewClientWindowMethod);
             OpenNewArticleWindowCommand = new RelayCommand(OpenNewArticleWindow);
 
-            MyList = articleModelCollection;
+            AdministrationViewModel = givenAdministrationViewModel;
+
+            
+            OfferList = AdministrationViewModel.Offers;
+            ClientList = AdministrationViewModel.Clients;
+            ArticleList = AdministrationViewModel.Articles;
+
+
             modelFileHandler = new ModelFileHandler();
             pathForSerialization = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ClientCollectionSerialization\\MyClient.cc";
+        }
+
+        private void OpenNewOfferWindowMethod()
+        {
+            ServiceBus.Instance.Send(new OpenNewOfferWindowMessage());
         }
 
         private void OpenNewClientWindowMethod()
@@ -52,12 +73,12 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 
         private void SaveModel()
         {
-            modelFileHandler.WriteModelToFile(pathForSerialization, MyList.Model);
+            modelFileHandler.WriteModelToFile(pathForSerialization, AdministrationViewModel.Model);
         }
 
         private void LoadModel()
         {
-            MyList.Model = modelFileHandler.ReadModelFromFile(pathForSerialization);
+            AdministrationViewModel.Model = modelFileHandler.ReadModelFromFile(pathForSerialization);
         }
     }
 }

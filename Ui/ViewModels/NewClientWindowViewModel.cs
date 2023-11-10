@@ -1,4 +1,5 @@
-﻿using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
+﻿using De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects;
+using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,20 +14,22 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public int Identifier { get; set; }
         public string Name { get; set; }
         public ICommand AddClient { get; }
-        private ClientCollectionViewModel clientCollectionViewModel;
+        private ClientCollection clientCollection;
 
-        public NewClientWindowViewModel(ClientCollectionViewModel viewModelCollection)
+        public NewClientWindowViewModel(ClientCollection givenClientCollection)
         {
             AddClient = new RelayCommand(AddClientMethod);
-            clientCollectionViewModel = viewModelCollection;
+            clientCollection = givenClientCollection;
         }
 
         private void AddClientMethod()
         {
-            ClientViewModel cvm = new ClientViewModel();
-            cvm.Id = Identifier;
-            cvm.Name = Name;
-            clientCollectionViewModel.Add(cvm);
+            Client cvm = new Client
+            {
+                Id = Identifier,
+                Name = Name
+            };
+            clientCollection.Add(cvm);
             
         }
     }

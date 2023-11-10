@@ -15,3 +15,9 @@ G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\A
 G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Model\obj\Debug\Business.Model.csproj.CoreCompileInputs.cache
 G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Model\obj\Debug\Business.Model.dll
 G:\Andere Computer\FIETE-PC\Dokumente\Studium\HS Flensburg\ARBEITEN\SEMESTER 5\ANWENDUNGSPROGRAMMIERUNG\! HAUSARBEIT\ClientApp078\Model\obj\Debug\Business.Model.pdb
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Model\bin\Debug\Business.Model.dll
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Model\bin\Debug\Business.Model.pdb
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Model\obj\Debug\Business.Model.csproj.AssemblyReference.cache
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Model\obj\Debug\Business.Model.csproj.CoreCompileInputs.cache
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Model\obj\Debug\Business.Model.dll
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Model\obj\Debug\Business.Model.pdb

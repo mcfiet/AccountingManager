@@ -7,43 +7,52 @@
         xmlns:viewModel="clr-namespace:De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;assembly=Logic.Ui"
         xmlns:viewModels="clr-namespace:De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels;assembly=Logic.Ui"
         mc:Ignorable="d"
-        Title="MainWindow" Height="120" Width="500">
+        Title="MainWindow" 
+        SizeToContent="WidthAndHeight"
+        Background="white"
+        FontFamily="Arial">
+    <Window.Resources>
+        
+    </Window.Resources>
     <Window.DataContext>
         <Binding Source="{StaticResource ViewModelLocator}" Path="TheMainWindowViewModel"></Binding>
     </Window.DataContext>
     <Window.IsEnabled >
         <Binding Source = "{StaticResource MessageListener}" Path ="BindableProperty"></Binding>
     </Window.IsEnabled >
-
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-    <UniformGrid Grid.Column="0" Columns="2">
-        <Label VerticalAlignment="Center" 
-               HorizontalAlignment="Right">
-            Identifier
-        </Label>
-            <TextBox VerticalAlignment="Center" 
-                 Text="{Binding ElementName=myDataGrid, Path=SelectedItem.Id}">
-            </TextBox>
-        <Label VerticalAlignment="Center" 
-               HorizontalAlignment="Right">
-            Name
-        </Label>
-            <TextBox VerticalAlignment="Center" 
-                     Text="{Binding ElementName=myDataGrid, Path=SelectedItem.Name}">
-            </TextBox>
-            <Button Command="{Binding OpenNewArticleWindowCommand, Mode=OneWay}">Open New Article Window</Button>
-            <Button Grid.Column="0" Command="{Binding OpenNewClientWindowCommand, Mode=OneWay}">Open New Client Window</Button>
-            <Button Command="{Binding SaveCommand}">Save</Button>
-            <Button Command="{Binding LoadCommand}">Load</Button>
+        <UniformGrid  Grid.Column="0" Columns="2">
+            <StackPanel  Margin="50, 20">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Margin" Value="10"/>
+                    </Style>
+                </StackPanel.Resources>
+                <Button Command="{Binding OpenNewOfferWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Open New Offer Window</Button>
+                <Button Command="{Binding OpenNewClientWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Open New Client Window</Button>
+                <Button Command="{Binding OpenNewArticleWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Open New Article Window</Button>
+                <Button Command="{Binding SaveCommand}" Style="{DynamicResource RoundeButton}">Save</Button>
+                <Button Command="{Binding LoadCommand}" Style="{DynamicResource RoundeButton}">Load</Button>
+            </StackPanel>
+            <StackPanel>
+                <Label Style="{DynamicResource H1}">Angebote</Label>
+            <DataGrid
+                  Name ="offerDataGrid"
+                  ItemsSource="{Binding Path = OfferList}" >
+            </DataGrid>
 
+                <Label Style="{DynamicResource H1}">Kunden</Label>
+                <DataGrid
+                  Name ="clientDataGrid"
+                  ItemsSource="{Binding Path = ClientList}" >
+                </DataGrid>
+
+                <Label Style="{DynamicResource H1}">Artikel</Label>
+                <DataGrid
+                  Name ="articleDataGrid"
+                  ItemsSource="{Binding Path = ArticleList}" >
+                </DataGrid>
+            </StackPanel>
         </UniformGrid>
-        <DataGrid Grid.Column="1" 
-                  Name ="myDataGrid"
-                  ItemsSource="{Binding Path = MyList}">
-        </DataGrid>
     </Grid>
 </Window>

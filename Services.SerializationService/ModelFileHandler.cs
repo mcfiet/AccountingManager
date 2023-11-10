@@ -12,7 +12,7 @@ namespace De.HsFlensburg.ClientApp078.Services.SerializationService
 {
     public class ModelFileHandler
     {
-        public ClientCollection ReadModelFromFile(string path)
+        public Administration ReadModelFromFile(string path)
         {
             IFormatter formatter = new BinaryFormatter();
             Stream streamLoad = new FileStream(
@@ -20,13 +20,13 @@ namespace De.HsFlensburg.ClientApp078.Services.SerializationService
                 FileMode.Open,
                 FileAccess.Read,
                 FileShare.Read);
-            ClientCollection loadedCollection = (ClientCollection)formatter.Deserialize(streamLoad);
+            Administration loadedCollection = (Administration)formatter.Deserialize(streamLoad);
             streamLoad.Close();
 
             return loadedCollection;
         }
 
-        public void WriteModelToFile(string path, ClientCollection model)
+        public void WriteModelToFile(string path, Administration model)
         {
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(

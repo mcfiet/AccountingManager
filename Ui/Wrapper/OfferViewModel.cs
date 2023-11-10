@@ -44,7 +44,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
             }
             set
             {
-                Date = value;
+                Model.Date = value;
 
             }
         }
