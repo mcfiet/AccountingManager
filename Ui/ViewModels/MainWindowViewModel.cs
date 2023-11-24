@@ -22,7 +22,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public ICommand LoadCommand { get; }
 
         public ICommand OpenNewOfferWindowCommand { get; }
-        public ICommand OpenNewClientWindowCommand { get; }
+        public ICommand OpenClientsWindowCommand { get; }
         public ICommand OpenNewArticleWindowCommand { get; }
 
 
@@ -40,7 +40,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             LoadCommand = new RelayCommand(LoadModel);
 
             OpenNewOfferWindowCommand = new RelayCommand(OpenNewOfferWindowMethod);
-            OpenNewClientWindowCommand = new RelayCommand(OpenNewClientWindowMethod);
+            OpenClientsWindowCommand = new RelayCommand(OpenClientsWindowMethod);
             OpenNewArticleWindowCommand = new RelayCommand(OpenNewArticleWindow);
 
             AdministrationViewModel = givenAdministrationViewModel;
@@ -60,9 +60,9 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             ServiceBus.Instance.Send(new OpenNewOfferWindowMessage());
         }
 
-        private void OpenNewClientWindowMethod()
+        private void OpenClientsWindowMethod()
         {
-            ServiceBus.Instance.Send(new OpenNewClientWindowMessage());
+            ServiceBus.Instance.Send(new OpenClientsWindowMessage());
         }
 
         private void OpenNewArticleWindow()

@@ -6,21 +6,36 @@
         xmlns:local="clr-namespace:De.HsFlensburg.ClientApp078.Ui.Desktop"
         xmlns:viewModels="clr-namespace:De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels;assembly=Logic.Ui"
         mc:Ignorable="d"
-        Title="NewArticleWindow" Height="450" Width="800">
+        Title="NewArticleWindow" 
+        SizeToContent="WidthAndHeight"
+        Background="white"
+        FontFamily="Arial">
     <Window.DataContext>
         <Binding Source="{StaticResource ViewModelLocator}" Path="TheNewArticleWindowViewModel"></Binding>
     </Window.DataContext>
     <Grid>
-        <UniformGrid Grid.Column="0" Columns="2">
-            <Label VerticalAlignment="Center" HorizontalAlignment="Right">ArticleNr</Label>
-            <TextBox Text="{Binding ArticleNr}" VerticalAlignment="Center"></TextBox>
-            <Label VerticalAlignment="Center" HorizontalAlignment="Right">Name</Label>
-            <TextBox Text="{Binding Name}" VerticalAlignment="Center"></TextBox>
-            <Label VerticalAlignment="Center" HorizontalAlignment="Right">Description</Label>
-            <TextBox Text="{Binding Description}" VerticalAlignment="Center"></TextBox>
-            <Label VerticalAlignment="Center" HorizontalAlignment="Right">Price</Label>
-            <TextBox Text="{Binding Price}" VerticalAlignment="Center"></TextBox>
-            <Button Command="{Binding AddArticle}">Article hinzufügen</Button>
-        </UniformGrid>
+        <Grid>
+            <StackPanel Margin="50, 20" >
+                <StackPanel Margin="0 15 0 0">
+                    <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">ArticleNr</Label>
+                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ArticleNr}" VerticalAlignment="Center"></TextBox>
+                </StackPanel>
+                <StackPanel Margin="0 15 0 0">
+                    <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Name</Label>
+                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding Name}" VerticalAlignment="Center"></TextBox>
+                </StackPanel>
+                <StackPanel Margin="0 15 0 0">
+                    <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Description</Label>
+                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding Description}" VerticalAlignment="Center"></TextBox>
+                </StackPanel>
+                <StackPanel Margin="0 15 0 0">
+                    <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Price</Label>
+                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding Price}" VerticalAlignment="Center"></TextBox>
+                </StackPanel>
+                <Grid Width="NaN" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 50 0 0">
+                    <Button Command="{Binding AddArticle}" Style="{DynamicResource RoundeButton}">Artikel hinzufügen</Button>
+                </Grid>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>

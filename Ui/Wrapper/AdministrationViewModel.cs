@@ -11,11 +11,14 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
 {
     public class AdministrationViewModel : ViewModelBase<Administration>
     {
-        public AdministrationViewModel()
+        public AdministrationViewModel(): base()
         {
             Offers = new OfferCollectionViewModel();
             Clients = new ClientCollectionViewModel();
             Articles = new ArticleCollectionViewModel();
+            Offers.Model = this.Model.Offers;
+            Clients.Model = this.Model.Clients;
+            Articles.Model = this.Model.Articles;
         }
         public OfferCollectionViewModel Offers { get; set; }
 
@@ -25,7 +28,18 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
         
         public override void NewModelAssigned()
         {
-            throw new NotImplementedException();
+            if (this.Offers != null)
+            {
+                Offers.Model = this.Model?.Offers;
+            }
+            if (this.Clients != null)
+            {
+                Clients.Model = this.Model?.Clients;
+            }
+            if (this.Articles != null)
+            {
+                Articles.Model = this.Model?.Articles;
+            }
         }
 
         internal void OnPropertyChangedInModel(object sender, PropertyChangedEventArgs e)
