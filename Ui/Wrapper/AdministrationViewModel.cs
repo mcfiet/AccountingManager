@@ -16,6 +16,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
             Offers = new OfferCollectionViewModel();
             Clients = new ClientCollectionViewModel();
             Articles = new ArticleCollectionViewModel();
+            Articles = new ArticleCollectionViewModel();
             Offers.Model = this.Model.Offers;
             Clients.Model = this.Model.Clients;
             Articles.Model = this.Model.Articles;

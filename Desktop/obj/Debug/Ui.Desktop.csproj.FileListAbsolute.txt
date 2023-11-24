@@ -178,3 +178,5 @@ C:\Users\Olli Dell HA\Documents\2023-testprojekte\awp-fiete-13-11-2023\Desktop\o
 C:\Users\Olli Dell HA\Documents\2023-testprojekte\awp-fiete-13-11-2023\Desktop\obj\Debug\Ui.Desktop.pdb
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\ClientsWindow.g.cs
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\ClientsWindow.baml
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\ArticlesWindow.g.cs
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\ArticlesWindow.baml

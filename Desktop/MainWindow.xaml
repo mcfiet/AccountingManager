@@ -30,7 +30,7 @@
                 </StackPanel.Resources>
                 <Button Command="{Binding OpenNewOfferWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Open New Offer Window</Button>
                 <Button Command="{Binding OpenClientsWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Kunden</Button>
-                <Button Command="{Binding OpenNewArticleWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Open New Article Window</Button>
+                <Button Command="{Binding OpenArticlesWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Artikel</Button>
                 <Button Command="{Binding SaveCommand}" Style="{DynamicResource RoundeButton}">Save</Button>
                 <Button Command="{Binding LoadCommand}" Style="{DynamicResource RoundeButton}">Load</Button>
             </StackPanel>

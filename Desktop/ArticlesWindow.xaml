@@ -1,0 +1,41 @@
+﻿<Window x:Class="De.HsFlensburg.ClientApp078.Ui.Desktop.ArticlesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:De.HsFlensburg.ClientApp078.Ui.Desktop"
+        mc:Ignorable="d"
+        Title="ArticlesWindow" 
+        SizeToContent="WidthAndHeight"
+        Background="white"
+        FontFamily="Arial">
+    <Window.Resources>
+
+    </Window.Resources>
+    <Window.DataContext>
+        <Binding Source="{StaticResource ViewModelLocator}" Path="TheArticlesWindowViewModel"></Binding>
+    </Window.DataContext>
+    <Window.IsEnabled >
+        <Binding Source = "{StaticResource MessageListener}" Path ="BindableProperty"></Binding>
+    </Window.IsEnabled >
+    <Grid>
+        <UniformGrid  Grid.Column="0" Columns="2">
+            <StackPanel  Margin="50, 20">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Margin" Value="10"/>
+                    </Style>
+                </StackPanel.Resources>
+                <Button Command="{Binding OpenNewArticleWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Neuen Artikel hinzufügen</Button>
+                <Button Command="{Binding OpenMainWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Zurück</Button>
+            </StackPanel>
+            <StackPanel>
+                <Label Style="{DynamicResource H1}">Artikel</Label>
+                <DataGrid
+                  Name ="clientDataGrid"
+                  ItemsSource="{Binding Path = ArticleList}" >
+                </DataGrid>
+            </StackPanel>
+        </UniformGrid>
+    </Grid>
+</Window>
