@@ -121,10 +121,6 @@
       <Project>{060486ca-023e-404a-9ed1-8ca986dd493e}</Project>
       <Name>Services.MessageBus</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Model\Business.Model.csproj">
-      <Project>{5EA066D6-C013-40AA-B01E-FA0D4012CA1F}</Project>
-      <Name>Business.Model</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Ui\Logic.Ui.csproj">
       <Project>{e46fae81-214c-4f48-9cd0-7941787fef5c}</Project>
       <Name>Logic.Ui</Name>

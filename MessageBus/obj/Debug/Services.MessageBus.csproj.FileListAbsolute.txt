@@ -9,3 +9,9 @@ C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientap
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\MessageBus\obj\Debug\Services.MessageBus.csproj.CoreCompileInputs.cache
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\MessageBus\obj\Debug\Services.MessageBus.dll
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\MessageBus\obj\Debug\Services.MessageBus.pdb
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\MessageBus\bin\Debug\Services.MessageBus.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\MessageBus\bin\Debug\Services.MessageBus.pdb
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\MessageBus\obj\Debug\Services.MessageBus.csproj.AssemblyReference.cache
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\MessageBus\obj\Debug\Services.MessageBus.csproj.CoreCompileInputs.cache
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\MessageBus\obj\Debug\Services.MessageBus.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\MessageBus\obj\Debug\Services.MessageBus.pdb

@@ -27,3 +27,9 @@ C:\Users\Olli Dell HA\Documents\2023-testprojekte\awp-fiete-13-11-2023\Model\obj
 C:\Users\Olli Dell HA\Documents\2023-testprojekte\awp-fiete-13-11-2023\Model\obj\Debug\Business.Model.csproj.CoreCompileInputs.cache
 C:\Users\Olli Dell HA\Documents\2023-testprojekte\awp-fiete-13-11-2023\Model\obj\Debug\Business.Model.dll
 C:\Users\Olli Dell HA\Documents\2023-testprojekte\awp-fiete-13-11-2023\Model\obj\Debug\Business.Model.pdb
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Model\bin\Debug\Business.Model.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Model\bin\Debug\Business.Model.pdb
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Model\obj\Debug\Business.Model.csproj.AssemblyReference.cache
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Model\obj\Debug\Business.Model.csproj.CoreCompileInputs.cache
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Model\obj\Debug\Business.Model.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Model\obj\Debug\Business.Model.pdb
