@@ -11,39 +11,18 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
 {
     public class AdministrationViewModel : ViewModelBase<Administration>
     {
-        public OfferCollection Offers
+        public AdministrationViewModel()
         {
-            get
-            {
-                return Model.Offers;
-            }
-            set
-            {
-                Model.Offers = value;
-            }
+            Offers = new OfferCollectionViewModel();
+            Clients = new ClientCollectionViewModel();
+            Articles = new ArticleCollectionViewModel();
         }
-        public ClientCollection Clients
-        {
-            get
-            {
-                return Model.Clients;
-            }
-            set
-            {
-                Model.Clients = value;
-            }
-        }
-        public ArticleCollection Articles
-        {
-            get
-            {
-                return Model.Articles;
-            }
-            set
-            {
-                Model.Articles = value;
-            }
-        }
+        public OfferCollectionViewModel Offers { get; set; }
+
+        public ClientCollectionViewModel Clients { get; set; }
+
+        public ArticleCollectionViewModel Articles { get; set; }
+        
         public override void NewModelAssigned()
         {
             throw new NotImplementedException();

@@ -16,10 +16,10 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public String Date { get; set; }
         public String Text { get; set; }
 
-        public ICommand AddOffer;
-        public OfferCollection offerCollection;
+        public ICommand AddOffer { get; }
+        public OfferCollectionViewModel offerCollection;
 
-        public NewOfferWindowViewModel(OfferCollection givenOfferCollection)
+        public NewOfferWindowViewModel(OfferCollectionViewModel givenOfferCollection)
         {
             AddOffer = new RelayCommand(AddOfferMethod);
             offerCollection = givenOfferCollection;
@@ -27,7 +27,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 
         private void AddOfferMethod()
         {
-            Offer cvm = new Offer
+            OfferViewModel cvm = new OfferViewModel
             {
                 OfferNr = OfferNr,
                 Reference = Reference,

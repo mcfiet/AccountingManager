@@ -1,4 +1,4 @@
-﻿using De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects;
+﻿//using De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects;
 using De.HsFlensburg.ClientApp078.Logic.Ui.MessageBusMessages;
 using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
 using De.HsFlensburg.ClientApp078.Services.MessageBus;
@@ -26,9 +26,9 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public ICommand OpenNewArticleWindowCommand { get; }
 
 
-        public OfferCollection OfferList { get; set; }
-        public ClientCollection ClientList { get; set; }
-        public ArticleCollection ArticleList { get; set; }
+        public OfferCollectionViewModel OfferList { get; set; }
+        public ClientCollectionViewModel ClientList { get; set; }
+        public ArticleCollectionViewModel ArticleList { get; set; }
 
 
         public AdministrationViewModel AdministrationViewModel { get; set; }   

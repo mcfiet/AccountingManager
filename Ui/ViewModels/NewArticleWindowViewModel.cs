@@ -16,9 +16,9 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public String Description { get; set; }
         public int Price { get; set; }
 
-        public ICommand AddArticle;
-        private ArticleCollection articleCollection;
-        public NewArticleWindowViewModel(ArticleCollection givenArticleCollection)
+        public ICommand AddArticle { get; }
+        private ArticleCollectionViewModel articleCollection;
+        public NewArticleWindowViewModel(ArticleCollectionViewModel givenArticleCollection)
         {
             AddArticle = new RelayCommand(AddArticleMethod);
             articleCollection = givenArticleCollection;
@@ -26,7 +26,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 
         private void AddArticleMethod()
         {
-            Article cvm = new Article
+            ArticleViewModel cvm = new ArticleViewModel
             {
                 ArticleNr = ArticleNr,
                 Name = Name,

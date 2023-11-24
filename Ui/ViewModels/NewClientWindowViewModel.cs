@@ -14,9 +14,9 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public int Identifier { get; set; }
         public string Name { get; set; }
         public ICommand AddClient { get; }
-        private ClientCollection clientCollection;
+        private ClientCollectionViewModel clientCollection;
 
-        public NewClientWindowViewModel(ClientCollection givenClientCollection)
+        public NewClientWindowViewModel(ClientCollectionViewModel givenClientCollection)
         {
             AddClient = new RelayCommand(AddClientMethod);
             clientCollection = givenClientCollection;
@@ -24,7 +24,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 
         private void AddClientMethod()
         {
-            Client cvm = new Client
+            ClientViewModel cvm = new ClientViewModel
             {
                 Id = Identifier,
                 Name = Name

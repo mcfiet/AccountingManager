@@ -21,3 +21,9 @@ C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientap
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Model\obj\Debug\Business.Model.csproj.CoreCompileInputs.cache
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Model\obj\Debug\Business.Model.dll
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Model\obj\Debug\Business.Model.pdb
+C:\Users\Olli Dell HA\Documents\2023-testprojekte\awp-fiete-13-11-2023\Model\bin\Debug\Business.Model.dll
+C:\Users\Olli Dell HA\Documents\2023-testprojekte\awp-fiete-13-11-2023\Model\bin\Debug\Business.Model.pdb
+C:\Users\Olli Dell HA\Documents\2023-testprojekte\awp-fiete-13-11-2023\Model\obj\Debug\Business.Model.csprojAssemblyReference.cache
+C:\Users\Olli Dell HA\Documents\2023-testprojekte\awp-fiete-13-11-2023\Model\obj\Debug\Business.Model.csproj.CoreCompileInputs.cache
+C:\Users\Olli Dell HA\Documents\2023-testprojekte\awp-fiete-13-11-2023\Model\obj\Debug\Business.Model.dll
+C:\Users\Olli Dell HA\Documents\2023-testprojekte\awp-fiete-13-11-2023\Model\obj\Debug\Business.Model.pdb

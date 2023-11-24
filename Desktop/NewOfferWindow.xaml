@@ -37,7 +37,7 @@
                 <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding Text}" VerticalAlignment="Center"></TextBox>
             </StackPanel>
             <Grid Width="NaN" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 50 0 0">
-                <Button Command="{Binding AddOffer}" Style="{DynamicResource RoundeButton}">Kunde hinzufügen</Button>
+                <Button Command="{Binding AddOffer}" Style="{DynamicResource RoundeButton}">Offer hinzufügen</Button>
             </Grid>
         </StackPanel>
     </Grid>
