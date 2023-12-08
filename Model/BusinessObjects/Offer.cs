@@ -67,6 +67,34 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
 
             }
         }
+        private Client client;
+        public Client Client
+        {
+            get
+            {
+                return client;
+            }
+            set
+            {
+                client = value;
+                OnPropertyChanged("Client");
+
+            }
+        }
+        private ArticleCollection articles;
+        public ArticleCollection Articles
+        {
+            get
+            {
+                return articles;
+            }
+            set
+            {
+                articles = value;
+                OnPropertyChanged("Articles");
+
+            }
+        }
 
         protected virtual void OnPropertyChanged(string propertyName)
         {

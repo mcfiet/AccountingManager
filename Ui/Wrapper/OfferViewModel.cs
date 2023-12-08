@@ -48,7 +48,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
 
             }
         }
-        
+
         public String Text
         {
             get
@@ -61,13 +61,41 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
 
             }
         }
-
+        private ClientViewModel client;
+        public ClientViewModel Client
+        {
+            get 
+            { 
+                return client; 
+            }
+            set
+            {
+                client = value;
+                this.Model.Client = value.Model;
+            }
+        }
+        private ArticleCollectionViewModel articles;
+        public ArticleCollectionViewModel Articles
+        {
+            get 
+            { 
+                return articles; 
+            }
+            set
+            {
+                articles = value;
+                this.Model.Articles = value.Model;
+            }
+        }
 
         public override void NewModelAssigned()
         {
-            throw new NotImplementedException();
-        }
+            if (this.Client != null)
+            {
+                Client.Model = this.Model?.Client;
+            }
 
+        }
         internal void OnPropertyChangedInModel(object sender, PropertyChangedEventArgs e)
         {
             OnPropertyChanged(e.PropertyName);

@@ -26,14 +26,19 @@
                         <Setter Property="Margin" Value="10"/>
                     </Style>
                 </StackPanel.Resources>
-                <Button Command="{Binding OpenNewClientWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Open New Client Window</Button>
+                <Button Command="{Binding OpenNewClientWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Neuen Kunden anlegen</Button>
                 <Button Command="{Binding OpenMainWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Zurück</Button>
             </StackPanel>
             <StackPanel>
                 <Label Style="{DynamicResource H1}">Kunden</Label>
                 <DataGrid
                   Name ="clientDataGrid"
-                  ItemsSource="{Binding Path = ClientList}" >
+                  ItemsSource="{Binding Path = ClientList}" 
+                  AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Id}" Header="Kundennr."></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Name}" Header="Name"></DataGridTextColumn>
+                    </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>
         </UniformGrid>

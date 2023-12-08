@@ -3,42 +3,70 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:De.HsFlensburg.ClientApp078.Ui.Desktop"
-        xmlns:viewModels="clr-namespace:De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels;assembly=Logic.Ui"
-        xmlns:style="clr-namespace:De.HsFlensburg.Client078.Ui.Desktop"
         mc:Ignorable="d"
         Title="NewOfferwindow" 
         SizeToContent="WidthAndHeight"
         Background="white"
         FontFamily="Arial">
-
     <Window.DataContext>
         <Binding Source="{StaticResource ViewModelLocator}" Path="TheNewOfferWindowViewmodel"></Binding>
     </Window.DataContext>
     <Grid>
-        <StackPanel Margin="50, 20" >
-            <StackPanel Margin="0 15 0 0">
-                <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Offer Number</Label>
-                <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding OfferNr}" VerticalAlignment="Center"></TextBox>
-            </StackPanel>
-            
-            <StackPanel Margin="0 15 0 0">
-                <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Reference</Label>
-                <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding Reference}" VerticalAlignment="Center"></TextBox>
-            </StackPanel>
+        <UniformGrid  Grid.Column="0" Columns="2">
 
-            <StackPanel Margin="0 15 0 0">
-                <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Date</Label>
-                <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding Date}" VerticalAlignment="Center"></TextBox>
+            <StackPanel Margin="50, 20" >
+                <StackPanel Margin="0 15 0 0">
+                    <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Offer Number</Label>
+                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding OfferNr}" VerticalAlignment="Center"></TextBox>
+                </StackPanel>
+
+                <StackPanel Margin="0 15 0 0">
+                    <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Reference</Label>
+                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding Reference}" VerticalAlignment="Center"></TextBox>
+                </StackPanel>
+
+                <StackPanel Margin="0 15 0 0">
+                    <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Date</Label>
+                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding Date}" VerticalAlignment="Center"></TextBox>
+                </StackPanel>
+
+                <StackPanel Margin="0 15 0 0">
+                    <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Text</Label>
+                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding Text}" VerticalAlignment="Center"></TextBox>
+                </StackPanel>
+                <Grid Width="NaN" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 50 0 0">
+                    <Button Command="{Binding AddOffer}" Style="{DynamicResource RoundeButton}">Offer hinzufügen</Button>
+                </Grid>
             </StackPanel>
-            
-            <StackPanel Margin="0 15 0 0">
-                <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Text</Label>
-                <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding Text}" VerticalAlignment="Center"></TextBox>
+            <StackPanel>
+                <StackPanel>
+                    <Label Style="{DynamicResource H1}">Kunden</Label>
+                    <DataGrid SelectedItem="{Binding SelectedClient}"
+                           Name ="clientDataGrid"
+                           ItemsSource="{Binding Path = ClientList}" 
+                           AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Id}" Header="Kundennr."></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Name}" Header="Name"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+                <StackPanel>
+                    <Label Style="{DynamicResource H1}">Artikel</Label>
+                    <DataGrid SelectedItem="{Binding SelectedArticles}"
+                              SelectionMode="Extended"
+                           Name ="articlesDataGrid"
+                           ItemsSource="{Binding Path = ArticleList}" 
+                           AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding ArticleNr}" Header="Articlenr."></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Name}" Header="Name"></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Description}" Header="Beschreibung"></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Price}" Header="Preis"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
             </StackPanel>
-            <Grid Width="NaN" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 50 0 0">
-                <Button Command="{Binding AddOffer}" Style="{DynamicResource RoundeButton}">Offer hinzufügen</Button>
-            </Grid>
-        </StackPanel>
+        </UniformGrid>
     </Grid>
 </Window>

@@ -16,13 +16,21 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public String Date { get; set; }
         public String Text { get; set; }
 
+        public ClientViewModel SelectedClient { get; set; }
+        public ArticleCollectionViewModel SelectedArticles{ get; set; }
+
         public ICommand AddOffer { get; }
         public OfferCollectionViewModel offerCollection;
+        public ClientCollectionViewModel ClientList { get; set; }
+        public ArticleCollectionViewModel ArticleList { get; set; }
 
-        public NewOfferWindowViewModel(OfferCollectionViewModel givenOfferCollection)
+        public NewOfferWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
             AddOffer = new RelayCommand(AddOfferMethod);
-            offerCollection = givenOfferCollection;
+            offerCollection = givenAdministrationViewModel.Offers;
+
+            ClientList = givenAdministrationViewModel.Clients;
+            ArticleList = givenAdministrationViewModel.Articles;
         }
 
         private void AddOfferMethod()
@@ -32,8 +40,12 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
                 OfferNr = OfferNr,
                 Reference = Reference,
                 Date = Date,
-                Text = Text
+                Text = Text,
+                Client = SelectedClient,
+                Articles = SelectedArticles
             };
+
+
             offerCollection.Add(cvm);
         }
     }

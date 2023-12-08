@@ -21,7 +21,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui
         {
             TheAdministrationViewModel = new AdministrationViewModel();
 
-            TheNewOfferWindowViewmodel = new NewOfferWindowViewModel(TheAdministrationViewModel.Offers);
+            TheNewOfferWindowViewmodel = new NewOfferWindowViewModel(TheAdministrationViewModel);
             TheNewClientWindowViewModel = new NewClientWindowViewModel(TheAdministrationViewModel.Clients);
             TheNewArticleWindowViewModel = new NewArticleWindowViewModel(TheAdministrationViewModel.Articles);
 

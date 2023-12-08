@@ -3,9 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:De.HsFlensburg.ClientApp078.Ui.Desktop"
-        xmlns:viewModel="clr-namespace:De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;assembly=Logic.Ui"
-        xmlns:viewModels="clr-namespace:De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels;assembly=Logic.Ui"
         mc:Ignorable="d"
         Title="MainWindow" 
         SizeToContent="WidthAndHeight"
@@ -28,7 +25,7 @@
                         <Setter Property="Margin" Value="10"/>
                     </Style>
                 </StackPanel.Resources>
-                <Button Command="{Binding OpenNewOfferWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Open New Offer Window</Button>
+                <Button Command="{Binding OpenNewOfferWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Neues Angebot anlegen</Button>
                 <Button Command="{Binding OpenClientsWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Kunden</Button>
                 <Button Command="{Binding OpenArticlesWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Artikel</Button>
                 <Button Command="{Binding SaveCommand}" Style="{DynamicResource RoundeButton}">Save</Button>
@@ -38,19 +35,39 @@
                 <Label Style="{DynamicResource H1}">Angebote</Label>
             <DataGrid
                   Name ="offerDataGrid"
-                  ItemsSource="{Binding Path = OfferList}" >
+                  ItemsSource="{Binding Path = OfferList}" 
+                  AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding OfferNr}" Header="Angebotsnr."></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Reference}" Header="Referenz"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Date}" Header="Datum"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Text}" Header="Text"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Client.Name}" Header="Client"></DataGridTextColumn>
+                    </DataGrid.Columns>
             </DataGrid>
 
                 <Label Style="{DynamicResource H1}">Kunden</Label>
                 <DataGrid
                   Name ="clientDataGrid"
-                  ItemsSource="{Binding Path = ClientList}" >
+                  ItemsSource="{Binding Path = ClientList}" 
+                  AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Id}" Header="Kundennr."></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Name}" Header="Name"></DataGridTextColumn>
+                    </DataGrid.Columns>
                 </DataGrid>
 
                 <Label Style="{DynamicResource H1}">Artikel</Label>
                 <DataGrid
                   Name ="articleDataGrid"
-                  ItemsSource="{Binding Path = ArticleList}" >
+                  ItemsSource="{Binding Path = ArticleList}" 
+                  AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding ArticleNr}" Header="Articlenr."></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Name}" Header="Name"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Description}" Header="Beschreibung"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Price}" Header="Preis"></DataGridTextColumn>
+                    </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>
         </UniformGrid>
