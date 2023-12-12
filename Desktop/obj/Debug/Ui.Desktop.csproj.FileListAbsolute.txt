@@ -186,3 +186,5 @@ E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\Articl
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\ClientsWindow.baml
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\OfferWindow.g.cs
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\OfferWindow.baml
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\OfferWindow.g.cs
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\OfferWindow.baml
