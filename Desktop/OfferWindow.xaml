@@ -1,0 +1,79 @@
+﻿<Window x:Class="De.HsFlensburg.ClientApp078.Ui.Desktop.OfferWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:De.HsFlensburg.ClientApp078.Ui.Desktop"
+        mc:Ignorable="d"
+        Title="OfferWindow"
+        SizeToContent="WidthAndHeight"
+        Background="white"
+        FontFamily="Arial">
+    <Window.DataContext>
+        <Binding Source="{StaticResource ViewModelLocator}" Path="TheOfferWindowViewmodel"></Binding>
+    </Window.DataContext>
+    <Grid>
+        <UniformGrid  Grid.Column="0" Columns="2">
+
+            <StackPanel Margin="50, 20" >
+                <StackPanel Margin="0 15 0 0">
+                    <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Offer Number</Label>
+                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=offerDataGrid, Path=SelectedItem.OfferNr}" VerticalAlignment="Center"></TextBox>
+                </StackPanel>
+
+                <StackPanel Margin="0 15 0 0">
+                    <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Reference</Label>
+                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=offerDataGrid, Path=SelectedItem.Reference}" VerticalAlignment="Center"></TextBox>
+                </StackPanel>
+
+                <StackPanel Margin="0 15 0 0">
+                    <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Date</Label>
+                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=offerDataGrid, Path=SelectedItem.Date}" VerticalAlignment="Center"></TextBox>
+                </StackPanel>
+
+                <StackPanel Margin="0 15 0 0">
+                    <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Text</Label>
+                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=offerDataGrid, Path=SelectedItem.Text}" VerticalAlignment="Center"></TextBox>
+                </StackPanel>
+                <StackPanel>
+                    <Label Style="{DynamicResource H1}">Positionen</Label>
+                    <DataGrid SelectedItem="{Binding SelectedArticles}"
+                              SelectionMode="Extended"
+                           Name ="offerItemsDataGrid"
+                           ItemsSource="{Binding Path = OfferItemList}" 
+                           AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding OfferItemNr}" Header="Positionsnr."></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Article}" Header="Artikel"></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Quantity}" Header="Anzahl"></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding TotalPrice}" Header="Gesamtpreis"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+                <Grid Width="NaN" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 50 0 0">
+                    <Button Command="{Binding AddOffer}" Style="{DynamicResource RoundeButton}">Offer hinzufügen</Button>
+                </Grid>
+            </StackPanel>
+            <StackPanel>
+                <StackPanel>
+                    <Label Style="{DynamicResource H1}">Angebote</Label>
+                    <DataGrid
+                  Name ="offerDataGrid"
+                  ItemsSource="{Binding Path = OfferList}" 
+                  AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding OfferNr}" Header="Angebotsnr."></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Reference}" Header="Referenz"></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Date}" Header="Datum"></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Text}" Header="Text"></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Client.Name}" Header="Client"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+               
+                
+
+            </StackPanel>
+        </UniformGrid>
+    </Grid>
+</Window>

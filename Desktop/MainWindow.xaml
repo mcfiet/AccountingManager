@@ -26,6 +26,7 @@
                     </Style>
                 </StackPanel.Resources>
                 <Button Command="{Binding OpenNewOfferWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Neues Angebot anlegen</Button>
+                <Button Command="{Binding OpenOfferWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Angebot öffnen</Button>
                 <Button Command="{Binding OpenClientsWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Kunden</Button>
                 <Button Command="{Binding OpenArticlesWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Artikel</Button>
                 <Button Command="{Binding SaveCommand}" Style="{DynamicResource RoundeButton}">Save</Button>

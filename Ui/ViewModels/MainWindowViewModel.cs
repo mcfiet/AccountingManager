@@ -22,6 +22,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public ICommand LoadCommand { get; }
 
         public ICommand OpenNewOfferWindowCommand { get; }
+        public ICommand OpenOfferWindowCommand { get; }
         public ICommand OpenClientsWindowCommand { get; }
         public ICommand OpenArticlesWindowCommand { get; }
 
@@ -40,6 +41,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             LoadCommand = new RelayCommand(LoadModel);
 
             OpenNewOfferWindowCommand = new RelayCommand(OpenNewOfferWindowMethod);
+            OpenOfferWindowCommand = new RelayCommand(OpenOfferWindowMethod);
             OpenClientsWindowCommand = new RelayCommand(OpenClientsWindowMethod);
             OpenArticlesWindowCommand = new RelayCommand(OpenArticlesWindow);
 
@@ -58,6 +60,11 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         private void OpenNewOfferWindowMethod()
         {
             ServiceBus.Instance.Send(new OpenNewOfferWindowMessage());
+        }
+        
+        private void OpenOfferWindowMethod()
+        {
+            ServiceBus.Instance.Send(new OpenOfferWindowMessage());
         }
 
         private void OpenClientsWindowMethod()

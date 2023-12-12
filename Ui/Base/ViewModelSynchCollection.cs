@@ -32,6 +32,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Base
                 this.WrappListItems();
                 this.NewModelAssigned();
                 OnPropertyChanged("Model");
+                model.CollectionChanged += ModelCollectionChanged;
             }
         }
         private void WrappListItems()

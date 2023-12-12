@@ -11,6 +11,17 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
 {
     public class OfferViewModel : ViewModelBase<Offer>
     {
+
+
+
+        public OfferViewModel() : base()
+        {
+            OfferItems = new OfferItemCollectionViewModel();
+            OfferItems.Model = this.Model.OfferItems;
+        }
+
+        public OfferItemCollectionViewModel OfferItems { get; set; }
+
         public int OfferNr
         {
             get
@@ -74,25 +85,12 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
                 this.Model.Client = value.Model;
             }
         }
-        private ArticleCollectionViewModel articles;
-        public ArticleCollectionViewModel Articles
-        {
-            get 
-            { 
-                return articles; 
-            }
-            set
-            {
-                articles = value;
-                this.Model.Articles = value.Model;
-            }
-        }
 
         public override void NewModelAssigned()
         {
-            if (this.Client != null)
+            if (this.OfferItems != null)
             {
-                Client.Model = this.Model?.Client;
+                OfferItems.Model = this.Model?.OfferItems;
             }
 
         }

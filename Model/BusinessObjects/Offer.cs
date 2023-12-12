@@ -10,6 +10,13 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
     [Serializable]
     public class Offer : INotifyPropertyChanged
     {
+
+        public OfferItemCollection OfferItems { get; set; }
+        public Offer()
+        {
+            OfferItems = new OfferItemCollection();
+        }
+
         private int offerNr;
         public int OfferNr
         {
@@ -39,6 +46,9 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
 
             }
         }
+
+
+
         private String date;
         public String Date
         {
@@ -81,20 +91,8 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
 
             }
         }
-        private ArticleCollection articles;
-        public ArticleCollection Articles
-        {
-            get
-            {
-                return articles;
-            }
-            set
-            {
-                articles = value;
-                OnPropertyChanged("Articles");
 
-            }
-        }
+
 
         protected virtual void OnPropertyChanged(string propertyName)
         {

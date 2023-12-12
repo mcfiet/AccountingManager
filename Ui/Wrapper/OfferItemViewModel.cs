@@ -49,6 +49,19 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
 
             }
         }
+
+        public Article Article
+        {
+            get
+            {
+                return Model.Article;
+            }
+            set
+            {
+                Model.Article = value;
+
+            }
+        }
         public override void NewModelAssigned()
         {
             throw new NotImplementedException();

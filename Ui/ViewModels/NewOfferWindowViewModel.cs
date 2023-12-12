@@ -9,8 +9,40 @@ using System.Windows.Input;
 
 namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 {
+
+
     public class NewOfferWindowViewModel
     {
+
+        public String[] GenreValues
+        {
+            get
+            {
+                List<String> value = new List<string>();
+                foreach (var e in Enum.GetValues(typeof(Genre)))
+                {
+                    value.Add(e.ToString());
+                }
+                return value.ToArray<String>();
+            }
+            private set
+            {
+
+            }
+        }
+
+        public Genre Genre
+        {
+            get
+            {
+                return Genre;
+            }
+            set
+            {
+                Genre = value;
+            }
+        }
+
         public int OfferNr { get; set; }
         public String Reference { get; set; }
         public String Date { get; set; }
@@ -22,15 +54,16 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public ICommand AddOffer { get; }
         public OfferCollectionViewModel offerCollection;
         public ClientCollectionViewModel ClientList { get; set; }
-        public ArticleCollectionViewModel ArticleList { get; set; }
+        public OfferItemCollectionViewModel OfferItemList { get; set; }
 
         public NewOfferWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
             AddOffer = new RelayCommand(AddOfferMethod);
             offerCollection = givenAdministrationViewModel.Offers;
 
-            ClientList = givenAdministrationViewModel.Clients;
-            ArticleList = givenAdministrationViewModel.Articles;
+            OfferItemList = new OfferItemCollectionViewModel();
+
+            ClientList = givenAdministrationViewModel.Clients;            
         }
 
         private void AddOfferMethod()
@@ -42,7 +75,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
                 Date = Date,
                 Text = Text,
                 Client = SelectedClient,
-                Articles = SelectedArticles
+                OfferItems = OfferItemList
             };
 
 

@@ -25,6 +25,26 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
             }
         }
 
+        private Article article;
+        public Article Article
+        {
+            get
+            {
+                return article;
+            }
+            set
+            {
+                article = value;
+                OnPropertyChanged("Article");
+
+            }
+        }
+
+        public enum Genre
+        {
+            Thriller, Drama, Parabel, Sachbuch
+        }
+
         private int quantity;
         public int Quantity
         {

@@ -65,7 +65,25 @@
                             <DataGridTextColumn Binding="{Binding Price}" Header="Preis"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
+
                 </StackPanel>
+                <StackPanel>
+                    <Label Style="{DynamicResource H1}">Positionen</Label>
+                    <DataGrid SelectedItem="{Binding SelectedArticles}"
+                              SelectionMode="Extended"
+                           Name ="offerItemsDataGrid"
+                           ItemsSource="{Binding Path = OfferItemList}" 
+                           AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding OfferItemNr}" Header="Positionsnr."></DataGridTextColumn>
+                            <DataGridComboBoxColumn SelectedValueBinding="{Binding GenreValues}"></DataGridComboBoxColumn>
+                            <DataGridTextColumn Binding="{Binding Article}" Header="Artikel"></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Quantity}" Header="Anzahl"></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding TotalPrice}" Header="Gesamtpreis"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+                <ComboBox x:Name="comboBox" IsSynchronizedWithCurrentItem="true" ItemsSource="{Binding GenreValues}"></ComboBox>
             </StackPanel>
         </UniformGrid>
     </Grid>
