@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Services.MessageBusWithParameter
 {
-    internal class IActionParameter
+    interface IActionParameter
     {
+        void ExecuteWithParameter(object parameter);
     }
 }

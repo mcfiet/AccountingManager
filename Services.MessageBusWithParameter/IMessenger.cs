@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Services.MessageBusWithParameter
+namespace Services.MessageBusWithParameter { 
 interface IMessenger
 {
     void Register<TNotification>(object recipient, Action<TNotification> action);
@@ -13,5 +13,5 @@ interface IMessenger
     void Send<TNotification>(TNotification notification, string identCode);
     void Unregister<TNotification>(object recipient);
 }
-
+}
 
