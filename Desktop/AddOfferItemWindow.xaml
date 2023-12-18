@@ -1,0 +1,79 @@
+﻿<Window x:Class="De.HsFlensburg.ClientApp078.Ui.Desktop.AddOfferItem"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:De.HsFlensburg.ClientApp078.Ui.Desktop"
+        mc:Ignorable="d"
+        Title="AddOfferItem"         SizeToContent="Width"
+        Height="1000"
+        Background="white"
+        FontFamily="Arial">
+    <Window.DataContext>
+        <Binding Source="{StaticResource ViewModelLocator}" Path="TheAddOfferItemWindowViewModel"></Binding>
+    </Window.DataContext>
+    <ScrollViewer>
+        <Grid>
+            <StackPanel Margin="30">
+                <StackPanel Margin="0 0 0 20">
+                    <Label Style="{DynamicResource H1}">Angebote</Label>
+                    <DataGrid
+                        Name ="offerDataGrid"
+                        SelectedItem="{Binding SelectedOffer}"
+                        ItemsSource="{Binding Path = OfferList}" 
+                        AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding OfferNr}" Header="Angebotsnr."></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Reference}" Header="Betreff"></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Date}" Header="Datum"></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Client.Name}" Header="Kunde"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+                <StackPanel>
+                    <Label Style="{DynamicResource H1}">Artikel</Label>
+                    <DataGrid
+                        Name ="articleDataGrid"
+                        SelectedItem="{Binding SelectedArticle}"
+                        ItemsSource="{Binding Path = ArticleList}" 
+                        AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding ArticleNr}" Header="Articlenr."></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Name}" Header="Name"></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Description}" Header="Beschreibung"></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Price}" Header="Preis"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+                <StackPanel Margin="0 20 0 0">
+                    <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Positionsnr.</Label>
+                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding OfferItemNr}" VerticalAlignment="Center"></TextBox>
+                </StackPanel>
+
+                <StackPanel Margin="0 20 0 0">
+                    <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Artikel</Label>
+                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=articleDataGrid, Path=SelectedItem.Name}" VerticalAlignment="Center"></TextBox>
+                </StackPanel>
+
+                <StackPanel Margin="0 20 0 0">
+                    <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Anzahl</Label>
+                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding Quantity}" VerticalAlignment="Center"></TextBox>
+                </StackPanel>
+
+                <StackPanel Margin="0 20 0 0">
+                    <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Einzelpreis</Label>
+                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=articleDataGrid, Path=SelectedItem.Price}" VerticalAlignment="Center"></TextBox>
+                </StackPanel>
+                <!--
+                <StackPanel Margin="0 20 0 0">
+                    <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Gesamtpreis</Label>
+                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding TotalPrice}" VerticalAlignment="Center" IsReadOnly = "True" ></TextBox>
+                </StackPanel>
+                -->
+                <Grid Width="NaN" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 50 0 0">
+                    <Button Command="{Binding AddOfferItem}" Style="{DynamicResource RoundeButton}">Angebot aktualisieren</Button>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>

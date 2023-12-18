@@ -188,3 +188,10 @@ E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\OfferW
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\OfferWindow.baml
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\OfferWindow.g.cs
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\OfferWindow.baml
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\AddOfferItemWindow.g.cs
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\AddOfferItemWindow.baml
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Services.PdfExport.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\itext.kernel.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\itext.layout.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\itext.io.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Services.PdfExport.pdb

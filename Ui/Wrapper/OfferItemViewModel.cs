@@ -37,7 +37,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
             }
         }
 
-        public int TotalPrice
+        public float TotalPrice
         {
             get
             {

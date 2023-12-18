@@ -1,5 +1,8 @@
 ﻿using De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects;
+using De.HsFlensburg.ClientApp078.Logic.Ui.MessageBusMessages;
 using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
+using De.HsFlensburg.ClientApp078.Services.MessageBus;
+using Services.PdfExport;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,25 +23,22 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public ClientViewModel SelectedClient { get; set; }
         public OfferViewModel SelectedOffer { get; set; }
 
-        public ICommand UpdateOffer { get; }
+        public ICommand UpdateOfferCommand { get; }
+        public ICommand OpenAddOfferItemWindowCommand { get; }
+        public ICommand ExportPdfCommand { get; }
         public OfferCollectionViewModel offerCollection;
         public ClientCollectionViewModel ClientList { get; set; }
         public OfferItemCollectionViewModel OfferItemList { get; set; }
         public OfferCollectionViewModel OfferList { get; set; }
         public OfferWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
-            UpdateOffer = new RelayCommand(UpdateOfferMethod);
+            UpdateOfferCommand = new RelayCommand(UpdateOfferMethod);
+            OpenAddOfferItemWindowCommand = new RelayCommand(OpenAddOfferItemWindow);
+            ExportPdfCommand = new RelayCommand(ExportPdf);
             offerCollection = givenAdministrationViewModel.Offers;
 
             OfferList = givenAdministrationViewModel.Offers;
             SelectedOffer = new OfferViewModel();
-/*            OfferItemViewModel of = new OfferItemViewModel();
-            of.Model.OfferItemNr = 1;
-            of.Model.Quantity = 1;
-            of.Model.TotalPrice = 1;
-            SelectedOffer.OfferItems.Add(of);
-            SelectedOffer.Text = "test";
-            SelectedOffer.Reference = "test";*/
             OfferItemList = SelectedOffer.OfferItems;
 
             ClientList = givenAdministrationViewModel.Clients;
@@ -46,18 +46,27 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 
         private void UpdateOfferMethod()
         {
-            OfferViewModel cvm = new OfferViewModel
-            {
-                OfferNr = OfferNr,
-                Reference = Reference,
-                Date = Date,
-                Text = Text,
-                Client = SelectedClient,
-                OfferItems = OfferItemList
-            };
 
+            SelectedOffer.OfferNr = OfferNr;
+            SelectedOffer.Reference = Reference;
+            SelectedOffer.Date = Date;
+            SelectedOffer.Text = Text;
+            SelectedOffer.OfferItems = OfferItemList;
+      
+        }
 
-            offerCollection.Add(cvm);
+        private void ExportPdf()
+        {
+
+            PdfExportFileHandler pdf = new PdfExportFileHandler();
+            pdf.PDFExport(SelectedOffer.Model);
+        }
+
+        private void OpenAddOfferItemWindow()
+        {
+
+            ServiceBus.Instance.Send(new OpenAddOfferItemWindowMessage());
+
         }
     }
 }

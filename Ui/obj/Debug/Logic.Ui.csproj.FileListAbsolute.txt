@@ -74,3 +74,10 @@ C:\Users\Olli Dell HA\Documents\2023-testprojekte\awp-fiete-13-11-2023\Ui\obj\De
 C:\Users\Olli Dell HA\Documents\2023-testprojekte\awp-fiete-13-11-2023\Ui\obj\Debug\Logic.Ui.csproj.CopyComplete
 C:\Users\Olli Dell HA\Documents\2023-testprojekte\awp-fiete-13-11-2023\Ui\obj\Debug\Logic.Ui.dll
 C:\Users\Olli Dell HA\Documents\2023-testprojekte\awp-fiete-13-11-2023\Ui\obj\Debug\Logic.Ui.pdb
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\Services.MessageBusWithParameter.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\Services.MessageBusWithParameter.pdb
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\Services.PdfExport.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\itext.kernel.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\itext.layout.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\itext.io.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\Services.PdfExport.pdb

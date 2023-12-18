@@ -40,11 +40,6 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
             }
         }
 
-        public enum Genre
-        {
-            Thriller, Drama, Parabel, Sachbuch
-        }
-
         private int quantity;
         public int Quantity
         {
@@ -60,8 +55,8 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
             }
         }
 
-        private int totalPrice;
-        public int TotalPrice
+        private float totalPrice;
+        public float TotalPrice
         {
             get
             {
@@ -69,15 +64,14 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
             }
             set
             {
-                totalPrice = value;
+                setTotalPrice();
                 OnPropertyChanged("TotalPrice");
-
             }
         }
 
-        public float calcTotalPrice(Article article)
+        public void setTotalPrice()
         {
-            return article.Price * quantity;
+            totalPrice = article.Price * quantity;
         }
 
         protected virtual void OnPropertyChanged(string propertyName)

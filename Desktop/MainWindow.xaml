@@ -40,10 +40,9 @@
                   AutoGenerateColumns="False">
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding OfferNr}" Header="Angebotsnr."></DataGridTextColumn>
-                        <DataGridTextColumn Binding="{Binding Reference}" Header="Referenz"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Reference}" Header="Betreff"></DataGridTextColumn>
                         <DataGridTextColumn Binding="{Binding Date}" Header="Datum"></DataGridTextColumn>
-                        <DataGridTextColumn Binding="{Binding Text}" Header="Text"></DataGridTextColumn>
-                        <DataGridTextColumn Binding="{Binding Client.Name}" Header="Client"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Client.Name}" Header="Kunde"></DataGridTextColumn>
                     </DataGrid.Columns>
             </DataGrid>
 
