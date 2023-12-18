@@ -37,10 +37,9 @@
                 </StackPanel>
                 <StackPanel>
                     <Label Style="{DynamicResource H1}">Positionen</Label>
-                    <DataGrid SelectedItem="{Binding SelectedArticles}"
-                              SelectionMode="Extended"
+                    <DataGrid 
                            Name ="offerItemsDataGrid"
-                           ItemsSource="{Binding Path = OfferItemList}" 
+                           ItemsSource="{Binding ElementName=offerDataGrid, Path=SelectedItem.OfferItems}" 
                            AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding OfferItemNr}" Header="Positionsnr."></DataGridTextColumn>

@@ -1,4 +1,5 @@
-﻿using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
+﻿using De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects;
+using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,15 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             offerCollection = givenAdministrationViewModel.Offers;
 
             OfferList = givenAdministrationViewModel.Offers;
-            //OfferItemList = givenAdministrationViewModel.Offers.Model;
+            SelectedOffer = new OfferViewModel();
+/*            OfferItemViewModel of = new OfferItemViewModel();
+            of.Model.OfferItemNr = 1;
+            of.Model.Quantity = 1;
+            of.Model.TotalPrice = 1;
+            SelectedOffer.OfferItems.Add(of);
+            SelectedOffer.Text = "test";
+            SelectedOffer.Reference = "test";*/
+            OfferItemList = SelectedOffer.OfferItems;
 
             ClientList = givenAdministrationViewModel.Clients;
         }

@@ -72,7 +72,7 @@
                     <DataGrid SelectedItem="{Binding SelectedArticles}"
                               SelectionMode="Extended"
                            Name ="offerItemsDataGrid"
-                           ItemsSource="{Binding Path = OfferItemList}" 
+                           ItemsSource="{Binding Path = OfferItemList, Mode=TwoWay}" 
                            AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding OfferItemNr}" Header="Positionsnr."></DataGridTextColumn>

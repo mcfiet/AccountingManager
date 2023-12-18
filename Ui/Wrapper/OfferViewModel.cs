@@ -16,11 +16,23 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
 
         public OfferViewModel() : base()
         {
-            OfferItems = new OfferItemCollectionViewModel();
-            OfferItems.Model = this.Model.OfferItems;
+            //OfferItems = new OfferItemCollectionViewModel();
+            //OfferItems.Model = this.Model.OfferItems;
         }
 
-        public OfferItemCollectionViewModel OfferItems { get; set; }
+        public OfferItemCollectionViewModel OfferItems { 
+            get
+            {
+                var offerItems = new OfferItemCollectionViewModel();
+                offerItems.Model = Model.OfferItems;
+                return offerItems;
+            }
+            set
+            {
+                this.Model.OfferItems = value.Model;
+
+            }
+        }
 
         public int OfferNr
         {
@@ -72,16 +84,16 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
 
             }
         }
-        private ClientViewModel client;
         public ClientViewModel Client
         {
             get 
             { 
+                var client = new ClientViewModel();
+                client.Model = Model.Client;
                 return client; 
             }
             set
             {
-                client = value;
                 this.Model.Client = value.Model;
             }
         }
