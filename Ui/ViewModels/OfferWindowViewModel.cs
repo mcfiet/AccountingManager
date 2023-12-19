@@ -16,9 +16,9 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
     {
 
         public int OfferNr { get; set; }
-        public String Reference { get; set; }
-        public String Date { get; set; }
-        public String Text { get; set; }
+        public string Reference { get; set; }
+        public string Date { get; set; }
+        public string Text { get; set; }
 
         public ClientViewModel SelectedClient { get; set; }
         public OfferViewModel SelectedOffer { get; set; }

@@ -47,7 +47,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
             }
         }
 
-        public String Reference
+        public string Reference
         {
             get
             {
@@ -59,7 +59,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
 
             }
         }
-        public String Date
+        public string Date
         {
             get
             {
@@ -72,7 +72,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
             }
         }
 
-        public String Text
+        public string Text
         {
             get
             {

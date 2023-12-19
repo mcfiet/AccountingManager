@@ -32,8 +32,8 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
             }
         }
 
-        private String reference;
-        public String Reference
+        private string reference;
+        public string Reference
         {
             get
             {
@@ -49,8 +49,8 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
 
 
 
-        private String date;
-        public String Date
+        private string date;
+        public string Date
         {
             get
             {
@@ -63,8 +63,8 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
 
             }
         }
-        private String text;
-        public String Text
+        private string text;
+        public string Text
         {
             get
             {

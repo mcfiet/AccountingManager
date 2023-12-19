@@ -33,7 +33,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         private void AddOfferItemMethod()
         {
 
-            OfferItem of = new OfferItem
+            OfferItemViewModel of = new OfferItemViewModel
             {
                 OfferItemNr = OfferItemNr,
                 Article = SelectedArticle.Model,
@@ -42,7 +42,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             };
 
 
-            SelectedOffer.Model.OfferItems.Add(of);
+            SelectedOffer.OfferItems.Add(of);
         }
     }
 

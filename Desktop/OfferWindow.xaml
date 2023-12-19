@@ -26,7 +26,7 @@
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding OfferNr}" Header="Angebotsnr."></DataGridTextColumn>
                             <DataGridTextColumn Binding="{Binding Reference}" Header="Betreff"></DataGridTextColumn>
-                            <DataGridTextColumn Binding="{Binding Date}" Header="Datum"></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Date, StringFormat=dd/MM/yyyy}" Header="Datum"></DataGridTextColumn>
                             <DataGridTextColumn Binding="{Binding Client.Name}" Header="Kunde"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
@@ -65,13 +65,14 @@
                         <UniformGrid  Grid.Column="0" Columns="2" >
 
                             <StackPanel Margin="0 15 10 0">
-                                <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Angebotsnr.</Label>
-                                <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=offerDataGrid, Path=SelectedItem.OfferNr}" VerticalAlignment="Center"></TextBox>
+                                <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left" >Angebotsnr.</Label>
+                                <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=offerDataGrid, Path=SelectedItem.OfferNr}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
                             </StackPanel>
 
                             <StackPanel Margin="10 15 0 0">
                                 <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Datum</Label>
-                                <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=offerDataGrid, Path=SelectedItem.Date}" VerticalAlignment="Center"></TextBox>
+                                <DatePicker SelectedDate="{Binding ElementName=offerDataGrid, Path=SelectedItem.Date}"></DatePicker>
+                                <!--<TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=offerDataGrid, Path=SelectedItem.Date}" VerticalAlignment="Center"></TextBox>-->
                             </StackPanel>
 
                         </UniformGrid>

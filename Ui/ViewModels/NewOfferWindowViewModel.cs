@@ -29,12 +29,14 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 
         public OfferCollectionViewModel offerCollection;
         public ClientCollectionViewModel ClientList { get; set; }
+        public AdministrationViewModel AdministrationViewModel { get; set; }
         public OfferItemCollectionViewModel OfferItemList { get; set; }
 
         public NewOfferWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
             AddOffer = new RelayCommand(AddOfferMethod);
             OpenAddOfferItemWindowCommand = new RelayCommand(OpenAddOfferItemWindow);
+            AdministrationViewModel = givenAdministrationViewModel;
 
             offerCollection = givenAdministrationViewModel.Offers;
 
@@ -47,7 +49,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         {
             OfferViewModel cvm = new OfferViewModel
             {
-                OfferNr = OfferNr,
+                OfferNr = AdministrationViewModel.Model.getOfferIdFromCreateOffer(),
                 Reference = Reference,
                 Date = Date,
                 Text = Text,
