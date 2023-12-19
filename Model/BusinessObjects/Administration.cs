@@ -17,6 +17,11 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
 
         private int offerId;
 
+        private int clientId;
+
+        private int articleId;
+
+
         public Administration() { 
         
             Offers = new OfferCollection();
@@ -24,15 +29,19 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
             Articles = new ArticleCollection(); 
         }
 
-        public int getOfferIdFromCreateOffer()
+        public int getOfferIdFromCreation()
         {
-            if (offerId == null)
-            {
-                offerId = 0;
-            }
-
             return offerId++;
         }
+        public int getClientIdFromCreation()
+        {
+            return clientId++;
+        }
+        public int getArticleIdFromCreation()
+        {
+            return articleId++;
+        }
+
 
     }
 }

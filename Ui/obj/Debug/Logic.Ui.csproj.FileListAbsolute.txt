@@ -81,3 +81,10 @@ E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\itext.kerne
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\itext.layout.dll
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\itext.io.dll
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\Services.PdfExport.pdb
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\Services.MessageBusWithParameter.dll
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\Services.PdfExport.dll
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\itext.kernel.dll
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\itext.layout.dll
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\itext.io.dll
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\Services.MessageBusWithParameter.pdb
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\Services.PdfExport.pdb

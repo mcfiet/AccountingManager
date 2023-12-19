@@ -21,6 +21,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public String Date { get; set; }
         public String Text { get; set; }
 
+
         public ClientViewModel SelectedClient { get; set; }
         public ArticleCollectionViewModel SelectedArticles{ get; set; }
 
@@ -49,7 +50,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         {
             OfferViewModel cvm = new OfferViewModel
             {
-                OfferNr = AdministrationViewModel.Model.getOfferIdFromCreateOffer(),
+                OfferNr = AdministrationViewModel.Model.getOfferIdFromCreation(),
                 Reference = Reference,
                 Date = Date,
                 Text = Text,

@@ -11,23 +11,34 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 {
     public class NewClientWindowViewModel
     {
-        public int Identifier { get; set; }
         public string Name { get; set; }
+
+        public string Street { get; set; }
+        public int HouseNumber { get; set; }
+        public int ZipCode { get; set; }
+        public string City { get; set; }
         public ICommand AddClient { get; }
         private ClientCollectionViewModel clientCollection;
 
-        public NewClientWindowViewModel(ClientCollectionViewModel givenClientCollection)
+        AdministrationViewModel AdministrationViewModel;
+
+        public NewClientWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
             AddClient = new RelayCommand(AddClientMethod);
-            clientCollection = givenClientCollection;
+            AdministrationViewModel = givenAdministrationViewModel;
+            clientCollection = AdministrationViewModel.Clients;
         }
 
         private void AddClientMethod()
         {
             ClientViewModel cvm = new ClientViewModel
             {
-                Id = Identifier,
-                Name = Name
+                Id = AdministrationViewModel.Model.getClientIdFromCreation(),
+                Name = Name,
+                Street = Street,
+                HouseNumber = HouseNumber,
+                ZipCode = ZipCode,
+                City = City
             };
             clientCollection.Add(cvm);
             

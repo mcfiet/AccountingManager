@@ -15,11 +15,6 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
     public class OfferWindowViewModel
     {
 
-        public int OfferNr { get; set; }
-        public string Reference { get; set; }
-        public string Date { get; set; }
-        public string Text { get; set; }
-
         public ClientViewModel SelectedClient { get; set; }
         public OfferViewModel SelectedOffer { get; set; }
 
@@ -46,13 +41,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 
         private void UpdateOfferMethod()
         {
-
-            SelectedOffer.OfferNr = OfferNr;
-            SelectedOffer.Reference = Reference;
-            SelectedOffer.Date = Date;
-            SelectedOffer.Text = Text;
-            SelectedOffer.OfferItems = OfferItemList;
-      
+                  
         }
 
         private void ExportPdf()

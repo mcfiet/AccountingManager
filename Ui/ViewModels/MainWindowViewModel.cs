@@ -55,7 +55,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 
 
             modelFileHandler = new ModelFileHandler();
-            pathForSerialization = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ClientCollectionSerialization\\MyClient.cc";
+            pathForSerialization = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Finances\\data.cc";
         }
 
         private void OpenNewOfferWindowMethod()

@@ -20,7 +20,8 @@
                     <DataGrid SelectedItem="{Binding SelectedClient}"
                            Name ="clientDataGrid"
                            ItemsSource="{Binding Path = ClientList}" 
-                           AutoGenerateColumns="False">
+                           AutoGenerateColumns="False"
+                              IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding Id}" Header="Kundennr."></DataGridTextColumn>
                             <DataGridTextColumn Binding="{Binding Name}" Header="Name"></DataGridTextColumn>
@@ -33,23 +34,24 @@
 
                         <StackPanel Margin="0 15 0 0">
                             <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Kundennr.</Label>
-                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=clientDataGrid, Path=SelectedItem.Id}" VerticalAlignment="Center"></TextBox>
+                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=clientDataGrid, Path=SelectedItem.Id}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
                         </StackPanel>
 
                         <StackPanel Margin="0 15 0 0">
                             <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Name</Label>
-                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=clientDataGrid, Path=SelectedItem.Name}" VerticalAlignment="Center"></TextBox>
+                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=clientDataGrid, Path=SelectedItem.Name}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
                         </StackPanel>
 
                         <StackPanel Margin="0 15 0 0">
                             <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Straße</Label>
-                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=clientDataGrid, Path=SelectedItem.Name}" VerticalAlignment="Center"></TextBox>
+                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=clientDataGrid, Path=SelectedItem.Street}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
                         </StackPanel>
 
                         <StackPanel Margin="0 15 0 0">
                             <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">PLZ und Ort</Label>
-                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=clientDataGrid, Path=SelectedItem.Name}" VerticalAlignment="Center"></TextBox>
+                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=clientDataGrid, Path=SelectedItem.ZipCode}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
                         </StackPanel>
+
                     </StackPanel>
                     <StackPanel>
                         <StackPanel Margin="0 15 0 0">

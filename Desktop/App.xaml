@@ -143,6 +143,10 @@
                 </Setter.Value>
             </Setter>
             <Style.Triggers>
+
+                <Trigger Property="IsReadOnly" Value="True">
+                    <Setter Property="Foreground" Value="#666"/>
+                </Trigger>
                 <MultiTrigger>
                     <MultiTrigger.Conditions>
                         <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>

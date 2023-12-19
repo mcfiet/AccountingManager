@@ -34,7 +34,8 @@
                 <DataGrid
                   Name ="clientDataGrid"
                   ItemsSource="{Binding Path = ClientList}" 
-                  AutoGenerateColumns="False">
+                  AutoGenerateColumns="False"
+                    IsReadOnly="True">
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Id}" Header="Kundennr."></DataGridTextColumn>
                         <DataGridTextColumn Binding="{Binding Name}" Header="Name"></DataGridTextColumn>

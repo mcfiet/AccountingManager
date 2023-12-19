@@ -25,8 +25,8 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui
 
             TheNewOfferWindowViewmodel = new NewOfferWindowViewModel(TheAdministrationViewModel);
             TheOfferWindowViewmodel = new OfferWindowViewModel(TheAdministrationViewModel);
-            TheNewClientWindowViewModel = new NewClientWindowViewModel(TheAdministrationViewModel.Clients);
-            TheNewArticleWindowViewModel = new NewArticleWindowViewModel(TheAdministrationViewModel.Articles);
+            TheNewClientWindowViewModel = new NewClientWindowViewModel(TheAdministrationViewModel);
+            TheNewArticleWindowViewModel = new NewArticleWindowViewModel(TheAdministrationViewModel);
 
             TheMainWindowViewModel = new MainWindowViewModel(TheAdministrationViewModel);
             TheClientsWindowViewModel = new ClientsWindowViewModel(TheAdministrationViewModel);

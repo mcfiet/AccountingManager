@@ -10,6 +10,12 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
     [Serializable]
     public class Offer : INotifyPropertyChanged
     {
+        private int offerItemId;
+
+        public int getOfferIdFromCreation()
+        {
+            return offerItemId++;
+        }
 
         public OfferItemCollection OfferItems { get; set; }
         public Offer()

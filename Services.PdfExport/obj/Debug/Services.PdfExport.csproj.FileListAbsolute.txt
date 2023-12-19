@@ -16,3 +16,12 @@ E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.PdfExport\obj\D
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.PdfExport\obj\Debug\Services.PdfExport.csproj.CopyComplete
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.PdfExport\obj\Debug\Services.PdfExport.dll
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.PdfExport\obj\Debug\Services.PdfExport.pdb
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.PdfExport\bin\Debug\Services.PdfExport.dll
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.PdfExport\bin\Debug\Services.PdfExport.pdb
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.PdfExport\bin\Debug\Business.Model.dll
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.PdfExport\bin\Debug\Business.Model.pdb
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.PdfExport\obj\Debug\Services.PdfExport.csproj.AssemblyReference.cache
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.PdfExport\obj\Debug\Services.PdfExport.csproj.CoreCompileInputs.cache
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.PdfExport\obj\Debug\Services.PdfExport.csproj.CopyComplete
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.PdfExport\obj\Debug\Services.PdfExport.dll
+C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.PdfExport\obj\Debug\Services.PdfExport.pdb

@@ -35,7 +35,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 
             OfferItemViewModel of = new OfferItemViewModel
             {
-                OfferItemNr = OfferItemNr,
+                OfferItemNr = SelectedOffer.Model.getOfferIdFromCreation(),
                 Article = SelectedArticle.Model,
                 Quantity = Quantity,
                 TotalPrice = TotalPrice

@@ -39,6 +39,66 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
 
             }
         }
+        
+        private String street;
+        public String Street
+        {
+            get
+            {
+                return street;
+            }
+            set
+            {
+                street = value;
+                OnPropertyChanged("Street");
+
+            }
+        }
+        
+        private int houseNumber;
+        public int HouseNumber
+        {
+            get
+            {
+                return houseNumber;
+            }
+            set
+            {
+                houseNumber = value;
+                OnPropertyChanged("HouseNumber");
+
+            }
+        }
+        
+        private int zipCode;
+        public int ZipCode
+        {
+            get
+            {
+                return zipCode;
+            }
+            set
+            {
+                zipCode = value;
+                OnPropertyChanged("ZipCode");
+
+            }
+        }
+        
+        private String city;
+        public String City
+        {
+            get
+            {
+                return city;
+            }
+            set
+            {
+                city = value;
+                OnPropertyChanged("City");
+
+            }
+        }
 
         protected virtual void OnPropertyChanged(string propertyName)
         {
@@ -49,7 +109,6 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
 
         [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
-
 
     }
 }

@@ -47,12 +47,12 @@
                 </StackPanel>
                 <StackPanel Margin="0 20 0 0">
                     <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Positionsnr.</Label>
-                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding OfferItemNr}" VerticalAlignment="Center"></TextBox>
+                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding OfferItemNr}" VerticalAlignment="Center"  IsReadOnly="True"></TextBox>
                 </StackPanel>
 
                 <StackPanel Margin="0 20 0 0">
                     <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Artikel</Label>
-                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=articleDataGrid, Path=SelectedItem.Name}" VerticalAlignment="Center"></TextBox>
+                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=articleDataGrid, Path=SelectedItem.Name}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
                 </StackPanel>
 
                 <StackPanel Margin="0 20 0 0">
@@ -62,7 +62,7 @@
 
                 <StackPanel Margin="0 20 0 0">
                     <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Einzelpreis</Label>
-                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=articleDataGrid, Path=SelectedItem.Price}" VerticalAlignment="Center"></TextBox>
+                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=articleDataGrid, Path=SelectedItem.Price}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
                 </StackPanel>
                 <!--
                 <StackPanel Margin="0 20 0 0">

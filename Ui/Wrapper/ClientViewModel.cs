@@ -32,6 +32,58 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
             }
         }
 
+        public String Street
+        {
+            get
+            {
+                return Model.Street;
+            }
+            set
+            {
+                Model.Street = value;
+
+            }
+        }
+
+        public int HouseNumber
+        {
+            get
+            {
+                return Model.HouseNumber;
+            }
+            set
+            {
+                Model.HouseNumber = value;
+
+            }
+        }
+
+        public int ZipCode
+        {
+            get
+            {
+                return Model.ZipCode;
+            }
+            set
+            {
+                Model.ZipCode = value;
+
+            }
+        }
+
+        public String City
+        {
+            get
+            {
+                return Model.City;
+            }
+            set
+            {
+                Model.City = value;
+
+            }
+        }
+
         public override void NewModelAssigned()
         {
             throw new NotImplementedException();

@@ -18,17 +18,19 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 
         public ICommand AddArticle { get; }
         private ArticleCollectionViewModel articleCollection;
-        public NewArticleWindowViewModel(ArticleCollectionViewModel givenArticleCollection)
+        private AdministrationViewModel AdministrationViewModel;
+        public NewArticleWindowViewModel(AdministrationViewModel givenAdministrationViewmodel)
         {
             AddArticle = new RelayCommand(AddArticleMethod);
-            articleCollection = givenArticleCollection;
+            AdministrationViewModel = givenAdministrationViewmodel;
+            articleCollection = AdministrationViewModel.Articles;
         }
 
         private void AddArticleMethod()
         {
             ArticleViewModel cvm = new ArticleViewModel
             {
-                ArticleNr = ArticleNr,
+                ArticleNr = AdministrationViewModel.Model.getArticleIdFromCreation(),
                 Name = Name,
                 Description = Description,
                 Price = Price
