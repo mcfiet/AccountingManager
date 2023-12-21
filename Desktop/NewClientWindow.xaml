@@ -11,40 +11,36 @@
         SizeToContent="WidthAndHeight"
         Background="white"
         FontFamily="Arial">
-    
+
     <Window.DataContext>
         <Binding Source="{StaticResource ViewModelLocator}" Path="TheNewClientWindowViewModel"></Binding>
     </Window.DataContext>
 
     <Grid>
         <StackPanel Margin="50, 20" >
-        <StackPanel Margin="0 15 0 0">
-            <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Identifier</Label>
-                <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding Identifier}" VerticalAlignment="Center"></TextBox>
-        </StackPanel>
-        <StackPanel Margin="0 15 0 0">
+            <StackPanel Margin="0 15 0 0">
                 <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Name</Label>
-                <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding Name}" VerticalAlignment="Center"></TextBox>
-         </StackPanel>
-        <StackPanel Margin="0 15 0 0">
+                <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding IncomingMessage}" VerticalAlignment="Center"></TextBox>
+            </StackPanel>
+            <StackPanel Margin="0 15 0 0">
                 <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Straße</Label>
                 <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding Street}" VerticalAlignment="Center"></TextBox>
-         </StackPanel>
-        <StackPanel Margin="0 15 0 0">
+            </StackPanel>
+            <StackPanel Margin="0 15 0 0">
                 <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Hausnr.</Label>
                 <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding HouseNumber}" VerticalAlignment="Center"></TextBox>
-         </StackPanel>
-        <StackPanel Margin="0 15 0 0">
+            </StackPanel>
+            <StackPanel Margin="0 15 0 0">
                 <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">PLZ</Label>
                 <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ZipCode}" VerticalAlignment="Center"></TextBox>
-         </StackPanel>
-        <StackPanel Margin="0 15 0 0">
+            </StackPanel>
+            <StackPanel Margin="0 15 0 0">
                 <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Stadt</Label>
                 <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding City}" VerticalAlignment="Center"></TextBox>
-         </StackPanel>
-        <Grid Width="NaN" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 50 0 0">
-            <Button Command="{Binding AddClient}" Style="{DynamicResource RoundeButton}">Kunde hinzufügen</Button>
-        </Grid>
+            </StackPanel>
+            <Grid Width="NaN" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 50 0 0">
+                <Button Command="{Binding AddClient}" Style="{DynamicResource RoundeButton}">Kunde hinzufügen</Button>
+            </Grid>
         </StackPanel>
     </Grid>
 </Window>

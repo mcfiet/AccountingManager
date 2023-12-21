@@ -2,8 +2,8 @@
 using De.HsFlensburg.ClientApp078.Logic.Ui.MessageBusMessages;
 using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
 using De.HsFlensburg.ClientApp078.Services.MessageBus;
+using De.HsFlensburg.ClientApp078.Services.MessageBusWithParameter;
 using De.HsFlensburg.ClientApp078.Services.SerializationService;
-using Services.PdfExport;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -33,22 +33,22 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public ArticleCollectionViewModel ArticleList { get; set; }
 
 
-        public AdministrationViewModel AdministrationViewModel { get; set; }   
+        public AdministrationViewModel AdministrationViewModel { get; set; }
 
         public MainWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
-            
+
             SaveCommand = new RelayCommand(SaveModel);
             LoadCommand = new RelayCommand(LoadModel);
 
-            OpenNewOfferWindowCommand = new RelayCommand(OpenNewOfferWindowMethod);
-            OpenOfferWindowCommand = new RelayCommand(OpenOfferWindowMethod);
-            OpenClientsWindowCommand = new RelayCommand(OpenClientsWindowMethod);
-            OpenArticlesWindowCommand = new RelayCommand(OpenArticlesWindow);
+            OpenNewOfferWindowCommand = new RelayCommand(OpenNewOfferWindowMethodWithParameter);
+            OpenOfferWindowCommand = new RelayCommand(OpenOfferWindowMethodWithParameter);
+            OpenClientsWindowCommand = new RelayCommand(OpenClientsWindowMethodWithParameter);
+            OpenArticlesWindowCommand = new RelayCommand(OpenArticlesWindowMethodWithParameter);
 
             AdministrationViewModel = givenAdministrationViewModel;
 
-            
+
             OfferList = AdministrationViewModel.Offers;
             ClientList = AdministrationViewModel.Clients;
             ArticleList = AdministrationViewModel.Articles;
@@ -58,26 +58,52 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             pathForSerialization = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Finances\\data.cc";
         }
 
-        private void OpenNewOfferWindowMethod()
-        {
-            ServiceBus.Instance.Send(new OpenNewOfferWindowMessage());
-        }
-        
-        private void OpenOfferWindowMethod()
-        {
-            ServiceBus.Instance.Send(new OpenOfferWindowMessage());
-        }
+        //private void OpenNewOfferWindowMethod()
+        //{
+        //    ServiceBus.Instance.Send(new OpenNewOfferWindowMessage());
+        //}
 
-        private void OpenClientsWindowMethod()
-        {
-            ServiceBus.Instance.Send(new OpenClientsWindowMessage());
-        }
+        //private void OpenOfferWindowMethod()
+        //{
+        //    ServiceBus.Instance.Send(new OpenOfferWindowMessage());
+        //}
 
-        private void OpenArticlesWindow()
-        {
-            ServiceBus.Instance.Send(new OpenArticlesWindowMessage());
-        }
+        //private void OpenClientsWindowMethod()
+        //{
+        //    ServiceBus.Instance.Send(new OpenClientsWindowMessage());
+        //}
 
+        //private void OpenArticlesWindow()
+        //{
+        //    ServiceBus.Instance.Send(new OpenArticlesWindowMessage());
+        //}
+
+
+        private void OpenClientsWindowMethodWithParameter()
+        {
+            //ServiceBus.Instance.Send(new OpenClientsWindowMessage());
+            OpenNewClientWindowMessage messageObject = new OpenNewClientWindowMessage();
+            messageObject.Message = "Moin";
+            Messenger.Instance.Send<OpenNewClientWindowMessage>(messageObject);
+        }
+        private void OpenNewOfferWindowMethodWithParameter()
+        {
+            //ServiceBus.Instance.Send(new OpenClientsWindowMessage());
+            OpenNewOfferWindowMessage messageObject = new OpenNewOfferWindowMessage();
+            Messenger.Instance.Send<OpenNewOfferWindowMessage>(messageObject);
+        }
+        private void OpenOfferWindowMethodWithParameter()
+        {
+            //ServiceBus.Instance.Send(new OpenClientsWindowMessage());
+            OpenOfferWindowMessage messageObject = new OpenOfferWindowMessage();
+            Messenger.Instance.Send<OpenOfferWindowMessage>(messageObject);
+        }
+        private void OpenArticlesWindowMethodWithParameter()
+        {
+            //ServiceBus.Instance.Send(new OpenClientsWindowMessage());
+            OpenArticlesWindowMessage messageObject = new OpenArticlesWindowMessage();
+            Messenger.Instance.Send<OpenArticlesWindowMessage>(messageObject);
+        }
 
         private void SaveModel()
         {

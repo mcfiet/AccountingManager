@@ -8,5 +8,6 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.MessageBusMessages
 {
     public class OpenNewClientWindowMessage
     {
+        public string Message { get; set; }
     }
 }

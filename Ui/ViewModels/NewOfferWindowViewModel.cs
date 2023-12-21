@@ -1,7 +1,9 @@
 ﻿using De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects;
+using De.HsFlensburg.ClientApp078.Logic.Ui.Base;
 using De.HsFlensburg.ClientApp078.Logic.Ui.MessageBusMessages;
 using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
 using De.HsFlensburg.ClientApp078.Services.MessageBus;
+using De.HsFlensburg.ClientApp078.Services.MessageBusWithParameter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +38,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public NewOfferWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
             AddOffer = new RelayCommand(AddOfferMethod);
-            OpenAddOfferItemWindowCommand = new RelayCommand(OpenAddOfferItemWindow);
+            OpenAddOfferItemWindowCommand = new RelayCommand(OpenAddOfferItemWindowWithParameter);
             AdministrationViewModel = givenAdministrationViewModel;
 
             offerCollection = givenAdministrationViewModel.Offers;
@@ -67,5 +69,15 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         {
             ServiceBus.Instance.Send(new OpenAddOfferItemWindowMessage());
         }
+
+        private void OpenAddOfferItemWindowWithParameter()
+        {
+
+            OpenAddOfferItemWindowMessage messageObject = new OpenAddOfferItemWindowMessage();
+            //ssageObject.Message = selectedOffer
+            Messenger.Instance.Send<OpenAddOfferItemWindowMessage>(messageObject);
+
+        }
+
     }
 }

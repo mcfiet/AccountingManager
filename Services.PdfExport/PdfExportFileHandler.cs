@@ -11,7 +11,7 @@ using iText.Layout.Properties;
 using iText.Layout.Borders;
 using iText.Kernel.Events;
 
-namespace Services.PdfExport
+namespace De.HsFlensburg.ClientApp078.Services.PdfExport
 {
     public class PdfExportFileHandler
     {

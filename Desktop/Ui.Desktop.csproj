@@ -149,6 +149,10 @@
       <Project>{060486ca-023e-404a-9ed1-8ca986dd493e}</Project>
       <Name>Services.MessageBus</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Services.MessageBusWithParameter\Services.MessageBusWithParameter.csproj">
+      <Project>{163c9943-63aa-47a3-b8f5-4425c2c28305}</Project>
+      <Name>Services.MessageBusWithParameter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ui\Logic.Ui.csproj">
       <Project>{e46fae81-214c-4f48-9cd0-7941787fef5c}</Project>
       <Name>Logic.Ui</Name>

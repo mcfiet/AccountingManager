@@ -2,7 +2,8 @@
 using De.HsFlensburg.ClientApp078.Logic.Ui.MessageBusMessages;
 using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
 using De.HsFlensburg.ClientApp078.Services.MessageBus;
-using Services.PdfExport;
+using De.HsFlensburg.ClientApp078.Services.MessageBusWithParameter;
+using De.HsFlensburg.ClientApp078.Services.PdfExport;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public OfferWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
             UpdateOfferCommand = new RelayCommand(UpdateOfferMethod);
-            OpenAddOfferItemWindowCommand = new RelayCommand(OpenAddOfferItemWindow);
+            OpenAddOfferItemWindowCommand = new RelayCommand(OpenAddOfferItemWindowWithParameter);
             ExportPdfCommand = new RelayCommand(ExportPdf);
             offerCollection = givenAdministrationViewModel.Offers;
 
@@ -55,6 +56,14 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         {
 
             ServiceBus.Instance.Send(new OpenAddOfferItemWindowMessage());
+
+        }
+        private void OpenAddOfferItemWindowWithParameter()
+        {
+
+            OpenAddOfferItemWindowMessage messageObject = new OpenAddOfferItemWindowMessage();
+            messageObject.Message = SelectedOffer;
+            Messenger.Instance.Send<OpenAddOfferItemWindowMessage>(messageObject);
 
         }
     }

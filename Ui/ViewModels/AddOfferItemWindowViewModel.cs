@@ -1,5 +1,7 @@
 ﻿using De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects;
+using De.HsFlensburg.ClientApp078.Logic.Ui.MessageBusMessages;
 using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
+using De.HsFlensburg.ClientApp078.Services.MessageBusWithParameter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 {
-    public class AddOfferItemViewModel
+    public class AddOfferItemWindowViewModel
     {
 
         public int OfferItemNr { get; set; }
@@ -18,7 +20,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 
         public OfferViewModel SelectedOffer { get; set; }
 
-        public AddOfferItemViewModel(AdministrationViewModel givenAdministrationViewModel)
+        public AddOfferItemWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
             AddOfferItem = new RelayCommand(AddOfferItemMethod);
             OfferList = givenAdministrationViewModel.Offers;
@@ -29,20 +31,21 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public RelayCommand AddOfferItem { get;}
         public OfferCollectionViewModel OfferList { get; set; }
         public ArticleCollectionViewModel ArticleList { get; set; }
+        public OfferViewModel IncomingOffer { get; set; }
 
         private void AddOfferItemMethod()
         {
 
             OfferItemViewModel of = new OfferItemViewModel
             {
-                OfferItemNr = SelectedOffer.Model.getOfferIdFromCreation(),
+                OfferItemNr = IncomingOffer.Model.getOfferIdFromCreation(),
                 Article = SelectedArticle.Model,
                 Quantity = Quantity,
                 TotalPrice = TotalPrice
             };
 
 
-            SelectedOffer.OfferItems.Add(of);
+            IncomingOffer.OfferItems.Add(of);
         }
     }
 

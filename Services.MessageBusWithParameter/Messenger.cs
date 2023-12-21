@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Services.MessageBusWithParameter
+namespace De.HsFlensburg.ClientApp078.Services.MessageBusWithParameter
 {
     public class Messenger : IMessenger
     {
@@ -37,7 +37,7 @@ namespace Services.MessageBusWithParameter
             if (!references.ContainsKey(messageType))
                 references.Add(messageType, new List<ActionIdentifier>());
             ActionIdentifier actionIdent = new ActionIdentifier();
-            actionIdent.Action = new WeakReferenceAction<TNotification>(recipient, action);
+            actionIdent.Action = new WeakReferenceActionWithParameter<TNotification>(recipient, action);
             actionIdent.IdentificationCode = identCode;
             references[messageType].Add(actionIdent);
         }

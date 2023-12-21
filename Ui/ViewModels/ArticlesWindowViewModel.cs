@@ -1,6 +1,7 @@
 ﻿using De.HsFlensburg.ClientApp078.Logic.Ui.MessageBusMessages;
 using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
 using De.HsFlensburg.ClientApp078.Services.MessageBus;
+using De.HsFlensburg.ClientApp078.Services.MessageBusWithParameter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public ArticlesWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
 
-            OpenNewArticleWindowCommand = new RelayCommand(OpenNewArticleWindowMethod);
+            OpenNewArticleWindowCommand = new RelayCommand(OpenNewArticleWindowMethodWithParameter);
 
             ArticleList = givenAdministrationViewModel.Articles;
 
@@ -28,6 +29,11 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         private void OpenNewArticleWindowMethod()
         {
             ServiceBus.Instance.Send(new OpenNewArticleWindowMessage());
+        }
+        private void OpenNewArticleWindowMethodWithParameter()
+        {
+            OpenNewArticleWindowMessage messageObject = new OpenNewArticleWindowMessage();
+            Messenger.Instance.Send<OpenNewArticleWindowMessage>(messageObject);
         }
 
     }

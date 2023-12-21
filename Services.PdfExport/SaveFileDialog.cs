@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Services.PdfExport
+namespace De.HsFlensburg.ClientApp078.Services.PdfExport
 {
     public class SaveFileDialog
     {
