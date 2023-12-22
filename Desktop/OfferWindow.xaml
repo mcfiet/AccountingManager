@@ -16,7 +16,7 @@
     <ScrollViewer>
         <Grid>
             <StackPanel Margin="30">
-                <StackPanel Margin="0 0 0 20">
+                <!--<StackPanel Margin="0 0 0 20">
                     <Label Style="{DynamicResource H1}">Angebote</Label>
                     <DataGrid
                         Name ="offerDataGrid"
@@ -31,29 +31,29 @@
                             <DataGridTextColumn Binding="{Binding Client.Name}" Header="Kunde"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
-                </StackPanel>
+                </StackPanel>-->
                 <UniformGrid  Grid.Column="0" Columns="2">
 
                     <StackPanel  Margin="0 0 20 0">
                         <StackPanel Margin="0 15 0 0">
                             <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Kundennr.</Label>
-                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=offerDataGrid, Path=SelectedItem.Client.Id}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
+                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding IncomingOffer.Client.Id}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
                         </StackPanel>
 
 
                         <StackPanel Margin="0 15 0 0">
                             <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Name</Label>
-                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=offerDataGrid, Path=SelectedItem.Client.Name}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
+                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding IncomingOffer.Client.Name}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
                         </StackPanel>
 
                         <StackPanel Margin="0 15 0 0">
                             <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Straße</Label>
-                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=offerDataGrid, Path=SelectedItem.Client.Street}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
+                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding IncomingOffer.Client.Street}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
                         </StackPanel>
 
                         <StackPanel Margin="0 15 0 0">
                             <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">PLZ und Ort</Label>
-                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=offerDataGrid, Path=SelectedItem.Client.ZipCode}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
+                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding IncomingOffer.Client.ZipCode}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
                         </StackPanel>
 
                     </StackPanel>
@@ -61,18 +61,18 @@
 
                         <StackPanel Margin="0 15 0 0">
                             <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Betreff</Label>
-                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=offerDataGrid, Path=SelectedItem.Reference}" VerticalAlignment="Center"></TextBox>
+                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding IncomingOffer.Reference}" VerticalAlignment="Center"></TextBox>
                         </StackPanel>
                         <UniformGrid  Grid.Column="0" Columns="2" >
 
                             <StackPanel Margin="0 15 10 0">
                                 <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left" >Angebotsnr.</Label>
-                                <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=offerDataGrid, Path=SelectedItem.OfferNr}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
+                                <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding IncomingOffer.OfferNr}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
                             </StackPanel>
 
                             <StackPanel Margin="10 15 0 0">
                                 <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Datum</Label>
-                                <DatePicker SelectedDate="{Binding ElementName=offerDataGrid, Path=SelectedItem.Date}"></DatePicker>
+                                <DatePicker SelectedDate="{Binding IncomingOffer.Date}"></DatePicker>
                                 <!--<TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=offerDataGrid, Path=SelectedItem.Date}" VerticalAlignment="Center"></TextBox>-->
                             </StackPanel>
 
@@ -83,13 +83,13 @@
                 </UniformGrid>
                 <StackPanel Margin="0 15 0 80">
                     <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Anschreiben</Label>
-                    <TextBox Style="{DynamicResource TextBoxStyle}"  Text="{Binding ElementName=offerDataGrid, Path=SelectedItem.Text}" VerticalAlignment="Center" MinHeight="200" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
+                    <TextBox Style="{DynamicResource TextBoxStyle}"  Text="{Binding IncomingOffer.Text}" VerticalAlignment="Center" MinHeight="200" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
                 </StackPanel>
                 <StackPanel>
                     <Label Style="{DynamicResource H1}">Positionen</Label>
                     <DataGrid 
                            Name ="offerItemsDataGrid"
-                           ItemsSource="{Binding ElementName=offerDataGrid, Path=SelectedItem.OfferItems}" 
+                           ItemsSource="{Binding IncomingOffer.OfferItems}" 
                            AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding OfferItemNr}" Header="Positionsnr."></DataGridTextColumn>
@@ -103,6 +103,8 @@
                     <Grid Width="NaN" Height="NaN" HorizontalAlignment="Left" VerticalAlignment="Center">
                         <Button Command="{Binding OpenAddOfferItemWindowCommand}" Style="{DynamicResource RoundeButton}">Position hinzufügen</Button>
                     </Grid>
+                    <TextBlock Text="Gesamtpreis:" TextAlignment="Right"></TextBlock>
+                    <TextBlock Text="{Binding ElementName=offerDataGrid, Path=SelectedItem.TotalPrice}" TextAlignment="Right"></TextBlock>
 
                 </StackPanel>
                 <UniformGrid  Grid.Column="0" Columns="2" Margin="0 50 0 0">

@@ -58,13 +58,13 @@ namespace De.HsFlensburg.ClientApp078.Services.PdfExport
 
                     Cell cell11 = new Cell(1, 2)
                         .SetBorder(Border.NO_BORDER)
-                        .Add(new Paragraph("DEVONIQ"))
-                        .Add(new Paragraph("Lüdemannstraße 47"))
-                        .Add(new Paragraph("24114 Kiel"))
-                        .Add(new Paragraph(""))
-                        .Add(new Paragraph("Telefon: +49 151 51 75 28 93"))
-                        .Add(new Paragraph("E-Mail: info@devoniq.de"))
-                        .Add(new Paragraph(""));
+                        .Add(new Paragraph("DEVONIQ")).SetTextAlignment(TextAlignment.RIGHT)
+                        .Add(new Paragraph("Lüdemannstraße 47")).SetTextAlignment(TextAlignment.RIGHT)
+                        .Add(new Paragraph("24114 Kiel")).SetTextAlignment(TextAlignment.RIGHT)
+                        .Add(new Paragraph("")).SetTextAlignment(TextAlignment.RIGHT)
+                        .Add(new Paragraph("Telefon: +49 151 51 75 28 93")).SetTextAlignment(TextAlignment.RIGHT)
+                        .Add(new Paragraph("E-Mail: info@devoniq.de")).SetTextAlignment(TextAlignment.RIGHT)
+                        .Add(new Paragraph("")).SetTextAlignment(TextAlignment.RIGHT);
 
                     OfferDetails.AddCell(cell11);
 

@@ -15,7 +15,7 @@
     <ScrollViewer>
         <Grid>
             <StackPanel Margin="30">
-                <StackPanel Margin="0 0 0 20">
+                <!--<StackPanel Margin="0 0 0 20">
                     <Label Style="{DynamicResource H1}">Angebote</Label>
                     <DataGrid
                         Name ="offerDataGrid"
@@ -29,7 +29,7 @@
                             <DataGridTextColumn Binding="{Binding Client.Name}" Header="Kunde"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
-                </StackPanel>
+                </StackPanel>-->
                 <StackPanel>
                     <Label Style="{DynamicResource H1}">Artikel</Label>
                     <DataGrid
@@ -71,7 +71,7 @@
                 </StackPanel>
                 -->
                 <Grid Width="NaN" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 50 0 0">
-                    <Button Command="{Binding AddOfferItem}" Style="{DynamicResource RoundeButton}">Angebot aktualisieren</Button>
+                    <Button Command="{Binding AddOfferItem}" Style="{DynamicResource RoundeButton}">Position hinzufügen</Button>
                 </Grid>
             </StackPanel>
         </Grid>

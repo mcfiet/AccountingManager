@@ -31,6 +31,8 @@ namespace De.HsFlensburg.ClientApp078.Ui.Desktop.MessageBusLogic
             Messenger.Instance.Register<OpenOfferWindowMessage>(this, delegate (OpenOfferWindowMessage messageObject)
             {
                 OfferWindow myWindow = new OfferWindow();
+                ((OfferWindowViewModel)myWindow.DataContext).IncomingOffer = messageObject.IncomingOffer;
+
                 myWindow.ShowDialog();
             });
             Messenger.Instance.Register<OpenAddOfferItemWindowMessage>(this, delegate (OpenAddOfferItemWindowMessage messageObject)

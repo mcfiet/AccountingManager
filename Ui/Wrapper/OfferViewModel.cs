@@ -98,6 +98,14 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
             }
         }
 
+
+        public float TotalPrice
+        {
+            get
+            {
+                return Model.TotalPrice;
+            }            
+        }
         public override void NewModelAssigned()
         {
             if (this.OfferItems != null)

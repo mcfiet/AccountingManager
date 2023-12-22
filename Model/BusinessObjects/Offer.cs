@@ -12,7 +12,7 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
     {
         private int offerItemId;
 
-        public int getOfferIdFromCreation()
+        public int getOfferItemIdFromCreation()
         {
             return offerItemId++;
         }
@@ -95,6 +95,19 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
                 client = value;
                 OnPropertyChanged("Client");
 
+            }
+        }
+
+        public float TotalPrice
+        {
+            get
+            {
+                float sum = 0;
+                foreach (var item in OfferItems)
+                {
+                    sum += item.TotalPrice;
+                }
+                return sum;
             }
         }
 

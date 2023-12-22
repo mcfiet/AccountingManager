@@ -4,14 +4,16 @@ using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
 using De.HsFlensburg.ClientApp078.Services.MessageBusWithParameter;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 {
-    public class AddOfferItemWindowViewModel
+    public class AddOfferItemWindowViewModel : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public int OfferItemNr { get; set; }
         public ArticleViewModel SelectedArticle { get; set; }
@@ -31,21 +33,44 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public RelayCommand AddOfferItem { get;}
         public OfferCollectionViewModel OfferList { get; set; }
         public ArticleCollectionViewModel ArticleList { get; set; }
-        public OfferViewModel IncomingOffer { get; set; }
+        public OfferViewModel incomingOffer;
+        public OfferViewModel IncomingOffer
+        {
+            get { return incomingOffer; }
+            set
+            {
+                incomingOffer = value;
+                OnPropertyChanged("IncomingOffer");
+            }
+        }
+
 
         private void AddOfferItemMethod()
         {
 
             OfferItemViewModel of = new OfferItemViewModel
             {
-                OfferItemNr = IncomingOffer.Model.getOfferIdFromCreation(),
+                OfferItemNr = IncomingOffer.Model.getOfferItemIdFromCreation(),
                 Article = SelectedArticle.Model,
                 Quantity = Quantity,
                 TotalPrice = TotalPrice
             };
 
 
-            IncomingOffer.OfferItems.Add(of);
+            IncomingOffer.OfferItems.Add(of); 
+            OnPropertyChanged("IncomingOffer");
+
+            //OpenOfferWindowMessage messageObject = new OpenOfferWindowMessage();
+            //messageObject.IncomingOffer = IncomingOffer;
+            //Messenger.Instance.Send<OpenOfferWindowMessage>(messageObject);
+        }
+
+        protected void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 

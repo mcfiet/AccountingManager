@@ -1,5 +1,4 @@
-﻿//using De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects;
-using De.HsFlensburg.ClientApp078.Logic.Ui.MessageBusMessages;
+﻿using De.HsFlensburg.ClientApp078.Logic.Ui.MessageBusMessages;
 using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
 using De.HsFlensburg.ClientApp078.Services.MessageBus;
 using De.HsFlensburg.ClientApp078.Services.MessageBusWithParameter;
@@ -34,6 +33,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 
 
         public AdministrationViewModel AdministrationViewModel { get; set; }
+        public OfferViewModel SelectedOffer { get; set; }
 
         public MainWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
@@ -58,6 +58,40 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             pathForSerialization = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Finances\\data.cc";
         }
 
+
+        private void OpenClientsWindowMethodWithParameter()
+        {
+            OpenClientsWindowMessage messageObject = new OpenClientsWindowMessage();
+            Messenger.Instance.Send<OpenClientsWindowMessage>(messageObject);
+        }
+        private void OpenNewOfferWindowMethodWithParameter()
+        {
+            OpenNewOfferWindowMessage messageObject = new OpenNewOfferWindowMessage();
+            Messenger.Instance.Send<OpenNewOfferWindowMessage>(messageObject);
+        }
+        private void OpenOfferWindowMethodWithParameter()
+        {
+            OpenOfferWindowMessage messageObject = new OpenOfferWindowMessage();
+            messageObject.IncomingOffer = SelectedOffer;
+            Messenger.Instance.Send<OpenOfferWindowMessage>(messageObject);
+        }
+        private void OpenArticlesWindowMethodWithParameter()
+        {
+            OpenArticlesWindowMessage messageObject = new OpenArticlesWindowMessage();
+            Messenger.Instance.Send<OpenArticlesWindowMessage>(messageObject);
+        }
+
+        private void SaveModel()
+        {
+            modelFileHandler.WriteModelToFile(pathForSerialization, AdministrationViewModel.Model);
+        }
+
+        private void LoadModel()
+        {
+            AdministrationViewModel.Model = modelFileHandler.ReadModelFromFile(pathForSerialization);
+        }
+
+
         //private void OpenNewOfferWindowMethod()
         //{
         //    ServiceBus.Instance.Send(new OpenNewOfferWindowMessage());
@@ -78,41 +112,5 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         //    ServiceBus.Instance.Send(new OpenArticlesWindowMessage());
         //}
 
-
-        private void OpenClientsWindowMethodWithParameter()
-        {
-            //ServiceBus.Instance.Send(new OpenClientsWindowMessage());
-            OpenNewClientWindowMessage messageObject = new OpenNewClientWindowMessage();
-            messageObject.Message = "Moin";
-            Messenger.Instance.Send<OpenNewClientWindowMessage>(messageObject);
-        }
-        private void OpenNewOfferWindowMethodWithParameter()
-        {
-            //ServiceBus.Instance.Send(new OpenClientsWindowMessage());
-            OpenNewOfferWindowMessage messageObject = new OpenNewOfferWindowMessage();
-            Messenger.Instance.Send<OpenNewOfferWindowMessage>(messageObject);
-        }
-        private void OpenOfferWindowMethodWithParameter()
-        {
-            //ServiceBus.Instance.Send(new OpenClientsWindowMessage());
-            OpenOfferWindowMessage messageObject = new OpenOfferWindowMessage();
-            Messenger.Instance.Send<OpenOfferWindowMessage>(messageObject);
-        }
-        private void OpenArticlesWindowMethodWithParameter()
-        {
-            //ServiceBus.Instance.Send(new OpenClientsWindowMessage());
-            OpenArticlesWindowMessage messageObject = new OpenArticlesWindowMessage();
-            Messenger.Instance.Send<OpenArticlesWindowMessage>(messageObject);
-        }
-
-        private void SaveModel()
-        {
-            modelFileHandler.WriteModelToFile(pathForSerialization, AdministrationViewModel.Model);
-        }
-
-        private void LoadModel()
-        {
-            AdministrationViewModel.Model = modelFileHandler.ReadModelFromFile(pathForSerialization);
-        }
     }
 }

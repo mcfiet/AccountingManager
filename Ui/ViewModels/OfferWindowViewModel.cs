@@ -6,6 +6,7 @@ using De.HsFlensburg.ClientApp078.Services.MessageBusWithParameter;
 using De.HsFlensburg.ClientApp078.Services.PdfExport;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,18 +14,29 @@ using System.Windows.Input;
 
 namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 {
-    public class OfferWindowViewModel
+    public class OfferWindowViewModel : INotifyPropertyChanged
     {
 
         public ClientViewModel SelectedClient { get; set; }
-        public OfferViewModel SelectedOffer { get; set; }
+        private OfferViewModel incomingOffer;
+        public OfferViewModel IncomingOffer
+        {
+            get
+            {
+                return incomingOffer;
+            }
+            set
+            {
+                incomingOffer = value;
+                OnPropertyChanged("IncomingOffer");
+            }
+        }
 
         public ICommand UpdateOfferCommand { get; }
         public ICommand OpenAddOfferItemWindowCommand { get; }
         public ICommand ExportPdfCommand { get; }
         public OfferCollectionViewModel offerCollection;
         public ClientCollectionViewModel ClientList { get; set; }
-        public OfferItemCollectionViewModel OfferItemList { get; set; }
         public OfferCollectionViewModel OfferList { get; set; }
         public OfferWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
@@ -34,22 +46,32 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             offerCollection = givenAdministrationViewModel.Offers;
 
             OfferList = givenAdministrationViewModel.Offers;
-            SelectedOffer = new OfferViewModel();
-            OfferItemList = SelectedOffer.OfferItems;
 
             ClientList = givenAdministrationViewModel.Clients;
         }
 
+        protected void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+
         private void UpdateOfferMethod()
         {
-                  
+
         }
 
         private void ExportPdf()
         {
 
             PdfExportFileHandler pdf = new PdfExportFileHandler();
-            pdf.PDFExport(SelectedOffer.Model);
+            pdf.PDFExport(IncomingOffer.Model);
         }
 
         private void OpenAddOfferItemWindow()
@@ -62,7 +84,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         {
 
             OpenAddOfferItemWindowMessage messageObject = new OpenAddOfferItemWindowMessage();
-            messageObject.Message = SelectedOffer;
+            messageObject.Message = IncomingOffer;
             Messenger.Instance.Send<OpenAddOfferItemWindowMessage>(messageObject);
 
         }

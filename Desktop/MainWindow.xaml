@@ -37,6 +37,7 @@
             <DataGrid
                   Name ="offerDataGrid"
                   ItemsSource="{Binding Path = OfferList}" 
+                SelectedItem="{Binding SelectedOffer}"
                   AutoGenerateColumns="False"
                 IsReadOnly="True">
                     <DataGrid.Columns>
