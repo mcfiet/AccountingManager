@@ -88,3 +88,5 @@ C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientap
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\itext.io.dll
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\Services.MessageBusWithParameter.pdb
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\Services.PdfExport.pdb
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\Services.XmlBuilder.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Ui\bin\Debug\Services.XmlBuilder.pdb

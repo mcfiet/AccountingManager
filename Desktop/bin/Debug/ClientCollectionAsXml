@@ -1,0 +1,26 @@
+﻿<clients>
+  <Kunde
+    clientID="0">
+    <Name>Max Mustermann</Name>
+    <Straße>Musterstraße</Straße>
+    <Hausnummer>22</Hausnummer>
+    <PLZ>23149</PLZ>
+    <Ort>Musterstadt</Ort>
+  </Kunde>
+  <Kunde
+    clientID="1">
+    <Name>Josephine Musterfrau</Name>
+    <Straße>Musterstreet</Straße>
+    <Hausnummer>34</Hausnummer>
+    <PLZ>23512</PLZ>
+    <Ort>Mustercity</Ort>
+  </Kunde>
+  <Kunde
+    clientID="2">
+    <Name>Karl Mustermuster</Name>
+    <Straße>Mustermuster</Straße>
+    <Hausnummer>1</Hausnummer>
+    <PLZ>43221</PLZ>
+    <Ort>Mustercity</Ort>
+  </Kunde>
+</clients>

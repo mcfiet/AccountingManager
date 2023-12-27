@@ -94,6 +94,10 @@
       <Project>{c7ee5479-d2a7-4b59-9d23-19396fb7d43c}</Project>
       <Name>Services.SerializationService</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Services.XmlBuilder\Services.XmlBuilder.csproj">
+      <Project>{41840241-a4dc-474e-a5ec-da10e0308f82}</Project>
+      <Name>Services.XmlBuilder</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,9 @@
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.XmlBuilder\bin\Debug\Services.XmlBuilder.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.XmlBuilder\bin\Debug\Services.XmlBuilder.pdb
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.XmlBuilder\bin\Debug\Business.Model.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.XmlBuilder\bin\Debug\Business.Model.pdb
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.XmlBuilder\obj\Debug\Services.XmlBuilder.csproj.AssemblyReference.cache
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.XmlBuilder\obj\Debug\Services.XmlBuilder.csproj.CoreCompileInputs.cache
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.XmlBuilder\obj\Debug\Services.XmlBuilder.csproj.CopyComplete
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.XmlBuilder\obj\Debug\Services.XmlBuilder.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.XmlBuilder\obj\Debug\Services.XmlBuilder.pdb

@@ -206,3 +206,5 @@ E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Servic
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Services.MessageBusWithParameter.pdb
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Services.MessageBusWithParameter.dll
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Services.MessageBusWithParameter.pdb
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Services.XmlBuilder.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Services.XmlBuilder.pdb

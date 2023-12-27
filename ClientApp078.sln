@@ -36,6 +36,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{86DA14
 		..\..\! DEVONIQ\SVG\Wortbildmarke.png = ..\..\! DEVONIQ\SVG\Wortbildmarke.png
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.XmlBuilder", "Services.XmlBuilder\Services.XmlBuilder.csproj", "{41840241-A4DC-474E-A5EC-DA10E0308F82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +72,10 @@ Global
 		{7FB3F3D8-DB27-4124-977B-6F294365B460}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FB3F3D8-DB27-4124-977B-6F294365B460}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FB3F3D8-DB27-4124-977B-6F294365B460}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41840241-A4DC-474E-A5EC-DA10E0308F82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41840241-A4DC-474E-A5EC-DA10E0308F82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41840241-A4DC-474E-A5EC-DA10E0308F82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41840241-A4DC-474E-A5EC-DA10E0308F82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +88,7 @@ Global
 		{C7EE5479-D2A7-4B59-9D23-19396FB7D43C} = {6F53DD76-F3AE-420B-9FC8-03075A7EBA78}
 		{163C9943-63AA-47A3-B8F5-4425C2C28305} = {6F53DD76-F3AE-420B-9FC8-03075A7EBA78}
 		{7FB3F3D8-DB27-4124-977B-6F294365B460} = {6F53DD76-F3AE-420B-9FC8-03075A7EBA78}
+		{41840241-A4DC-474E-A5EC-DA10E0308F82} = {6F53DD76-F3AE-420B-9FC8-03075A7EBA78}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DC14C10D-5F10-47A5-AAD2-128C96442002}

@@ -27,6 +27,7 @@
                     </Style>
                 </StackPanel.Resources>
                 <Button Command="{Binding OpenNewClientWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Neuen Kunden anlegen</Button>
+                <Button Command="{Binding ExportClientsToXmlCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">XML exportieren</Button>
                 <Button Command="{Binding OpenMainWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Zurück</Button>
             </StackPanel>
             <StackPanel>
