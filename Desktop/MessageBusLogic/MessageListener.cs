@@ -35,6 +35,20 @@ namespace De.HsFlensburg.ClientApp078.Ui.Desktop.MessageBusLogic
 
                 myWindow.ShowDialog();
             });
+            Messenger.Instance.Register<OpenOrderWindowMessage>(this, delegate (OpenOrderWindowMessage messageObject)
+            {
+                OrderWindow myWindow = new OrderWindow();
+                ((OrderWindowViewModel)myWindow.DataContext).IncomingOrder = messageObject.IncomingOrder;
+
+                myWindow.ShowDialog();
+            });
+            Messenger.Instance.Register<OpenInvoiceWindowMessage>(this, delegate (OpenInvoiceWindowMessage messageObject)
+            {
+                InvoiceWindow myWindow = new InvoiceWindow();
+                ((InvoiceWindowViewModel)myWindow.DataContext).IncomingInvoice = messageObject.IncomingInvoice;
+
+                myWindow.ShowDialog();
+            });
             Messenger.Instance.Register<OpenAddOfferItemWindowMessage>(this, delegate (OpenAddOfferItemWindowMessage messageObject)
             {
                 AddOfferItemWindow myWindow = new AddOfferItemWindow();

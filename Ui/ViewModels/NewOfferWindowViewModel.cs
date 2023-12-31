@@ -6,6 +6,7 @@ using De.HsFlensburg.ClientApp078.Services.MessageBus;
 using De.HsFlensburg.ClientApp078.Services.MessageBusWithParameter;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,16 +16,50 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 {
 
 
-    public class NewOfferWindowViewModel
+    public class NewOfferWindowViewModel : INotifyPropertyChanged
     {
 
         public int OfferNr { get; set; }
         public String Reference { get; set; }
         public String Date { get; set; }
-        public String Text { get; set; }
+        //public String Text { get; set; }
+
+        private String text;
+        public String Text
+        {
+            get
+            {
+                return text;
+            }
+            set
+            {
+                text = value;
+                OnPropertyChanged("Text");
+            }
+        }
+        protected void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
 
-        public ClientViewModel SelectedClient { get; set; }
+        private ClientViewModel selectedClient;
+        public ClientViewModel SelectedClient { 
+            get
+            {
+                return selectedClient;
+            } 
+            set
+            {
+                selectedClient = value;
+                Text = "Sehr geehrte/r " + selectedClient.Name + ",\n\ngerne bieten wir Ihnen folgende Produkte an.";
+            }
+        }
         public ArticleCollectionViewModel SelectedArticles{ get; set; }
 
         public ICommand AddOffer { get; }
@@ -33,17 +68,17 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public OfferCollectionViewModel offerCollection;
         public ClientCollectionViewModel ClientList { get; set; }
         public AdministrationViewModel AdministrationViewModel { get; set; }
-        public OfferItemCollectionViewModel OfferItemList { get; set; }
+        //public OfferItemCollectionViewModel OfferItemList { get; set; }
 
         public NewOfferWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
             AddOffer = new RelayCommand(AddOfferMethod);
-            OpenAddOfferItemWindowCommand = new RelayCommand(OpenAddOfferItemWindowWithParameter);
+            //OpenAddOfferItemWindowCommand = new RelayCommand(OpenAddOfferItemWindowWithParameter);
             AdministrationViewModel = givenAdministrationViewModel;
 
             offerCollection = givenAdministrationViewModel.Offers;
 
-            OfferItemList = new OfferItemCollectionViewModel();
+            //OfferItemList = new OfferItemCollectionViewModel();
 
             ClientList = givenAdministrationViewModel.Clients;            
         }
@@ -57,27 +92,20 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
                 Date = Date,
                 Text = Text,
                 Client = SelectedClient,
-                OfferItems = OfferItemList
+                //OfferItems = OfferItemList
             };
-
 
             offerCollection.Add(cvm);
         }
 
-
-        private void OpenAddOfferItemWindow()
-        {
-            ServiceBus.Instance.Send(new OpenAddOfferItemWindowMessage());
-        }
-
-        private void OpenAddOfferItemWindowWithParameter()
+/*        private void OpenAddOfferItemWindowWithParameter()
         {
 
             OpenAddOfferItemWindowMessage messageObject = new OpenAddOfferItemWindowMessage();
             //ssageObject.Message = selectedOffer
             Messenger.Instance.Send<OpenAddOfferItemWindowMessage>(messageObject);
 
-        }
+        }*/
 
     }
 }

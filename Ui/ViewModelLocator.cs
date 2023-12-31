@@ -15,6 +15,8 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui
         public NewArticleWindowViewModel TheNewArticleWindowViewModel { get; set; }
         public NewOfferWindowViewModel TheNewOfferWindowViewmodel { get; set; }
         public OfferWindowViewModel TheOfferWindowViewmodel { get; set; }
+        public OrderWindowViewModel TheOrderWindowViewmodel { get; set; }
+        public InvoiceWindowViewModel TheInvoiceWindowViewmodel { get; set; }
         public AdministrationViewModel TheAdministrationViewModel { get; set; }
         public ClientsWindowViewModel TheClientsWindowViewModel { get; set; }
         public ArticlesWindowViewModel TheArticlesWindowViewModel { get; set; }
@@ -25,6 +27,8 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui
 
             TheNewOfferWindowViewmodel = new NewOfferWindowViewModel(TheAdministrationViewModel);
             TheOfferWindowViewmodel = new OfferWindowViewModel(TheAdministrationViewModel);
+            TheOrderWindowViewmodel = new OrderWindowViewModel(TheAdministrationViewModel);
+            TheInvoiceWindowViewmodel = new InvoiceWindowViewModel(TheAdministrationViewModel);
             TheNewClientWindowViewModel = new NewClientWindowViewModel(TheAdministrationViewModel);
             TheNewArticleWindowViewModel = new NewArticleWindowViewModel(TheAdministrationViewModel);
 

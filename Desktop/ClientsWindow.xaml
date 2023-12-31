@@ -6,43 +6,44 @@
         xmlns:local="clr-namespace:De.HsFlensburg.ClientApp078.Ui.Desktop"
         mc:Ignorable="d"
         Title="ClientsWindow" 
-        SizeToContent="WidthAndHeight"
+        SizeToContent="Width"
+        Height="800"
         Background="white"
         FontFamily="Arial">
-    <Window.Resources>
-
-    </Window.Resources>
     <Window.DataContext>
         <Binding Source="{StaticResource ViewModelLocator}" Path="TheClientsWindowViewModel"></Binding>
     </Window.DataContext>
     <Window.IsEnabled >
         <Binding Source = "{StaticResource MessageListener}" Path ="BindableProperty"></Binding>
     </Window.IsEnabled >
-    <Grid>
-        <UniformGrid  Grid.Column="0" Columns="2">
-            <StackPanel  Margin="50, 20">
-                <StackPanel.Resources>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="Margin" Value="10"/>
-                    </Style>
-                </StackPanel.Resources>
-                <Button Command="{Binding OpenNewClientWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Neuen Kunden anlegen</Button>
-                <Button Command="{Binding ExportClientsToXmlCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">XML exportieren</Button>
-                <Button Command="{Binding OpenMainWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Zurück</Button>
-            </StackPanel>
-            <StackPanel>
-                <Label Style="{DynamicResource H1}">Kunden</Label>
-                <DataGrid
+    <ScrollViewer>
+        <Grid>
+            <UniformGrid  Grid.Column="0" Columns="2">
+                <StackPanel  Margin="50, 20">
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Margin" Value="10"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <Button Command="{Binding OpenNewClientWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Neuen Kunden anlegen</Button>
+                    <Button Command="{Binding ExportClientsToXmlCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">XML exportieren</Button>
+                    <Button Command="{Binding OpenMainWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Zurück</Button>
+                </StackPanel>
+                <StackPanel>
+                    <Label Style="{DynamicResource H1}">Kunden</Label>
+                    <DataGrid
                   Name ="clientDataGrid"
                   ItemsSource="{Binding Path = ClientList}" 
                   AutoGenerateColumns="False"
                     IsReadOnly="True">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding Id}" Header="Kundennr."></DataGridTextColumn>
-                        <DataGridTextColumn Binding="{Binding Name}" Header="Name"></DataGridTextColumn>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </StackPanel>
-        </UniformGrid>
-    </Grid>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Id}" Header="Kundennr."></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Name}" Header="Name"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </UniformGrid>
+        </Grid>
+    </ScrollViewer>
+
 </Window>

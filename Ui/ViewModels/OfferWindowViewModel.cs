@@ -32,22 +32,24 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             }
         }
 
-        public ICommand UpdateOfferCommand { get; }
+        public ICommand ConvertToOrderCommand { get; }
         public ICommand OpenAddOfferItemWindowCommand { get; }
         public ICommand ExportPdfCommand { get; }
-        public OfferCollectionViewModel offerCollection;
         public ClientCollectionViewModel ClientList { get; set; }
         public OfferCollectionViewModel OfferList { get; set; }
+        public OrderCollectionViewModel OrderList { get; set; }
+        public AdministrationViewModel Administration { get; set; }
         public OfferWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
-            UpdateOfferCommand = new RelayCommand(UpdateOfferMethod);
+            ConvertToOrderCommand = new RelayCommand(ConvertToOrderCommandMethodWithParameter);
             OpenAddOfferItemWindowCommand = new RelayCommand(OpenAddOfferItemWindowWithParameter);
             ExportPdfCommand = new RelayCommand(ExportPdf);
-            offerCollection = givenAdministrationViewModel.Offers;
 
-            OfferList = givenAdministrationViewModel.Offers;
+            Administration = givenAdministrationViewModel;
 
-            ClientList = givenAdministrationViewModel.Clients;
+            OfferList = Administration.Offers;
+            OrderList = Administration.Orders;
+            ClientList = Administration.Clients;
         }
 
         protected void OnPropertyChanged(string propertyName)
@@ -62,9 +64,19 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 
 
 
-        private void UpdateOfferMethod()
+        private void ConvertToOrderCommandMethodWithParameter()
         {
+            OrderViewModel o = new OrderViewModel()
+            {
+                OrderNr = Administration.Model.getOrderIdFromCreation(),
+                OfferItems = IncomingOffer.OfferItems,
+                Reference = IncomingOffer.Reference,
+                Date = IncomingOffer.Date,
+                Text = IncomingOffer.Text,
+                Client = IncomingOffer.Client
+            };
 
+            OrderList.Add(o);
         }
 
         private void ExportPdf()

@@ -68,10 +68,12 @@ namespace Services.XmlBuilder
             xmlWriter.WriteStartElement("Kunde");
             xmlWriter.WriteAttributeString("clientID", client.Id.ToString());
             writeElement(xmlWriter, "Name", client.Name);
+            xmlWriter.WriteStartElement("Adresse");
             writeElement(xmlWriter, "Straße", client.Street);
             writeElement(xmlWriter, "Hausnummer", client.HouseNumber.ToString());
             writeElement(xmlWriter, "PLZ", client.ZipCode.ToString());
             writeElement(xmlWriter, "Ort", client.City);
+            xmlWriter.WriteEndElement();
             xmlWriter.WriteEndElement();
         }
 

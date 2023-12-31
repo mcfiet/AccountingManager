@@ -1,0 +1,104 @@
+﻿<Window x:Class="De.HsFlensburg.ClientApp078.Ui.Desktop.OrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:De.HsFlensburg.ClientApp078.Ui.Desktop"
+        mc:Ignorable="d"
+        Title="OrderWindow"        
+        SizeToContent="Width"
+        Height="800"
+        Background="white"
+        FontFamily="Arial">
+    <Window.DataContext>
+        <Binding Source="{StaticResource ViewModelLocator}" Path="TheOrderWindowViewmodel"></Binding>
+    </Window.DataContext>
+    <ScrollViewer>
+        <Grid>
+            <StackPanel Margin="30">
+                <UniformGrid  Grid.Column="0" Columns="2">
+
+                    <StackPanel  Margin="0 0 20 0">
+                        <StackPanel Margin="0 15 0 0">
+                            <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Kundennr.</Label>
+                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding IncomingOrder.Client.Id}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
+                        </StackPanel>
+
+
+                        <StackPanel Margin="0 15 0 0">
+                            <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Name</Label>
+                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding IncomingOrder.Client.Name}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
+                        </StackPanel>
+
+                        <StackPanel Margin="0 15 0 0">
+                            <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Straße</Label>
+                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding IncomingOrder.Client.Street}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
+                        </StackPanel>
+
+                        <StackPanel Margin="0 15 0 0">
+                            <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">PLZ und Ort</Label>
+                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding IncomingOrder.Client.ZipCode}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
+                        </StackPanel>
+
+                    </StackPanel>
+                    <StackPanel>
+
+                        <StackPanel Margin="0 15 0 0">
+                            <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Betreff</Label>
+                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding IncomingOrder.Reference}" VerticalAlignment="Center"></TextBox>
+                        </StackPanel>
+                        <UniformGrid  Grid.Column="0" Columns="2" >
+
+                            <StackPanel Margin="0 15 10 0">
+                                <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left" >Angebotsnr.</Label>
+                                <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding IncomingOrder.OrderNr}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
+                            </StackPanel>
+
+                            <StackPanel Margin="10 15 0 0">
+                                <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Datum</Label>
+                                <DatePicker SelectedDate="{Binding IncomingOrder.Date}"></DatePicker>
+                            </StackPanel>
+
+                        </UniformGrid>
+
+                    </StackPanel>
+
+                </UniformGrid>
+                <StackPanel Margin="0 15 0 80">
+                    <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Anschreiben</Label>
+                    <TextBox Style="{DynamicResource TextBoxStyle}"  Text="{Binding IncomingOrder.Text}" VerticalAlignment="Center" MinHeight="200" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
+                </StackPanel>
+                <StackPanel>
+                    <Label Style="{DynamicResource H1}">Positionen</Label>
+                    <DataGrid 
+                           Name ="offerItemsDataGrid"
+                           ItemsSource="{Binding IncomingOrder.OfferItems}" 
+                           AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding OfferItemNr}" Header="Positionsnr."></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Article.Name}" Header="Artikel"></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Quantity}" Header="Anzahl"></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Article.Price}" Header="Einzelpreis"></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding TotalPrice}" Header="Gesamtpreis"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Grid Width="NaN" Height="NaN" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <Button Command="{Binding OpenAddOfferItemWindowCommand}" Style="{DynamicResource RoundeButton}">Position hinzufügen</Button>
+                    </Grid>
+                    <TextBlock Text="Gesamtpreis:" TextAlignment="Right"></TextBlock>
+                    <TextBlock Text="{Binding ElementName=offerDataGrid, Path=SelectedItem.TotalPrice}" TextAlignment="Right"></TextBlock>
+
+                </StackPanel>
+                <UniformGrid  Grid.Column="0" Columns="2" Margin="0 50 0 0">
+                    <Grid Width="NaN" Height="NaN" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <Button Command="{Binding ExportPdfCommand}" Style="{DynamicResource RoundeButton}">als PDF exportieren</Button>
+                    </Grid>
+                    <Grid Width="NaN" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Button Command="{Binding ConvertToInvoiceCommand}" Style="{DynamicResource RoundeButton}">Rechnung schreiben</Button>
+                    </Grid>
+                </UniformGrid>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>

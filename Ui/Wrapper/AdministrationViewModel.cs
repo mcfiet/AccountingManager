@@ -14,13 +14,19 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
         public AdministrationViewModel(): base()
         {
             Offers = new OfferCollectionViewModel();
+            Orders = new OrderCollectionViewModel();
+            Invoices = new InvoiceCollectionViewModel();
             Clients = new ClientCollectionViewModel();
             Articles = new ArticleCollectionViewModel();
             Offers.Model = this.Model.Offers;
+            Orders.Model = this.Model.Orders;
+            Invoices.Model = this.Model.Invoices;
             Clients.Model = this.Model.Clients;
             Articles.Model = this.Model.Articles;
         }
         public OfferCollectionViewModel Offers { get; set; }
+        public OrderCollectionViewModel Orders { get; set; }
+        public InvoiceCollectionViewModel Invoices { get; set; }
 
         public ClientCollectionViewModel Clients { get; set; }
 
@@ -31,6 +37,14 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
             if (this.Offers != null)
             {
                 Offers.Model = this.Model?.Offers;
+            }
+            if (this.Orders != null)
+            {
+                Orders.Model = this.Model?.Orders;
+            }
+            if (this.Invoices != null)
+            {
+                Invoices.Model = this.Model?.Invoices;
             }
             if (this.Clients != null)
             {

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="OfferWindow"
         SizeToContent="Width"
-        Height="1000"
+        Height="800"
         Background="white"
         FontFamily="Arial">
     <Window.DataContext>
@@ -16,22 +16,6 @@
     <ScrollViewer>
         <Grid>
             <StackPanel Margin="30">
-                <!--<StackPanel Margin="0 0 0 20">
-                    <Label Style="{DynamicResource H1}">Angebote</Label>
-                    <DataGrid
-                        Name ="offerDataGrid"
-                        SelectedItem="{Binding SelectedOffer}"
-                        ItemsSource="{Binding Path = OfferList}" 
-                        AutoGenerateColumns="False"
-                        IsReadOnly="True">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding OfferNr}" Header="Angebotsnr."></DataGridTextColumn>
-                            <DataGridTextColumn Binding="{Binding Reference}" Header="Betreff"></DataGridTextColumn>
-                            <DataGridTextColumn Binding="{Binding Date, StringFormat=dd/MM/yyyy}" Header="Datum"></DataGridTextColumn>
-                            <DataGridTextColumn Binding="{Binding Client.Name}" Header="Kunde"></DataGridTextColumn>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                </StackPanel>-->
                 <UniformGrid  Grid.Column="0" Columns="2">
 
                     <StackPanel  Margin="0 0 20 0">
@@ -73,7 +57,6 @@
                             <StackPanel Margin="10 15 0 0">
                                 <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Datum</Label>
                                 <DatePicker SelectedDate="{Binding IncomingOffer.Date}"></DatePicker>
-                                <!--<TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=offerDataGrid, Path=SelectedItem.Date}" VerticalAlignment="Center"></TextBox>-->
                             </StackPanel>
 
                         </UniformGrid>
@@ -112,7 +95,7 @@
                         <Button Command="{Binding ExportPdfCommand}" Style="{DynamicResource RoundeButton}">als PDF exportieren</Button>
                     </Grid>
                     <Grid Width="NaN" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Button Command="{Binding UpdateOfferCommand}" Style="{DynamicResource RoundeButton}">Angebot aktualisieren</Button>
+                        <Button Command="{Binding ConvertToOrderCommand}" Style="{DynamicResource RoundeButton}">Auftrag erteilen</Button>
                     </Grid>
                 </UniformGrid>
             </StackPanel>

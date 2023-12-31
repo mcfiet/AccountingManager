@@ -208,3 +208,7 @@ C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientap
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Services.MessageBusWithParameter.pdb
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Services.XmlBuilder.dll
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Services.XmlBuilder.pdb
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\OrderWindow.g.cs
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\OrderWindow.baml
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\InvoiceWindow.g.cs
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\InvoiceWindow.baml

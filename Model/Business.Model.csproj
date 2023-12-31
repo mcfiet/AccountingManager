@@ -41,16 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessObjects\Accounting.cs" />
     <Compile Include="BusinessObjects\Administration.cs" />
     <Compile Include="BusinessObjects\Article.cs" />
     <Compile Include="BusinessObjects\ArticleCollection.cs" />
     <Compile Include="BusinessObjects\Client.cs" />
     <Compile Include="BusinessObjects\ClientCollection.cs" />
     <Compile Include="BusinessObjects\Genre.cs" />
+    <Compile Include="BusinessObjects\Invoice.cs" />
+    <Compile Include="BusinessObjects\InvoiceCollection.cs" />
     <Compile Include="BusinessObjects\Offer.cs" />
     <Compile Include="BusinessObjects\OfferCollection.cs" />
     <Compile Include="BusinessObjects\OfferItem.cs" />
     <Compile Include="BusinessObjects\OfferItemCollection.cs" />
+    <Compile Include="BusinessObjects\Order.cs" />
+    <Compile Include="BusinessObjects\OrderCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

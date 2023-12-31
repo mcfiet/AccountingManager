@@ -6,44 +6,50 @@
         xmlns:local="clr-namespace:De.HsFlensburg.ClientApp078.Ui.Desktop"
         mc:Ignorable="d"
         Title="ArticlesWindow" 
-        SizeToContent="WidthAndHeight"
+        SizeToContent="Width"
+        Height="800"
         Background="white"
         FontFamily="Arial">
-    <Window.Resources>
-
-    </Window.Resources>
     <Window.DataContext>
         <Binding Source="{StaticResource ViewModelLocator}" Path="TheArticlesWindowViewModel"></Binding>
     </Window.DataContext>
     <Window.IsEnabled >
         <Binding Source = "{StaticResource MessageListener}" Path ="BindableProperty"></Binding>
     </Window.IsEnabled >
-    <Grid>
-        <UniformGrid  Grid.Column="0" Columns="2">
-            <StackPanel  Margin="50, 20">
-                <StackPanel.Resources>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="Margin" Value="10"/>
-                    </Style>
-                </StackPanel.Resources>
-                <Button Command="{Binding OpenNewArticleWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Neuen Artikel hinzufügen</Button>
-                <Button Command="{Binding OpenMainWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Zurück</Button>
-            </StackPanel>
-            <StackPanel>
-                <Label Style="{DynamicResource H1}">Artikel</Label>
-                <DataGrid
+    <ScrollViewer>
+        <Grid>
+            <UniformGrid  Grid.Column="0" Columns="2">
+                <StackPanel  Margin="50, 20">
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Margin" Value="10"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <Button Command="{Binding OpenNewArticleWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Neuen Artikel hinzufügen</Button>
+                    <Button Command="{Binding OpenMainWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Zurück</Button>
+                </StackPanel>
+                <StackPanel>
+                    <Label Style="{DynamicResource H1}">Artikel</Label>
+                    <DataGrid
                   Name ="clientDataGrid"
                   ItemsSource="{Binding Path = ArticleList}"  
                   AutoGenerateColumns="False"
                     IsReadOnly="True">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding ArticleNr}" Header="Articlenr."></DataGridTextColumn>
-                        <DataGridTextColumn Binding="{Binding Name}" Header="Name"></DataGridTextColumn>
-                        <DataGridTextColumn Binding="{Binding Description}" Header="Beschreibung"></DataGridTextColumn>
-                        <DataGridTextColumn Binding="{Binding Price}" Header="Preis"></DataGridTextColumn>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </StackPanel>
-        </UniformGrid>
-    </Grid>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding ArticleNr}" Header="Articlenr."></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Name}" Header="Name"></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Description}" Header="Beschreibung" MaxWidth="150">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style>
+                                        <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Price}" Header="Preis"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </UniformGrid>
+        </Grid>
+    </ScrollViewer>
 </Window>

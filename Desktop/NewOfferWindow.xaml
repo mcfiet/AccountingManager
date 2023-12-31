@@ -60,13 +60,13 @@
                         </StackPanel>
 
                         <UniformGrid  Grid.Column="0" Columns="2" >
-
+<!--
                             <StackPanel Margin="0 15 10 0">
                                 <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Angebotsnr.</Label>
                                 <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding OfferNr}" VerticalAlignment="Center"></TextBox>
                             </StackPanel>
-
-                            <StackPanel Margin="10 15 0 0">
+-->
+                            <StackPanel Grid.Column="1" Margin="10 15 0 0">
                                 <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Datum</Label>
                                 <DatePicker SelectedDate="{Binding Date, StringFormat=dd/MM/yyyy}"></DatePicker>
                             </StackPanel>
@@ -79,6 +79,8 @@
                     <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Anschreiben</Label>
                     <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding Text}" VerticalAlignment="Center" MinHeight="200" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
                 </StackPanel>
+                
+                <!--
                 <StackPanel>
                     <Label Style="{DynamicResource H1}">Positionen</Label>
                     <DataGrid SelectedItem="{Binding SelectedArticles}"
@@ -97,10 +99,12 @@
                     <Grid Width="NaN" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Button Command="{Binding OpenAddOfferItemWindowCommand}" Style="{DynamicResource RoundeButton}">Position hinzufügen</Button>
                     </Grid>
-                    <Grid Width="NaN" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 50 0 0">
-                        <Button Command="{Binding AddOffer}" Style="{DynamicResource RoundeButton}">Offer hinzufügen</Button>
-                    </Grid>
+
                 </StackPanel>
+                -->
+                <Grid Width="NaN" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 50 0 0">
+                    <Button Command="{Binding AddOffer}" Style="{DynamicResource RoundeButton}">Offer hinzufügen</Button>
+                </Grid>
             </StackPanel>
         </Grid>
     </ScrollViewer>

@@ -12,8 +12,6 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
     public class OfferViewModel : ViewModelBase<Offer>
     {
 
-
-
         public OfferViewModel() : base()
         {
             //OfferItems = new OfferItemCollectionViewModel();
