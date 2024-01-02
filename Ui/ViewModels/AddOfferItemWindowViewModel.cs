@@ -30,7 +30,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 
         }
 
-        public RelayCommand AddOfferItem { get;}
+        public RelayCommand AddOfferItem { get; }
         public OfferCollectionViewModel OfferList { get; set; }
         public ArticleCollectionViewModel ArticleList { get; set; }
         public OfferViewModel incomingOffer;
@@ -57,12 +57,8 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             };
 
 
-            IncomingOffer.OfferItems.Add(of); 
+            IncomingOffer.OfferItems.Add(of);
             OnPropertyChanged("IncomingOffer");
-
-            //OpenOfferWindowMessage messageObject = new OpenOfferWindowMessage();
-            //messageObject.IncomingOffer = IncomingOffer;
-            //Messenger.Instance.Send<OpenOfferWindowMessage>(messageObject);
         }
 
         protected void OnPropertyChanged(string propertyName)

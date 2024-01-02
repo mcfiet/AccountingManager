@@ -24,12 +24,6 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             ArticleList = givenAdministrationViewModel.Articles;
 
         }
-
-
-        private void OpenNewArticleWindowMethod()
-        {
-            ServiceBus.Instance.Send(new OpenNewArticleWindowMessage());
-        }
         private void OpenNewArticleWindowMethodWithParameter()
         {
             OpenNewArticleWindowMessage messageObject = new OpenNewArticleWindowMessage();

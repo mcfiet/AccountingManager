@@ -15,20 +15,20 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
             Article,
             ArticleCollection>
     {
-        public override void NewModelAssigned()
-        {
-            //Wenn das neue Model z.B. aus der Deserialisierung kommt,
-            //dann muss für jedes Element der Liste (hier: jeder Client in der ClientCollection)
-            //sich die Wrapper-Klasse neu im PropertyChanged-EventArgs registrieren
+        //public override void NewModelAssigned()
+        //{
+        //    //Wenn das neue Model z.B. aus der Deserialisierung kommt,
+        //    //dann muss für jedes Element der Liste (hier: jeder Client in der ClientCollection)
+        //    //sich die Wrapper-Klasse neu im PropertyChanged-EventArgs registrieren
 
-            foreach (var cvm in this)
-            {
-                var modelPropChanged = cvm.Model as INotifyPropertyChanged;
-                if (modelPropChanged != null)
-                {
-                    modelPropChanged.PropertyChanged += cvm.OnPropertyChangedInModel;
-                }
-            }
-        }
+        //    foreach (var cvm in this)
+        //    {
+        //        var modelPropChanged = cvm.Model as INotifyPropertyChanged;
+        //        if (modelPropChanged != null)
+        //        {
+        //            modelPropChanged.PropertyChanged += cvm.OnPropertyChangedInModel;
+        //        }
+        //    }
+        //}
     }
 }

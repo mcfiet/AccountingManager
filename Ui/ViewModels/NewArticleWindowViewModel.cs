@@ -12,7 +12,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
     public class NewArticleWindowViewModel
     {
         public int ArticleNr { get; set; }
-        public String Name { get; set;}
+        public String Name { get; set; }
         public String Description { get; set; }
         public int Price { get; set; }
 

@@ -12,7 +12,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
     public class NewClientWindowViewModel
     {
         public String IncomingMessage { get; set; }
-        
+
         public string Name { get; set; }
 
         public string Street { get; set; }
@@ -44,7 +44,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
                 City = City
             };
             clientCollection.Add(cvm);
-            
+
         }
     }
 }

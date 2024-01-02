@@ -40,10 +40,6 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             XmlBuilder xmlBuilder = new XmlBuilder();
             xmlBuilder.ExportClientCollectionToHtmlFile(ClientList.Model);
         }
-        //private void OpenNewClientWindowMethod()
-        //{
-        //    ServiceBus.Instance.Send(new OpenNewClientWindowMessage());
-        //}
 
     }
 }

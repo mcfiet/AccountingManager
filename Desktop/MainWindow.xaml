@@ -45,7 +45,7 @@
                 <Label Style="{DynamicResource H1}">Angebote</Label>
                 <DataGrid
                   Name ="offerDataGrid"
-                  ItemsSource="{Binding Path = OfferList}" 
+                  ItemsSource="{Binding Path = AdministrationViewModel.Offers}" 
                 SelectedItem="{Binding SelectedOffer}"
                   AutoGenerateColumns="False"
                 IsReadOnly="True">

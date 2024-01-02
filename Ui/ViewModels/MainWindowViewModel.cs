@@ -5,6 +5,7 @@ using De.HsFlensburg.ClientApp078.Services.MessageBusWithParameter;
 using De.HsFlensburg.ClientApp078.Services.SerializationService;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -13,10 +14,12 @@ using System.Windows.Input;
 
 namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 {
-    public class MainWindowViewModel
+    public class MainWindowViewModel : INotifyPropertyChanged
     {
         private ModelFileHandler modelFileHandler;
         private string pathForSerialization;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public ICommand SaveCommand { get; }
         public ICommand LoadCommand { get; }
@@ -111,28 +114,13 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         private void LoadModel()
         {
             AdministrationViewModel.Model = modelFileHandler.ReadModelFromFile(pathForSerialization);
+            OnPropertyChanged("OfferList");
         }
 
-
-        //private void OpenNewOfferWindowMethod()
-        //{
-        //    ServiceBus.Instance.Send(new OpenNewOfferWindowMessage());
-        //}
-
-        //private void OpenOfferWindowMethod()
-        //{
-        //    ServiceBus.Instance.Send(new OpenOfferWindowMessage());
-        //}
-
-        //private void OpenClientsWindowMethod()
-        //{
-        //    ServiceBus.Instance.Send(new OpenClientsWindowMessage());
-        //}
-
-        //private void OpenArticlesWindow()
-        //{
-        //    ServiceBus.Instance.Send(new OpenArticlesWindowMessage());
-        //}
-
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

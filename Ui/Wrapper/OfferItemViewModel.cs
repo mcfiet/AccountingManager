@@ -62,15 +62,15 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
 
             }
         }
-        public override void NewModelAssigned()
-        {
-            throw new NotImplementedException();
-        }
+        //public override void NewModelAssigned()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        internal void OnPropertyChangedInModel(object sender, PropertyChangedEventArgs e)
-        {
-            OnPropertyChanged(e.PropertyName);
-        }
+        //internal void OnPropertyChangedInModel(object sender, PropertyChangedEventArgs e)
+        //{
+        //    OnPropertyChanged(e.PropertyName);
+        //}
         
     }
 }

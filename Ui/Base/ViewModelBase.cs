@@ -8,59 +8,48 @@ using System.Threading.Tasks;
 
 namespace De.HsFlensburg.ClientApp078.Logic.Ui.Base
 {
-    public abstract class ViewModelBase<TypeOfModel> : INotifyPropertyChanged,
-         IViewModel<TypeOfModel> where TypeOfModel : new()
+    public abstract class ViewModelBase<TModel> : IViewModel<TModel>
+    where TModel : new()
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        private TypeOfModel model;
-        public TypeOfModel Model
+        private TModel _model;
+
+        public TModel Model
         {
-            get
-            {
-                return model;
-            }
+            get => _model;
             set
             {
-                model = value;
-                try
-                {
-                    this.NewModelAssigned();
-                }
-                catch (Exception e)
-                {
-
-                }
-
+                _model = value;
+                OnPropertyChanged();
             }
         }
-        public ViewModelBase(TypeOfModel modelObject)
+
+        protected ViewModelBase()
         {
-            this.Model = modelObject;
-            var modelPropChanged = this.Model as INotifyPropertyChanged;
-            if (modelPropChanged != null)
+            Initialize(new TModel());
+        }
+
+        protected ViewModelBase(TModel modelObject)
+        {
+            Initialize(modelObject);
+        }
+
+        private void Initialize(TModel modelObject)
+        {
+            Model = modelObject;
+            if (Model is INotifyPropertyChanged modelPropChanged)
             {
                 modelPropChanged.PropertyChanged += OnPropertyChangedInModel;
             }
         }
-        public ViewModelBase()
-        {
-            this.Model = new TypeOfModel();
-            var modelPropChanged = this.Model as INotifyPropertyChanged;
-            if (modelPropChanged != null)
-            {
-                modelPropChanged.PropertyChanged += OnPropertyChangedInModel;
-            }
-        }
-        protected void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-        public abstract void NewModelAssigned();
 
-        private void OnPropertyChangedInModel(object sender, PropertyChangedEventArgs e)
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void OnPropertyChanged(string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void OnPropertyChangedInModel(object sender, PropertyChangedEventArgs e)
         {
             OnPropertyChanged(e.PropertyName);
         }

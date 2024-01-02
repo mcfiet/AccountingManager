@@ -104,17 +104,17 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
                 return Model.TotalPrice;
             }            
         }
-        public override void NewModelAssigned()
-        {
-            if (this.OfferItems != null)
-            {
-                OfferItems.Model = this.Model?.OfferItems;
-            }
+        //public override void NewModelAssigned()
+        //{
+        //    if (this.OfferItems != null)
+        //    {
+        //        OfferItems.Model = this.Model?.OfferItems;
+        //    }
 
-        }
-        internal void OnPropertyChangedInModel(object sender, PropertyChangedEventArgs e)
-        {
-            OnPropertyChanged(e.PropertyName);
-        }
+        //}
+        //internal void OnPropertyChangedInModel(object sender, PropertyChangedEventArgs e)
+        //{
+        //    OnPropertyChanged(e.PropertyName);
+        //}
     }
 }

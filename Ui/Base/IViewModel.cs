@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace De.HsFlensburg.ClientApp078.Logic.Ui.Base
 {
-    public interface IViewModel<TypeOfModel> : INotifyPropertyChanged
+    public interface IViewModel<TOfModel> : INotifyPropertyChanged
     {
-        TypeOfModel Model { get; set; }
+        TOfModel Model { get; set; }
 
-        void NewModelAssigned();
+        void OnPropertyChangedInModel(object sender, PropertyChangedEventArgs e);
     }
 }

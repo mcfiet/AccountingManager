@@ -87,7 +87,7 @@
                         <Button Command="{Binding OpenAddOfferItemWindowCommand}" Style="{DynamicResource RoundeButton}">Position hinzufügen</Button>
                     </Grid>
                     <TextBlock Text="Gesamtpreis:" TextAlignment="Right"></TextBlock>
-                    <TextBlock Text="{Binding ElementName=offerDataGrid, Path=SelectedItem.TotalPrice}" TextAlignment="Right"></TextBlock>
+                    <TextBlock Text="{Binding IncomingOffer.TotalPrice}" TextAlignment="Right"></TextBlock>
 
                 </StackPanel>
                 <UniformGrid  Grid.Column="0" Columns="2" Margin="0 50 0 0">

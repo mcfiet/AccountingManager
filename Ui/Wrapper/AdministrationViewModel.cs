@@ -1,4 +1,4 @@
-﻿using De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects;
+﻿ using De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects;
 using De.HsFlensburg.ClientApp078.Logic.Ui.Base;
 using System;
 using System.Collections.Generic;
@@ -11,54 +11,56 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
 {
     public class AdministrationViewModel : ViewModelBase<Administration>
     {
-        public AdministrationViewModel(): base()
+      
+        public OfferCollectionViewModel Offers
         {
-            Offers = new OfferCollectionViewModel();
-            Orders = new OrderCollectionViewModel();
-            Invoices = new InvoiceCollectionViewModel();
-            Clients = new ClientCollectionViewModel();
-            Articles = new ArticleCollectionViewModel();
-            Offers.Model = this.Model.Offers;
-            Orders.Model = this.Model.Orders;
-            Invoices.Model = this.Model.Invoices;
-            Clients.Model = this.Model.Clients;
-            Articles.Model = this.Model.Articles;
+            get
+            {
+                OfferCollectionViewModel temp = new OfferCollectionViewModel();
+                temp.Model = Model.Offers;
+                return temp;
+            }
+            set => Model.Offers = value.Model;
         }
-        public OfferCollectionViewModel Offers { get; set; }
-        public OrderCollectionViewModel Orders { get; set; }
-        public InvoiceCollectionViewModel Invoices { get; set; }
-
-        public ClientCollectionViewModel Clients { get; set; }
-
-        public ArticleCollectionViewModel Articles { get; set; }
-        
-        public override void NewModelAssigned()
+        public OrderCollectionViewModel Orders {
+            get
+            {
+                OrderCollectionViewModel temp = new OrderCollectionViewModel();
+                temp.Model = Model.Orders;
+                return temp;
+            }
+            set => Model.Orders = value.Model;
+        }
+        public InvoiceCollectionViewModel Invoices
         {
-            if (this.Offers != null)
+            get
             {
-                Offers.Model = this.Model?.Offers;
+                InvoiceCollectionViewModel temp = new InvoiceCollectionViewModel();
+                temp.Model = Model.Invoices;
+                return temp;
             }
-            if (this.Orders != null)
+            set => Model.Invoices = value.Model;
+        }
+        public ClientCollectionViewModel Clients
+        {
+            get
             {
-                Orders.Model = this.Model?.Orders;
+                ClientCollectionViewModel temp = new ClientCollectionViewModel();
+                temp.Model = Model.Clients;
+                return temp;
             }
-            if (this.Invoices != null)
-            {
-                Invoices.Model = this.Model?.Invoices;
-            }
-            if (this.Clients != null)
-            {
-                Clients.Model = this.Model?.Clients;
-            }
-            if (this.Articles != null)
-            {
-                Articles.Model = this.Model?.Articles;
-            }
+            set => Model.Clients = value.Model;
         }
 
-        internal void OnPropertyChangedInModel(object sender, PropertyChangedEventArgs e)
+        public ArticleCollectionViewModel Articles
         {
-            OnPropertyChanged(e.PropertyName);
+            get
+            {
+                ArticleCollectionViewModel temp = new ArticleCollectionViewModel();
+                temp.Model = Model.Articles;
+                return temp;
+            }
+            set => Model.Articles = value.Model;
         }
     }
 }

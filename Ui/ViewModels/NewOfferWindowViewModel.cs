@@ -22,7 +22,6 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public int OfferNr { get; set; }
         public String Reference { get; set; }
         public String Date { get; set; }
-        //public String Text { get; set; }
 
         private String text;
         public String Text
@@ -49,18 +48,19 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 
 
         private ClientViewModel selectedClient;
-        public ClientViewModel SelectedClient { 
+        public ClientViewModel SelectedClient
+        {
             get
             {
                 return selectedClient;
-            } 
+            }
             set
             {
                 selectedClient = value;
                 Text = "Sehr geehrte/r " + selectedClient.Name + ",\n\ngerne bieten wir Ihnen folgende Produkte an.";
             }
         }
-        public ArticleCollectionViewModel SelectedArticles{ get; set; }
+        public ArticleCollectionViewModel SelectedArticles { get; set; }
 
         public ICommand AddOffer { get; }
         public ICommand OpenAddOfferItemWindowCommand { get; }
@@ -68,19 +68,16 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public OfferCollectionViewModel offerCollection;
         public ClientCollectionViewModel ClientList { get; set; }
         public AdministrationViewModel AdministrationViewModel { get; set; }
-        //public OfferItemCollectionViewModel OfferItemList { get; set; }
 
         public NewOfferWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
             AddOffer = new RelayCommand(AddOfferMethod);
-            //OpenAddOfferItemWindowCommand = new RelayCommand(OpenAddOfferItemWindowWithParameter);
             AdministrationViewModel = givenAdministrationViewModel;
 
             offerCollection = givenAdministrationViewModel.Offers;
 
-            //OfferItemList = new OfferItemCollectionViewModel();
 
-            ClientList = givenAdministrationViewModel.Clients;            
+            ClientList = givenAdministrationViewModel.Clients;
         }
 
         private void AddOfferMethod()
@@ -92,20 +89,10 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
                 Date = Date,
                 Text = Text,
                 Client = SelectedClient,
-                //OfferItems = OfferItemList
             };
 
             offerCollection.Add(cvm);
         }
-
-/*        private void OpenAddOfferItemWindowWithParameter()
-        {
-
-            OpenAddOfferItemWindowMessage messageObject = new OpenAddOfferItemWindowMessage();
-            //ssageObject.Message = selectedOffer
-            Messenger.Instance.Send<OpenAddOfferItemWindowMessage>(messageObject);
-
-        }*/
 
     }
 }
