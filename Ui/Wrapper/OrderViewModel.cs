@@ -11,12 +11,6 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
 {
     public class OrderViewModel : ViewModelBase<Order>
     {
-        public OrderViewModel() : base()
-        {
-            //OfferItems = new OfferItemCollectionViewModel();
-            //OfferItems.Model = this.Model.OfferItems;
-        }
-
         public OfferItemCollectionViewModel OfferItems
         {
             get
@@ -104,17 +98,5 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
                 return Model.TotalPrice;
             }
         }
-        //public override void NewModelAssigned()
-        //{
-        //    if (this.OfferItems != null)
-        //    {
-        //        OfferItems.Model = this.Model?.OfferItems;
-        //    }
-
-        //}
-        //internal void OnPropertyChangedInModel(object sender, PropertyChangedEventArgs e)
-        //{
-        //    OnPropertyChanged(e.PropertyName);
-        //}
     }
 }

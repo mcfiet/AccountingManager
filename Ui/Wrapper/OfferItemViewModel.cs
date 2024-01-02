@@ -61,16 +61,6 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
                 Model.Article = value;
 
             }
-        }
-        //public override void NewModelAssigned()
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //internal void OnPropertyChangedInModel(object sender, PropertyChangedEventArgs e)
-        //{
-        //    OnPropertyChanged(e.PropertyName);
-        //}
-        
+        }        
     }
 }

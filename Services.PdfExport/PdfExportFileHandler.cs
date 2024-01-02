@@ -10,6 +10,7 @@ using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Layout.Borders;
 using iText.Kernel.Events;
+using iText.Kernel.Geom;
 
 namespace De.HsFlensburg.ClientApp078.Services.PdfExport
 {
@@ -33,7 +34,7 @@ namespace De.HsFlensburg.ClientApp078.Services.PdfExport
                 {
                     Document doc = new Document(pdf);
                     Text text = new Text(of.Date);
-
+                    PageSize ps = pdf.GetDefaultPageSize();
                     Table layout, OfferDetails, OfferItems, details;
                     AddTables(out layout, out OfferDetails, out OfferItems, out details);
 
@@ -52,7 +53,7 @@ namespace De.HsFlensburg.ClientApp078.Services.PdfExport
                     AddOfferItems(of, doc, OfferItems);
                     AddSignature(doc);
                     AddFooterCompanyDetails(details);
-
+                    details.SetFixedPosition(doc.GetLeftMargin(), doc.GetBottomMargin(), ps.GetWidth() - doc.GetLeftMargin() - doc.GetRightMargin());
                     doc.Add(details);
                 }
             }

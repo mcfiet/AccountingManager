@@ -1,43 +1,29 @@
 ﻿using De.HsFlensburg.ClientApp078.Logic.Ui.MessageBusMessages;
 using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
-using De.HsFlensburg.ClientApp078.Services.MessageBus;
 using De.HsFlensburg.ClientApp078.Services.MessageBusWithParameter;
 using De.HsFlensburg.ClientApp078.Services.SerializationService;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 {
-    public class MainWindowViewModel : INotifyPropertyChanged
+    public class MainWindowViewModel
     {
         private ModelFileHandler modelFileHandler;
         private string pathForSerialization;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public ICommand SaveCommand { get; }
-        public ICommand LoadCommand { get; }
+        public ICommand SaveCommand { get; private set; }
+        public ICommand LoadCommand { get; private set; }
 
-        public ICommand OpenNewOfferWindowCommand { get; }
-        public ICommand OpenOfferWindowCommand { get; }
-        public ICommand OpenOrderWindowCommand { get; }
-        public ICommand OpenInvoiceWindowCommand { get; }
-        public ICommand OpenClientsWindowCommand { get; }
-        public ICommand OpenArticlesWindowCommand { get; }
-
-
-        public OfferCollectionViewModel OfferList { get; set; }
-        public OrderCollectionViewModel OrderList { get; set; }
-        public InvoiceCollectionViewModel InvoiceList { get; set; }
-        public ClientCollectionViewModel ClientList { get; set; }
-        public ArticleCollectionViewModel ArticleList { get; set; }
-
+        public ICommand OpenNewOfferWindowCommand { get; private set; }
+        public ICommand OpenOfferWindowCommand { get; private set; }
+        public ICommand OpenOrderWindowCommand { get; private set; }
+        public ICommand OpenInvoiceWindowCommand { get; private set; }
+        public ICommand OpenClientsWindowCommand { get; private set; }
+        public ICommand OpenArticlesWindowCommand { get; private set; }
 
         public AdministrationViewModel AdministrationViewModel { get; set; }
         public OfferViewModel SelectedOffer { get; set; }
@@ -46,7 +32,15 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 
         public MainWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
+            initCommands();
 
+            AdministrationViewModel = givenAdministrationViewModel;
+            modelFileHandler = new ModelFileHandler();
+            pathForSerialization = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Finances\\data.cc";
+        }
+
+        private void initCommands()
+        {
             SaveCommand = new RelayCommand(SaveModel);
             LoadCommand = new RelayCommand(LoadModel);
 
@@ -56,21 +50,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             OpenInvoiceWindowCommand = new RelayCommand(OpenInvoiceWindowMethodWithParameter);
             OpenClientsWindowCommand = new RelayCommand(OpenClientsWindowMethodWithParameter);
             OpenArticlesWindowCommand = new RelayCommand(OpenArticlesWindowMethodWithParameter);
-
-            AdministrationViewModel = givenAdministrationViewModel;
-
-
-            OfferList = AdministrationViewModel.Offers;
-            OrderList = AdministrationViewModel.Orders;
-            InvoiceList = AdministrationViewModel.Invoices;
-            ClientList = AdministrationViewModel.Clients;
-            ArticleList = AdministrationViewModel.Articles;
-
-
-            modelFileHandler = new ModelFileHandler();
-            pathForSerialization = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Finances\\data.cc";
         }
-
 
         private void OpenClientsWindowMethodWithParameter()
         {
@@ -114,7 +94,6 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         private void LoadModel()
         {
             AdministrationViewModel.Model = modelFileHandler.ReadModelFromFile(pathForSerialization);
-            OnPropertyChanged("OfferList");
         }
 
         protected virtual void OnPropertyChanged(string propertyName)

@@ -59,7 +59,7 @@
                 <Label Style="{DynamicResource H1}">Aufträge</Label>
                 <DataGrid
                   Name ="orderDataGrid"
-                  ItemsSource="{Binding Path = OrderList}" 
+                  ItemsSource="{Binding Path = AdministrationViewModel.Orders}" 
                 SelectedItem="{Binding SelectedOrder}"
                   AutoGenerateColumns="False"
                 IsReadOnly="True">
@@ -73,7 +73,7 @@
                 <Label Style="{DynamicResource H1}">Rechnungen</Label>
                 <DataGrid
                   Name ="invoiceDataGrid"
-                  ItemsSource="{Binding Path = InvoiceList}" 
+                  ItemsSource="{Binding Path = AdministrationViewModel.Invoices}" 
                 SelectedItem="{Binding SelectedInvoice}"
                   AutoGenerateColumns="False"
                 IsReadOnly="True">
