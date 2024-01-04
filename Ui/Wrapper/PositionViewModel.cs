@@ -9,17 +9,29 @@ using System.Threading.Tasks;
 
 namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
 {
-    public class OfferItemViewModel : ViewModelBase<OfferItem>
+    public class PositionViewModel : ViewModelBase<Position>
     {
-        public int OfferItemNr
+        public bool IsSelected
         {
             get
             {
-                return Model.OfferItemNr;
+                return Model.IsSelected;
             }
             set
             {
-                Model.OfferItemNr = value;
+                Model.IsSelected = value;
+            }
+        }
+
+        public int PositionNr
+        {
+            get
+            {
+                return Model.PositionNr;
+            }
+            set
+            {
+                Model.PositionNr = value;
 
             }
         }
@@ -32,8 +44,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
             }
             set
             {
-                Model.Quantity = value;
-
+                Model.Quantity = value; 
             }
         }
 
@@ -42,11 +53,6 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
             get
             {
                 return Model.TotalPrice;
-            }
-            set
-            {
-                Model.TotalPrice = value;
-
             }
         }
 

@@ -1,15 +1,6 @@
-﻿using De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects;
-using De.HsFlensburg.ClientApp078.Logic.Ui.Base;
-using De.HsFlensburg.ClientApp078.Logic.Ui.MessageBusMessages;
-using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
-using De.HsFlensburg.ClientApp078.Services.MessageBus;
-using De.HsFlensburg.ClientApp078.Services.MessageBusWithParameter;
+﻿using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
@@ -21,7 +12,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 
         public int OfferNr { get; set; }
         public String Reference { get; set; }
-        public String Date { get; set; }
+        public DateTime Date { get; set; }
 
         private String text;
         public String Text

@@ -24,6 +24,9 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public ICommand OpenInvoiceWindowCommand { get; private set; }
         public ICommand OpenClientsWindowCommand { get; private set; }
         public ICommand OpenArticlesWindowCommand { get; private set; }
+        public ICommand DeleteOffersCommand { get; private set; }
+        public ICommand DeleteOrdersCommand { get; private set; }
+        public ICommand DeleteInvoicesCommand { get; private set; }
 
         public AdministrationViewModel AdministrationViewModel { get; set; }
         public OfferViewModel SelectedOffer { get; set; }
@@ -50,6 +53,9 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             OpenInvoiceWindowCommand = new RelayCommand(OpenInvoiceWindowMethodWithParameter);
             OpenClientsWindowCommand = new RelayCommand(OpenClientsWindowMethodWithParameter);
             OpenArticlesWindowCommand = new RelayCommand(OpenArticlesWindowMethodWithParameter);
+            DeleteOffersCommand = new RelayCommand(DeleteOffersCommandMethod);
+            DeleteOrdersCommand = new RelayCommand(DeleteOrdersCommandMethod);
+            DeleteInvoicesCommand = new RelayCommand(DeleteInvoicesCommandMethod);
         }
 
         private void OpenClientsWindowMethodWithParameter()
@@ -95,6 +101,46 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         {
             AdministrationViewModel.Model = modelFileHandler.ReadModelFromFile(pathForSerialization);
         }
+
+        private void DeleteOffersCommandMethod()
+        {
+
+            for (int i = 0; i < AdministrationViewModel.Offers.Count; i++)
+            {
+                if (AdministrationViewModel.Offers[i].IsSelected)
+                {
+                    AdministrationViewModel.Offers.RemoveAt(i);
+                }
+            }
+
+        }
+
+        private void DeleteOrdersCommandMethod()
+        {
+
+            for (int i = 0; i < AdministrationViewModel.Orders.Count; i++)
+            {
+                if (AdministrationViewModel.Orders[i].IsSelected)
+                {
+                    AdministrationViewModel.Orders.RemoveAt(i);
+                }
+            }
+
+        }
+
+        private void DeleteInvoicesCommandMethod()
+        {
+
+            for (int i = 0; i < AdministrationViewModel.Invoices.Count; i++)
+            {
+                if (AdministrationViewModel.Invoices[i].IsSelected)
+                {
+                    AdministrationViewModel.Invoices.RemoveAt(i);
+                }
+            }
+
+        }
+
 
         protected virtual void OnPropertyChanged(string propertyName)
         {

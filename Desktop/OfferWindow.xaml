@@ -72,20 +72,25 @@
                     <Label Style="{DynamicResource H1}">Positionen</Label>
                     <DataGrid 
                            Name ="offerItemsDataGrid"
-                           ItemsSource="{Binding IncomingOffer.OfferItems}" 
-                           AutoGenerateColumns="False">
+                           ItemsSource="{Binding IncomingOffer.Positions}" 
+                           AutoGenerateColumns="False"
+                        CanUserAddRows="False"
+                           >
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding OfferItemNr}" Header="Positionsnr."></DataGridTextColumn>
-                            <DataGridTextColumn Binding="{Binding Article.Name}" Header="Artikel"></DataGridTextColumn>
-                            <DataGridTextColumn Binding="{Binding Quantity}" Header="Anzahl"></DataGridTextColumn>
-                            <DataGridTextColumn Binding="{Binding Article.Price}" Header="Einzelpreis"></DataGridTextColumn>
-                            <DataGridTextColumn Binding="{Binding TotalPrice}" Header="Gesamtpreis"></DataGridTextColumn>
+                            <DataGridCheckBoxColumn Binding="{Binding IsSelected}" Header="Auswählen" />
+                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding PositionNr}" Header="Positionsnr."></DataGridTextColumn>
+                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding Article.Name}" Header="Artikel"></DataGridTextColumn>
+                            <DataGridTextColumn IsReadOnly="False" Binding="{Binding Quantity}" Header="Anzahl"></DataGridTextColumn>
+                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding Article.Price}" Header="Einzelpreis"></DataGridTextColumn>
+                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding TotalPrice}" Header="Gesamtpreis"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
 
-                    <Grid Width="NaN" Height="NaN" HorizontalAlignment="Left" VerticalAlignment="Center">
-                        <Button Command="{Binding OpenAddOfferItemWindowCommand}" Style="{DynamicResource RoundeButton}">Position hinzufügen</Button>
-                    </Grid>
+                    <UniformGrid HorizontalAlignment="Left" VerticalAlignment="Center" Columns="2">
+                        <Button Command="{Binding DeletePositionsCommand}" HorizontalAlignment="Left" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Positionen löschen</Button>
+
+                        <Button Command="{Binding OpenAddOfferItemWindowCommand}" HorizontalAlignment="Right" Style="{DynamicResource RoundeButton}">Position hinzufügen</Button>
+                    </UniformGrid>
                     <TextBlock Text="Gesamtpreis:" TextAlignment="Right"></TextBlock>
                     <TextBlock Text="{Binding IncomingOffer.TotalPrice}" TextAlignment="Right"></TextBlock>
 

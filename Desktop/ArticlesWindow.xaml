@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:De.HsFlensburg.ClientApp078.Ui.Desktop"
         mc:Ignorable="d"
         Title="ArticlesWindow" 
+        x:Name="ThisWindow"
         SizeToContent="Width"
         Height="800"
         Background="white"
@@ -26,13 +27,14 @@
                         </Style>
                     </StackPanel.Resources>
                     <Button Command="{Binding OpenNewArticleWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Neuen Artikel hinzufügen</Button>
-                    <Button Command="{Binding OpenMainWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Zurück</Button>
+                    <Button Command="{Binding CloseWindow}" CommandParameter="{Binding ElementName=ThisWindow}"  Style="{DynamicResource RoundeButton}">Fenster schließen</Button>
+
                 </StackPanel>
                 <StackPanel>
                     <Label Style="{DynamicResource H1}">Artikel</Label>
                     <DataGrid
                   Name ="clientDataGrid"
-                  ItemsSource="{Binding Path = ArticleList}"  
+                  ItemsSource="{Binding Path = AdministrationViewModel.Articles}"  
                   AutoGenerateColumns="False"
                     IsReadOnly="True">
                         <DataGrid.Columns>

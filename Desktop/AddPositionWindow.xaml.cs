@@ -17,9 +17,9 @@ namespace De.HsFlensburg.ClientApp078.Ui.Desktop
     /// <summary>
     /// Interaction logic for AddOfferItem.xaml
     /// </summary>
-    public partial class AddOfferItemWindow : Window
+    public partial class AddPositionWindow : Window
     {
-        public AddOfferItemWindow()
+        public AddPositionWindow()
         {
             InitializeComponent();
         }

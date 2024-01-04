@@ -8,18 +8,32 @@ using System.Threading.Tasks;
 namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
 {
     [Serializable]
-    public class OfferItem : INotifyPropertyChanged
+    public class Position : INotifyPropertyChanged
     {
-        private int offerItemNr;
-        public int OfferItemNr
+        private bool isSelected;
+        public bool IsSelected
         {
             get
             {
-                return offerItemNr;
+                return isSelected;
             }
             set
             {
-                offerItemNr = value;
+                isSelected = value;
+                OnPropertyChanged("IsSelected");
+            }
+        }
+
+        private int positionNr;
+        public int PositionNr
+        {
+            get
+            {
+                return positionNr;
+            }
+            set
+            {
+                positionNr = value;
                 OnPropertyChanged("OfferItemNr");
 
             }
@@ -51,28 +65,17 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
             {
                 quantity = value;
                 OnPropertyChanged("Quantity");
-
             }
         }
 
-        private float totalPrice;
         public float TotalPrice
         {
             get
             {
-                return totalPrice;
-            }
-            set
-            {
-                setTotalPrice();
-                OnPropertyChanged("TotalPrice");
+                return quantity * article.Price;
             }
         }
 
-        public void setTotalPrice()
-        {
-            totalPrice = article.Price * quantity;
-        }
 
         protected virtual void OnPropertyChanged(string propertyName)
         {

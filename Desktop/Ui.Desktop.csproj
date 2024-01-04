@@ -55,7 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="AddOfferItemWindow.xaml">
+    <Page Include="AddPositionWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -75,8 +75,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AddOfferItemWindow.xaml.cs">
-      <DependentUpon>AddOfferItemWindow.xaml</DependentUpon>
+    <Compile Include="AddPositionWindow.xaml.cs">
+      <DependentUpon>AddPositionWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -159,10 +159,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MessageBus\Services.MessageBus.csproj">
-      <Project>{060486ca-023e-404a-9ed1-8ca986dd493e}</Project>
-      <Name>Services.MessageBus</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Services.MessageBusWithParameter\Services.MessageBusWithParameter.csproj">
       <Project>{163c9943-63aa-47a3-b8f5-4425c2c28305}</Project>
       <Name>Services.MessageBusWithParameter</Name>

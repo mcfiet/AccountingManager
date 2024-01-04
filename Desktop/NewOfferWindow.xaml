@@ -68,7 +68,7 @@
 -->
                             <StackPanel Grid.Column="1" Margin="10 15 0 0">
                                 <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Datum</Label>
-                                <DatePicker SelectedDate="{Binding Date, StringFormat=dd/MM/yyyy}"></DatePicker>
+                                <DatePicker SelectedDate="{Binding Date, StringFormat=dd/MM/yyyy, Mode=OneWayToSource}"></DatePicker>
                             </StackPanel>
 
                         </UniformGrid>

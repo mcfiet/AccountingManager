@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
 {
-    public class OfferItemCollectionViewModel :
+    public class PositionCollectionViewModel :
         ViewModelSyncCollection<
-            OfferItemViewModel,
-            OfferItem,
-            OfferItemCollection>
+            PositionViewModel,
+            Position,
+            PositionCollection>
     {
     }
 }

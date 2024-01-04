@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
 {
     [Serializable]
-    public class OfferItemCollection : ObservableCollection<OfferItem>
+    public class PositionCollection : ObservableCollection<Position>
     {
     }
 }

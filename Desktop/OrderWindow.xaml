@@ -72,10 +72,10 @@
                     <Label Style="{DynamicResource H1}">Positionen</Label>
                     <DataGrid 
                            Name ="offerItemsDataGrid"
-                           ItemsSource="{Binding IncomingOrder.OfferItems}" 
+                           ItemsSource="{Binding IncomingOrder.Positions}" 
                            AutoGenerateColumns="False">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding OfferItemNr}" Header="Positionsnr."></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding PositionNr}" Header="Positionsnr."></DataGridTextColumn>
                             <DataGridTextColumn Binding="{Binding Article.Name}" Header="Artikel"></DataGridTextColumn>
                             <DataGridTextColumn Binding="{Binding Quantity}" Header="Anzahl"></DataGridTextColumn>
                             <DataGridTextColumn Binding="{Binding Article.Price}" Header="Einzelpreis"></DataGridTextColumn>
@@ -87,8 +87,7 @@
                         <Button Command="{Binding OpenAddOfferItemWindowCommand}" Style="{DynamicResource RoundeButton}">Position hinzufügen</Button>
                     </Grid>
                     <TextBlock Text="Gesamtpreis:" TextAlignment="Right"></TextBlock>
-                    <TextBlock Text="{Binding ElementName=offerDataGrid, Path=SelectedItem.TotalPrice}" TextAlignment="Right"></TextBlock>
-
+                    <TextBlock Text="{Binding IncomingOrder.TotalPrice}" TextAlignment="Right"></TextBlock>
                 </StackPanel>
                 <UniformGrid  Grid.Column="0" Columns="2" Margin="0 50 0 0">
                     <Grid Width="NaN" Height="NaN" HorizontalAlignment="Left" VerticalAlignment="Center">

@@ -11,16 +11,29 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
 {
     public class OfferViewModel : ViewModelBase<Offer>
     {
-        public OfferItemCollectionViewModel OfferItems { 
+
+        public bool IsSelected
+        {
             get
             {
-                var offerItems = new OfferItemCollectionViewModel();
-                offerItems.Model = Model.OfferItems;
-                return offerItems;
+                return Model.IsSelected;
             }
             set
             {
-                this.Model.OfferItems = value.Model;
+                Model.IsSelected = value;
+            }
+        }
+
+        public PositionCollectionViewModel Positions { 
+            get
+            {
+                var positions = new PositionCollectionViewModel();
+                positions.Model = Model.Positions;
+                return positions;
+            }
+            set
+            {
+                this.Model.Positions = value.Model;
 
             }
         }
@@ -50,7 +63,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
 
             }
         }
-        public string Date
+        public DateTime Date
         {
             get
             {

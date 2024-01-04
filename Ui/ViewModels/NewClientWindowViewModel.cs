@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
@@ -20,6 +21,8 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public int ZipCode { get; set; }
         public string City { get; set; }
         public ICommand AddClient { get; }
+        public RelayCommand CloseWindow { get; }
+
         private ClientCollectionViewModel clientCollection;
 
         AdministrationViewModel AdministrationViewModel;
@@ -27,6 +30,8 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public NewClientWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
             AddClient = new RelayCommand(AddClientMethod);
+            CloseWindow = new RelayCommand(param => CloseWPFWindow(param));
+
             AdministrationViewModel = givenAdministrationViewModel;
             clientCollection = AdministrationViewModel.Clients;
         }
@@ -45,6 +50,11 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             };
             clientCollection.Add(cvm);
 
+        }
+        private void CloseWPFWindow(object param)
+        {
+            Window window = (Window)param;
+            window.Close();
         }
     }
 }

@@ -1,13 +1,9 @@
 ﻿using De.HsFlensburg.ClientApp078.Logic.Ui.MessageBusMessages;
+using De.HsFlensburg.ClientApp078.Services.MessageBusWithParameter;
 using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
-using De.HsFlensburg.ClientApp078.Services.MessageBus;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
+using De.HsFlensburg.ClientApp078.Services.PdfExport;
 
 namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 {
@@ -37,8 +33,8 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public AdministrationViewModel Administration { get; set; }
         public InvoiceWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
-            /*            OpenAddOfferItemWindowCommand = new RelayCommand(OpenAddOfferItemWindowWithParameter);
-                        ExportPdfCommand = new RelayCommand(ExportPdf);*/
+            OpenAddOfferItemWindowCommand = new RelayCommand(OpenAddPositionWindowWithParameter);
+            ExportPdfCommand = new RelayCommand(ExportPdf);
 
             Administration = givenAdministrationViewModel;
 
@@ -59,26 +55,20 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 
 
 
-        /*        private void ExportPdf()
-                {
-
-                    PdfExportFileHandler pdf = new PdfExportFileHandler();
-                    pdf.PDFExport(IncomingOrder.Model);
-                }*/
-
-        private void OpenAddOfferItemWindow()
+        private void ExportPdf()
         {
 
-            ServiceBus.Instance.Send(new OpenAddOfferItemWindowMessage());
+            PdfExportFileHandler pdf = new PdfExportFileHandler();
+            pdf.PDFExport(IncomingInvoice.Model);
+        }
+
+        private void OpenAddPositionWindowWithParameter()
+        {
+
+            OpenAddOfferItemWindowMessage messageObject = new OpenAddOfferItemWindowMessage();
+            messageObject.InvoiceMessage = IncomingInvoice;
+            Messenger.Instance.Send<OpenAddOfferItemWindowMessage>(messageObject);
 
         }
-        /*        private void OpenAddOfferItemWindowWithParameter()
-                {
-
-                    OpenAddOfferItemWindowMessage messageObject = new OpenAddOfferItemWindowMessage();
-                    messageObject.Message = IncomingOffer;
-                    Messenger.Instance.Send<OpenAddOfferItemWindowMessage>(messageObject);
-
-                }*/
     }
 }

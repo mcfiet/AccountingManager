@@ -11,6 +11,6 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.MessageBusMessages
     public class OpenNewOfferWindowMessage
     {
 
-       public OfferItemCollectionViewModel IncomingOfferItemCollection { get; set; }
+       public PositionCollectionViewModel IncomingOfferItemCollection { get; set; }
     }
 }

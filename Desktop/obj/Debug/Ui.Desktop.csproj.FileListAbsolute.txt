@@ -85,9 +85,7 @@ E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Ui.Des
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Ui.Desktop.pdb
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Business.Model.dll
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Logic.Ui.dll
-E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Services.MessageBus.dll
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Services.SerializationService.dll
-E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Services.MessageBus.pdb
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Business.Model.pdb
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Logic.Ui.pdb
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Services.SerializationService.pdb
@@ -188,8 +186,6 @@ E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\OfferW
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\OfferWindow.baml
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\OfferWindow.g.cs
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\OfferWindow.baml
-E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\AddOfferItemWindow.g.cs
-E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\AddOfferItemWindow.baml
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Services.PdfExport.dll
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\itext.kernel.dll
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\itext.layout.dll
@@ -212,3 +208,7 @@ E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\OrderW
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\OrderWindow.baml
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\InvoiceWindow.g.cs
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\InvoiceWindow.baml
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\AddPositionWindow.g.cs
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\AddPositionWindow.baml
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Services.XmlImport.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Services.XmlImport.pdb

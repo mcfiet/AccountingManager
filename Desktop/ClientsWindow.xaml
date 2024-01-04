@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:De.HsFlensburg.ClientApp078.Ui.Desktop"
         mc:Ignorable="d"
         Title="ClientsWindow" 
+        x:Name="ThisWindow"
         SizeToContent="Width"
         Height="800"
         Background="white"
@@ -27,13 +28,14 @@
                     </StackPanel.Resources>
                     <Button Command="{Binding OpenNewClientWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Neuen Kunden anlegen</Button>
                     <Button Command="{Binding ExportClientsToXmlCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">XML exportieren</Button>
-                    <!--<Button Command="{Binding OpenMainWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Zurück</Button>-->
+                    <Button Command="{Binding ImportClientsCommand}" CommandParameter="{Binding ElementName=ThisWindow}"  Style="{DynamicResource RoundeButton}">Kunden importieren</Button>
+                    <Button Command="{Binding CloseWindow}" CommandParameter="{Binding ElementName=ThisWindow}"  Style="{DynamicResource RoundeButton}">Fenster schließen</Button>
                 </StackPanel>
                 <StackPanel>
                     <Label Style="{DynamicResource H1}">Kunden</Label>
                     <DataGrid
                   Name ="clientDataGrid"
-                  ItemsSource="{Binding Path = ClientList}" 
+                  ItemsSource="{Binding Path = AdministrationViewModel.Clients}" 
                   AutoGenerateColumns="False"
                     IsReadOnly="True">
                         <DataGrid.Columns>

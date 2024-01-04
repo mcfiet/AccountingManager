@@ -1,0 +1,9 @@
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.XmlImport\bin\Debug\Services.XmlImport.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.XmlImport\bin\Debug\Services.XmlImport.pdb
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.XmlImport\obj\Debug\Services.XmlImport.csproj.CoreCompileInputs.cache
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.XmlImport\obj\Debug\Services.XmlImport.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.XmlImport\obj\Debug\Services.XmlImport.pdb
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.XmlImport\obj\Debug\Services.XmlImport.csproj.AssemblyReference.cache
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.XmlImport\bin\Debug\Business.Model.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.XmlImport\bin\Debug\Business.Model.pdb
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.XmlImport\obj\Debug\Services.XmlImport.csproj.CopyComplete

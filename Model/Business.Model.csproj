@@ -52,8 +52,8 @@
     <Compile Include="BusinessObjects\InvoiceCollection.cs" />
     <Compile Include="BusinessObjects\Offer.cs" />
     <Compile Include="BusinessObjects\OfferCollection.cs" />
-    <Compile Include="BusinessObjects\OfferItem.cs" />
-    <Compile Include="BusinessObjects\OfferItemCollection.cs" />
+    <Compile Include="BusinessObjects\Position.cs" />
+    <Compile Include="BusinessObjects\PositionCollection.cs" />
     <Compile Include="BusinessObjects\Order.cs" />
     <Compile Include="BusinessObjects\OrderCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

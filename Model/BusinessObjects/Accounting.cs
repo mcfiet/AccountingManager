@@ -10,16 +10,40 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
     [Serializable]
     public abstract class Accounting : INotifyPropertyChanged
     {
+
+        private bool isSelected;
+        public bool IsSelected
+        {
+            get
+            {
+                return isSelected;
+            }
+            set
+            {
+                isSelected = value;
+                OnPropertyChanged("IsSelected");
+            }
+        }
+
+
         private int offerItemId;
 
-        public int getOfferItemIdFromCreation()
+        public int getPositionIdFromCreation()
         {
             return offerItemId++;
         }
-        public OfferItemCollection OfferItems { get; set; }
+        public void setPositonId(int id)
+        {
+            offerItemId = id;
+        }
+        public int getPositonId()
+        {
+            return offerItemId;
+        }
+        public PositionCollection Positions { get; set; }
         public Accounting()
         {
-            OfferItems = new OfferItemCollection();
+            Positions = new PositionCollection();
         }
 
 
@@ -40,8 +64,8 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
 
 
 
-        private string date;
-        public string Date
+        private DateTime date;
+        public DateTime Date
         {
             get
             {
@@ -88,14 +112,13 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
             get
             {
                 float sum = 0;
-                foreach (var item in OfferItems)
+                foreach (Position position in Positions)
                 {
-                    sum += item.TotalPrice;
+                    sum += position.TotalPrice;
                 }
                 return sum;
             }
         }
-
 
 
         protected virtual void OnPropertyChanged(string propertyName)

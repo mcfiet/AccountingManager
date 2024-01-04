@@ -1,30 +1,19 @@
 ﻿using De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Layout.Borders;
-using iText.Kernel.Events;
 using iText.Kernel.Geom;
 
 namespace De.HsFlensburg.ClientApp078.Services.PdfExport
 {
     public class PdfExportFileHandler
     {
-        public void PDFExport(Offer of)
+        public void PDFExport(Accounting accounting)
         {
-            SaveFileDialog sfd = new SaveFileDialog
-            {
-                FolderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
-                FileName = "Offer",
-                DefaultExt = ".pdf",
-                Filter = "PDF (.pdf)|*.pdf"
-            };
+            SaveFileDialog sfd = initSaveFileDianlog(accounting);
 
             string dir = System.IO.Path.Combine(sfd.FolderPath, sfd.FileName + sfd.DefaultExt);
 
@@ -33,14 +22,13 @@ namespace De.HsFlensburg.ClientApp078.Services.PdfExport
                 using (PdfDocument pdf = new PdfDocument(writer))
                 {
                     Document doc = new Document(pdf);
-                    Text text = new Text(of.Date);
                     PageSize ps = pdf.GetDefaultPageSize();
                     Table layout, OfferDetails, OfferItems, details;
                     AddTables(out layout, out OfferDetails, out OfferItems, out details);
 
-                    AddSenderReceiptBlock(of, layout);
+                    AddSenderReceiptBlock(accounting, layout);
                     AddHeaderContactDetails(OfferDetails);
-                    AddOfferDetailsBlock(of, OfferDetails);
+                    AddOfferDetailsBlock(accounting, OfferDetails);
 
                     Cell offerDetailsCell = new Cell(1, 1)
                             .SetBorder(Border.NO_BORDER)
@@ -49,14 +37,57 @@ namespace De.HsFlensburg.ClientApp078.Services.PdfExport
                     layout.AddCell(offerDetailsCell);
                     doc.Add(layout);
 
-                    AddOfferNumberAndText(of, doc);
-                    AddOfferItems(of, doc, OfferItems);
-                    AddSignature(doc);
+                    AddOfferNumberAndText(accounting, doc);
+                    AddPositions(accounting, doc, OfferItems);
+                    AddSignature(doc, accounting);
                     AddFooterCompanyDetails(details);
                     details.SetFixedPosition(doc.GetLeftMargin(), doc.GetBottomMargin(), ps.GetWidth() - doc.GetLeftMargin() - doc.GetRightMargin());
                     doc.Add(details);
                 }
             }
+        }
+
+        private static bool isOffer(Accounting accounting)
+        {
+            return accounting.GetType() == typeof(Offer);
+        }
+        private static bool isOrder(Accounting accounting)
+        {
+            return accounting.GetType() == typeof(Order);
+        }
+        private static bool isInvoice(Accounting accounting)
+        {
+            return accounting.GetType() == typeof(Invoice);
+        }
+
+        private static SaveFileDialog initSaveFileDianlog(Accounting accounting)
+        {
+            string fileName = getFileName(accounting);
+            return new SaveFileDialog
+            {
+                FolderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Finances",
+                FileName = fileName,
+                DefaultExt = ".pdf",
+                Filter = "PDF (.pdf)|*.pdf"
+            };
+        }
+
+        private static string getFileName(Accounting accounting)
+        {
+            if (isOffer(accounting))
+            {
+                return "Angebot-" + ((Offer)accounting).OfferNr;
+            }
+            if (isInvoice(accounting))
+            {
+                return "Rechnung-" + ((Invoice)accounting).InvoiceNr;
+            }
+            if (isOrder(accounting))
+            {
+                return "Auftrag-" + ((Order)accounting).OrderNr;
+            }
+
+            return "";
         }
 
         private static void AddTables(out Table layout, out Table OfferDetails, out Table OfferItems, out Table details)
@@ -67,16 +98,33 @@ namespace De.HsFlensburg.ClientApp078.Services.PdfExport
             details = new Table(3, false);
         }
 
-        private static void AddOfferNumberAndText(Offer of, Document doc)
+        private static void AddOfferNumberAndText(Accounting accounting, Document doc)
         {
-            doc.Add(new Paragraph(new Text("Angebot Nr. " + of.OfferNr)));
+            if(isOffer(accounting))
+            {
+                doc.Add(new Paragraph(new Text("Angebot Nr. " + ((Offer)accounting).OfferNr)));
 
-            doc.Add(new Paragraph(new Text(of.Text)));
+            }
+            if(isOrder(accounting))
+            {
+                doc.Add(new Paragraph(new Text("Auftrag Nr. " + ((Order)accounting).OrderNr)));
+
+            }
+            if(isInvoice(accounting))
+            {
+                doc.Add(new Paragraph(new Text("Rechnung Nr. " + ((Invoice)accounting).InvoiceNr)));
+
+            }
+
+            doc.Add(new Paragraph(new Text(accounting.Text)));
         }
 
-        private static void AddSignature(Document doc)
+        private static void AddSignature(Document doc, Accounting accounting)
         {
-            doc.Add(new Paragraph(new Text("Bitte überweisen Sie den Rechnungsbetrag innerhalb von 14 Tagen. Vielen Dank für Ihren Auftrag.")));
+            if (isInvoice(accounting))
+            {
+                doc.Add(new Paragraph(new Text("Bitte überweisen Sie den Rechnungsbetrag innerhalb von 14 Tagen. Vielen Dank für Ihren Auftrag.")));
+            }
             doc.Add(new Paragraph(new Text("Mit freundlichen Grüßen")));
             doc.Add(new Paragraph(new Text("Fiete Scheel")));
         }
@@ -127,23 +175,23 @@ namespace De.HsFlensburg.ClientApp078.Services.PdfExport
             details.AddCell(companyDetails);
         }
 
-        private static void AddOfferItems(Offer of, Document doc, Table OfferItems)
+        private static void AddPositions(Accounting accounting, Document doc, Table OfferItems)
         {
             OfferItems.SetMarginTop(5);
             AddOfferItemsTableHaders(OfferItems);
-            AddOfferItemsTableValues(of, OfferItems);
+            AddOfferItemsTableValues(accounting, OfferItems);
 
             doc.Add(OfferItems);
         }
 
-        private static void AddOfferItemsTableValues(Offer of, Table OfferItems)
+        private static void AddOfferItemsTableValues(Accounting accounting, Table OfferItems)
         {
-            foreach (OfferItem item in of.OfferItems)
+            foreach (Position item in accounting.Positions)
             {
 
                 Cell offerItemNumber = new Cell(1, 1)
                     .SetBorder(Border.NO_BORDER)
-                    .Add(new Paragraph(new Text(item.OfferItemNr.ToString())));
+                    .Add(new Paragraph(new Text(item.PositionNr.ToString())));
 
                 Cell article = new Cell(1, 1)
                     .SetBorder(Border.NO_BORDER)
@@ -192,7 +240,7 @@ namespace De.HsFlensburg.ClientApp078.Services.PdfExport
             OfferItems.AddCell(totalPriceDes);
         }
 
-        private static void AddOfferDetailsBlock(Offer of, Table OfferDetails)
+        private static void AddOfferDetailsBlock(Accounting accounting, Table OfferDetails)
         {
             Cell offerDetailsDes = new Cell(1, 1)
                                     .SetBorder(Border.NO_BORDER)
@@ -205,9 +253,9 @@ namespace De.HsFlensburg.ClientApp078.Services.PdfExport
 
             Cell offerDetailsValue = new Cell(1, 1)
                 .SetBorder(Border.NO_BORDER)
-                .Add(new Paragraph(of.Client.Id.ToString()))
-                .Add(new Paragraph(of.Date))
-                .Add(new Paragraph(of.Reference));
+                .Add(new Paragraph(accounting.Client.Id.ToString()))
+                .Add(new Paragraph(accounting.Date.ToString("dd.MM.yyyy")))
+                .Add(new Paragraph(accounting.Reference));
 
             OfferDetails.AddCell(offerDetailsValue);
         }
@@ -227,15 +275,14 @@ namespace De.HsFlensburg.ClientApp078.Services.PdfExport
             OfferDetails.AddCell(cell11);
         }
 
-        private static void AddSenderReceiptBlock(Offer of, Table layout)
+        private static void AddSenderReceiptBlock(Accounting accounting, Table layout)
         {
             Cell Client = new Cell(1, 1)
                                     .SetBorder(Border.NO_BORDER)
                                     .Add(new Paragraph("DEVONIQ" + " · " + "Lüdemannstraße 47" + " · " + "24114 Kiel").SetFontSize(8))
-                                    .Add(new Paragraph(of.Client.Name))
-                                    .Add(new Paragraph("Firma"))
-                                    .Add(new Paragraph("Straße"))
-                                    .Add(new Paragraph("PLZ & ORT"));
+                                    .Add(new Paragraph(accounting.Client.Name))
+                                    .Add(new Paragraph(accounting.Client.Street + " " + accounting.Client.HouseNumber))
+                                    .Add(new Paragraph(accounting.Client.ZipCode + " " + accounting.Client.City));
 
             layout.AddCell(Client);
         }

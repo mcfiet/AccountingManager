@@ -1,7 +1,6 @@
 ﻿using De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects;
 using De.HsFlensburg.ClientApp078.Logic.Ui.MessageBusMessages;
 using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
-using De.HsFlensburg.ClientApp078.Services.MessageBus;
 using De.HsFlensburg.ClientApp078.Services.MessageBusWithParameter;
 using De.HsFlensburg.ClientApp078.Services.PdfExport;
 using System;
@@ -35,21 +34,68 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public ICommand ConvertToOrderCommand { get; }
         public ICommand OpenAddOfferItemWindowCommand { get; }
         public ICommand ExportPdfCommand { get; }
-        public ClientCollectionViewModel ClientList { get; set; }
-        public OfferCollectionViewModel OfferList { get; set; }
-        public OrderCollectionViewModel OrderList { get; set; }
-        public AdministrationViewModel Administration { get; set; }
+        public ICommand DeletePositionsCommand { get; }
+        public AdministrationViewModel AdministrationViewModel { get; set; }
         public OfferWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
             ConvertToOrderCommand = new RelayCommand(ConvertToOrderCommandMethodWithParameter);
-            OpenAddOfferItemWindowCommand = new RelayCommand(OpenAddOfferItemWindowWithParameter);
+            OpenAddOfferItemWindowCommand = new RelayCommand(OpenAddPositionWindowWithParameter);
+            DeletePositionsCommand = new RelayCommand(DeletePositionsCommandMethod);
             ExportPdfCommand = new RelayCommand(ExportPdf);
 
-            Administration = givenAdministrationViewModel;
+            AdministrationViewModel = givenAdministrationViewModel;
+        }
 
-            OfferList = Administration.Offers;
-            OrderList = Administration.Orders;
-            ClientList = Administration.Clients;
+        private void DeletePositionsCommandMethod()
+        {
+
+            for (int i = 0; i < IncomingOffer.Positions.Count; i++)
+            {
+                if (IncomingOffer.Positions[i].IsSelected)
+                {
+                    IncomingOffer.Positions.RemoveAt(i);
+                }
+            }
+            for (int i = 0; i < IncomingOffer.Positions.Count; i++)
+            {
+                IncomingOffer.Positions[i].PositionNr = i+1;
+                
+            }
+
+            OnPropertyChanged("IncomingOffer");
+        }
+
+
+        private void ConvertToOrderCommandMethodWithParameter()
+        {
+            OrderViewModel order = new OrderViewModel()
+            {
+                OrderNr = AdministrationViewModel.Model.getOrderIdFromCreation(),
+                Positions = IncomingOffer.Positions,
+                Reference = IncomingOffer.Reference,
+                Date = IncomingOffer.Date,
+                Text = IncomingOffer.Text,
+                Client = IncomingOffer.Client
+            };
+
+            order.Model.setPositonId(IncomingOffer.Model.getPositonId());
+
+            AdministrationViewModel.Orders.Add(order);
+        }
+
+        private void ExportPdf()
+        {
+
+            PdfExportFileHandler pdf = new PdfExportFileHandler();
+            pdf.PDFExport(IncomingOffer.Model);
+        }
+        private void OpenAddPositionWindowWithParameter()
+        {
+
+            OpenAddOfferItemWindowMessage messageObject = new OpenAddOfferItemWindowMessage();
+            messageObject.OfferMessage = IncomingOffer;
+            Messenger.Instance.Send<OpenAddOfferItemWindowMessage>(messageObject);
+
         }
 
         protected void OnPropertyChanged(string propertyName)
@@ -63,42 +109,5 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
 
-
-        private void ConvertToOrderCommandMethodWithParameter()
-        {
-            OrderViewModel o = new OrderViewModel()
-            {
-                OrderNr = Administration.Model.getOrderIdFromCreation(),
-                OfferItems = IncomingOffer.OfferItems,
-                Reference = IncomingOffer.Reference,
-                Date = IncomingOffer.Date,
-                Text = IncomingOffer.Text,
-                Client = IncomingOffer.Client
-            };
-
-            OrderList.Add(o);
-        }
-
-        private void ExportPdf()
-        {
-
-            PdfExportFileHandler pdf = new PdfExportFileHandler();
-            pdf.PDFExport(IncomingOffer.Model);
-        }
-
-        private void OpenAddOfferItemWindow()
-        {
-
-            ServiceBus.Instance.Send(new OpenAddOfferItemWindowMessage());
-
-        }
-        private void OpenAddOfferItemWindowWithParameter()
-        {
-
-            OpenAddOfferItemWindowMessage messageObject = new OpenAddOfferItemWindowMessage();
-            messageObject.Message = IncomingOffer;
-            Messenger.Instance.Send<OpenAddOfferItemWindowMessage>(messageObject);
-
-        }
     }
 }

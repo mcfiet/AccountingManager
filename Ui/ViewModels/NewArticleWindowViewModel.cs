@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
@@ -17,11 +18,14 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public int Price { get; set; }
 
         public ICommand AddArticle { get; }
+        public RelayCommand CloseWindow { get; }
+
         private ArticleCollectionViewModel articleCollection;
         private AdministrationViewModel AdministrationViewModel;
         public NewArticleWindowViewModel(AdministrationViewModel givenAdministrationViewmodel)
         {
-            AddArticle = new RelayCommand(AddArticleMethod);
+            AddArticle = new RelayCommand(AddArticleMethod); 
+            CloseWindow = new RelayCommand(param => CloseWPFWindow(param));
             AdministrationViewModel = givenAdministrationViewmodel;
             articleCollection = AdministrationViewModel.Articles;
         }
@@ -36,6 +40,11 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
                 Price = Price
             };
             articleCollection.Add(cvm);
+        }
+        private void CloseWPFWindow(object param)
+        {
+            Window window = (Window)param;
+            window.Close();
         }
     }
 }

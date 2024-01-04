@@ -7,6 +7,7 @@
         xmlns:viewModels="clr-namespace:De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels;assembly=Logic.Ui"
         mc:Ignorable="d"
         Title="NewArticleWindow" 
+        x:Name="ThisWindow"
         SizeToContent="WidthAndHeight"
         Background="white"
         FontFamily="Arial">
@@ -36,6 +37,9 @@
                 </StackPanel>
                 <Grid Width="NaN" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 50 0 0">
                     <Button Command="{Binding AddArticle}" Style="{DynamicResource RoundeButton}">Artikel hinzufügen</Button>
+                </Grid>
+                <Grid Width="NaN" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 50 0 0">
+                    <Button Command="{Binding CloseWindow}" CommandParameter="{Binding ElementName=ThisWindow}"  Style="{DynamicResource RoundeButton}">Fenster schließen</Button>
                 </Grid>
             </StackPanel>
         </Grid>
