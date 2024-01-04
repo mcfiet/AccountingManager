@@ -16,25 +16,12 @@ namespace Services.XmlImport
     {
         public ClientCollection ImportClients()
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "XML|*.xml|Alle Dateien|*.*";
-            ofd.ShowDialog();
-            var path = ofd.FileName;
-            XElement XmlClients = XElement.Parse("<empty>empty</empty>");
-            try
-            {
-                XmlClients = XElement.Load(path);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Falsche XML-Sytax: \n" + e);
-            }
+            XElement XmlClients = loadXmlFile();
 
             ClientCollection clients = new ClientCollection();
 
-            foreach (XElement XmlClient in XmlClients.Elements("Kunde")) 
+            foreach (XElement XmlClient in XmlClients.Elements("Kunde"))
             {
-                string elementValue = XmlClient.Value;
                 Client client = new Client();
                 client.Id = int.Parse(XmlClient.Attribute("clientID").Value);
                 client.Name = XmlClient.Element("Name").Value;
@@ -46,6 +33,42 @@ namespace Services.XmlImport
                 clients.Add(client);
             }
             return clients;
+        }
+        public ArticleCollection ImportArticles()
+        {
+            XElement XmlArticles = loadXmlFile();
+
+            ArticleCollection articles = new ArticleCollection();
+
+            foreach (XElement XmlArticle in XmlArticles.Elements("article"))
+            {
+                Article article = new Article();
+                article.ArticleNr = int.Parse(XmlArticle.Attribute("articleID").Value);
+                article.Name = XmlArticle.Element("Name").Value;
+                article.Description = XmlArticle.Element("Description").Value;
+                article.Price = int.Parse(XmlArticle.Element("Price").Value);
+                articles.Add(article);
+            }
+            return articles;
+        }
+
+        private static XElement loadXmlFile()
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "XML|*.xml|Alle Dateien|*.*";
+            Nullable<bool> result = ofd.ShowDialog();
+            string dir = ofd.FileName;
+            XElement XmlElement = XElement.Parse("<empty>empty</empty>");
+            try
+            {
+                XmlElement = XElement.Load(dir);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Falsche XML-Sytax: \n" + e);
+            }
+
+            return XmlElement;
         }
     }
 }

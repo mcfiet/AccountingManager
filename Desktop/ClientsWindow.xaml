@@ -28,21 +28,26 @@
                     </StackPanel.Resources>
                     <Button Command="{Binding OpenNewClientWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Neuen Kunden anlegen</Button>
                     <Button Command="{Binding ExportClientsToXmlCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">XML exportieren</Button>
-                    <Button Command="{Binding ImportClientsCommand}" CommandParameter="{Binding ElementName=ThisWindow}"  Style="{DynamicResource RoundeButton}">Kunden importieren</Button>
+                    <Button Command="{Binding ImportClientsCommand}" CommandParameter="{Binding ElementName=ThisWindow}"  Style="{DynamicResource RoundeButton}">XML importieren</Button>
                     <Button Command="{Binding CloseWindow}" CommandParameter="{Binding ElementName=ThisWindow}"  Style="{DynamicResource RoundeButton}">Fenster schließen</Button>
                 </StackPanel>
                 <StackPanel>
                     <Label Style="{DynamicResource H1}">Kunden</Label>
                     <DataGrid
-                  Name ="clientDataGrid"
-                  ItemsSource="{Binding Path = AdministrationViewModel.Clients}" 
-                  AutoGenerateColumns="False"
-                    IsReadOnly="True">
+                        Name ="clientDataGrid"
+                        ItemsSource="{Binding Path = AdministrationViewModel.Clients}" 
+                        AutoGenerateColumns="False"
+                        CanUserAddRows="False"
+                        >
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding Id}" Header="Kundennr."></DataGridTextColumn>
-                            <DataGridTextColumn Binding="{Binding Name}" Header="Name"></DataGridTextColumn>
+                            <DataGridCheckBoxColumn IsReadOnly="False" Binding="{Binding IsSelected}" Header="Auswählen" />
+
+                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding Id}" Header="Kundennr."></DataGridTextColumn>
+                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding Name}" Header="Name"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
+                    <Button Command="{Binding DeleteClientsCommand}" HorizontalAlignment="Left" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Kunden löschen</Button>
+
                 </StackPanel>
             </UniformGrid>
         </Grid>

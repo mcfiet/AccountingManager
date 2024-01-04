@@ -19,7 +19,7 @@
                     <Label Style="{DynamicResource H1}">Kunden</Label>
                     <DataGrid SelectedItem="{Binding SelectedClient}"
                            Name ="clientDataGrid"
-                           ItemsSource="{Binding Path = ClientList}" 
+                           ItemsSource="{Binding Path = AdministrationViewModel.Clients}" 
                            AutoGenerateColumns="False"
                               IsReadOnly="True">
                         <DataGrid.Columns>

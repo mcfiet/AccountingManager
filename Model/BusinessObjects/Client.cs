@@ -10,6 +10,21 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
     [Serializable]
     public class Client : INotifyPropertyChanged
     {
+        private bool isSelected;
+        public bool IsSelected
+        {
+            get
+            {
+                return isSelected;
+            }
+            set
+            {
+                isSelected = value;
+                OnPropertyChanged("IsSelected");
+            }
+        }
+
+
         private int id;
         public int Id
         {

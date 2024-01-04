@@ -11,6 +11,21 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
     public class Article : INotifyPropertyChanged
 
     {
+
+        private bool isSelected;
+        public bool IsSelected
+        {
+            get
+            {
+                return isSelected;
+            }
+            set
+            {
+                isSelected = value;
+                OnPropertyChanged("IsSelected");
+            }
+        }
+
         private int articleNr;
         public int ArticleNr
         {

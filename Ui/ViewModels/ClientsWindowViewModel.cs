@@ -21,6 +21,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public ICommand OpenNewClientWindowCommand { get; }
         public ICommand ExportClientsToXmlCommand { get; }
         public ICommand ImportClientsCommand { get; }
+        public RelayCommand DeleteClientsCommand { get; }
         public RelayCommand CloseWindow { get; }
         private AdministrationViewModel administrationViewModel;
         public AdministrationViewModel AdministrationViewModel
@@ -43,10 +44,22 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             OpenNewClientWindowCommand = new RelayCommand(OpenNewClientWindowMethod);
             ExportClientsToXmlCommand = new RelayCommand(ExportClientsToXmlFileMethod);
             ImportClientsCommand = new RelayCommand(ImportClients);
+            DeleteClientsCommand = new RelayCommand(DeleteClientsCommandMethod);
             CloseWindow = new RelayCommand(param => CloseWPFWindow(param));
 
             AdministrationViewModel = givenAdministrationViewModel;
 
+        }
+
+        private void DeleteClientsCommandMethod()
+        {
+            for (int i = 0; i < AdministrationViewModel.Clients.Count; i++)
+            {
+                if (AdministrationViewModel.Clients[i].IsSelected)
+                {
+                    AdministrationViewModel.Clients.RemoveAt(i);
+                }
+            }
         }
 
         private void OpenNewClientWindowMethod()

@@ -8,6 +8,17 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
     public class ClientViewModel: ViewModelBase<Client>
     {
 
+        public bool IsSelected
+        {
+            get
+            {
+                return Model.IsSelected;
+            }
+            set
+            {
+                Model.IsSelected = value;
+            }
+        }
         public int Id
         {
             get

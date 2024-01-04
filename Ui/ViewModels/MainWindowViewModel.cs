@@ -2,6 +2,7 @@
 using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
 using De.HsFlensburg.ClientApp078.Services.MessageBusWithParameter;
 using De.HsFlensburg.ClientApp078.Services.SerializationService;
+using Microsoft.Win32;
 using System;
 using System.ComponentModel;
 using System.Windows.Input;
@@ -94,12 +95,33 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 
         private void SaveModel()
         {
-            modelFileHandler.WriteModelToFile(pathForSerialization, AdministrationViewModel.Model);
+            SaveFileDialog sfd = new SaveFileDialog
+            {
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                FileName = "data.cc",
+                DefaultExt = ".cc",
+                Filter = "Data (.cc)|*.cc",
+                Title = "Speichern unter"
+            };
+            Nullable<bool> result = sfd.ShowDialog();
+
+            string dir = System.IO.Path.Combine(sfd.FileName);
+            modelFileHandler.WriteModelToFile(dir, AdministrationViewModel.Model);
         }
 
         private void LoadModel()
         {
-            AdministrationViewModel.Model = modelFileHandler.ReadModelFromFile(pathForSerialization);
+            OpenFileDialog ofd = new OpenFileDialog
+            {
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                FileName = "data.cc",
+                DefaultExt = ".cc",
+                Filter = "Data (.cc)|*.cc",
+                Title = "Daten laden"
+            };
+            Nullable<bool> result = ofd.ShowDialog();
+            string dir = ofd.FileName;
+            AdministrationViewModel.Model = modelFileHandler.ReadModelFromFile(dir);
         }
 
         private void DeleteOffersCommandMethod()

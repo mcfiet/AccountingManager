@@ -6,6 +6,7 @@ using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Layout.Borders;
 using iText.Kernel.Geom;
+using Microsoft.Win32;
 
 namespace De.HsFlensburg.ClientApp078.Services.PdfExport
 {
@@ -14,8 +15,9 @@ namespace De.HsFlensburg.ClientApp078.Services.PdfExport
         public void PDFExport(Accounting accounting)
         {
             SaveFileDialog sfd = initSaveFileDianlog(accounting);
+            Nullable<bool> result = sfd.ShowDialog();
 
-            string dir = System.IO.Path.Combine(sfd.FolderPath, sfd.FileName + sfd.DefaultExt);
+            string dir = System.IO.Path.Combine(sfd.FileName);
 
             using (PdfWriter writer = new PdfWriter(dir))
             {
@@ -65,10 +67,11 @@ namespace De.HsFlensburg.ClientApp078.Services.PdfExport
             string fileName = getFileName(accounting);
             return new SaveFileDialog
             {
-                FolderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Finances",
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
                 FileName = fileName,
                 DefaultExt = ".pdf",
-                Filter = "PDF (.pdf)|*.pdf"
+                Filter = "PDF (.pdf)|*.pdf",
+                Title = "Speichern unter"
             };
         }
 

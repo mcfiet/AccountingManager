@@ -87,7 +87,7 @@
                     </DataGrid>
 
                     <UniformGrid HorizontalAlignment="Left" VerticalAlignment="Center" Columns="2">
-                        <Button Command="{Binding DeletePositionsCommand}" HorizontalAlignment="Left" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Positionen löschen</Button>
+                        <Button Command="{Binding DeletePositionsCommand}" HorizontalAlignment="Left" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Positionen löschen</Button>
 
                         <Button Command="{Binding OpenAddOfferItemWindowCommand}" HorizontalAlignment="Right" Style="{DynamicResource RoundeButton}">Position hinzufügen</Button>
                     </UniformGrid>

@@ -49,6 +49,7 @@
                         ItemsSource="{Binding Path = AdministrationViewModel.Offers}" 
                         SelectedItem="{Binding SelectedOffer}"
                         AutoGenerateColumns="False"
+                        CanUserAddRows="False"
                         >
                         <DataGrid.Columns>
                             <DataGridCheckBoxColumn IsReadOnly="False" Binding="{Binding IsSelected}" Header="Auswählen" />
@@ -58,7 +59,7 @@
                             <DataGridTextColumn IsReadOnly="True" Binding="{Binding Client.Name}" Header="Kunde"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Button Command="{Binding DeleteOffersCommand}" HorizontalAlignment="Left" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Angebote löschen</Button>
+                    <Button Command="{Binding DeleteOffersCommand}" HorizontalAlignment="Left" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Angebote löschen</Button>
 
                     <Label Style="{DynamicResource H1}">Aufträge</Label>
                     <DataGrid
@@ -66,6 +67,7 @@
                         ItemsSource="{Binding Path = AdministrationViewModel.Orders}" 
                         SelectedItem="{Binding SelectedOrder}"
                         AutoGenerateColumns="False"
+                        CanUserAddRows="False"
                         >
                         <DataGrid.Columns>
                             <DataGridCheckBoxColumn IsReadOnly="False" Binding="{Binding IsSelected}" Header="Auswählen" />
@@ -76,7 +78,7 @@
                             <DataGridTextColumn IsReadOnly="True" Binding="{Binding Client.Name}" Header="Kunde"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Button Command="{Binding DeleteOrdersCommand}" HorizontalAlignment="Left" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Aufträge löschen</Button>
+                    <Button Command="{Binding DeleteOrdersCommand}" HorizontalAlignment="Left" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Aufträge löschen</Button>
 
 
                     <Label Style="{DynamicResource H1}">Rechnungen</Label>
@@ -85,6 +87,7 @@
                         ItemsSource="{Binding Path = AdministrationViewModel.Invoices}" 
                         SelectedItem="{Binding SelectedInvoice}"
                         AutoGenerateColumns="False"
+                        CanUserAddRows="False"
                         >
                         <DataGrid.Columns>
                             <DataGridCheckBoxColumn IsReadOnly="False" Binding="{Binding IsSelected}" Header="Auswählen" />
@@ -96,7 +99,7 @@
                             <DataGridTextColumn IsReadOnly="True" Binding="{Binding Client.Name}" Header="Kunde"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Button Command="{Binding DeleteInvoicesCommand}" HorizontalAlignment="Left" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Rechnungen löschen</Button>
+                    <Button Command="{Binding DeleteInvoicesCommand}" HorizontalAlignment="Left" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Rechnungen löschen</Button>
 
                 </StackPanel>
             </UniformGrid>

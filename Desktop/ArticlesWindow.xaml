@@ -27,20 +27,24 @@
                         </Style>
                     </StackPanel.Resources>
                     <Button Command="{Binding OpenNewArticleWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Neuen Artikel hinzufügen</Button>
+                    <Button Command="{Binding ImportArticlesCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">XML importieren</Button>
                     <Button Command="{Binding CloseWindow}" CommandParameter="{Binding ElementName=ThisWindow}"  Style="{DynamicResource RoundeButton}">Fenster schließen</Button>
 
                 </StackPanel>
                 <StackPanel>
                     <Label Style="{DynamicResource H1}">Artikel</Label>
                     <DataGrid
-                  Name ="clientDataGrid"
-                  ItemsSource="{Binding Path = AdministrationViewModel.Articles}"  
-                  AutoGenerateColumns="False"
-                    IsReadOnly="True">
+                        Name ="clientDataGrid"
+                        ItemsSource="{Binding Path = AdministrationViewModel.Articles}"  
+                        AutoGenerateColumns="False"
+                        CanUserAddRows="False"
+                        >
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding ArticleNr}" Header="Articlenr."></DataGridTextColumn>
-                            <DataGridTextColumn Binding="{Binding Name}" Header="Name"></DataGridTextColumn>
-                            <DataGridTextColumn Binding="{Binding Description}" Header="Beschreibung" MaxWidth="150">
+                            <DataGridCheckBoxColumn IsReadOnly="False" Binding="{Binding IsSelected}" Header="Auswählen" />
+
+                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding ArticleNr}" Header="Articlenr."></DataGridTextColumn>
+                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding Name}" Header="Name"></DataGridTextColumn>
+                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding Description}" Header="Beschreibung" MaxWidth="150">
                                 <DataGridTextColumn.ElementStyle>
                                     <Style>
                                         <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
@@ -50,6 +54,8 @@
                             <DataGridTextColumn Binding="{Binding Price}" Header="Preis"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
+                    <Button Command="{Binding DeleteArticlesCommand}" HorizontalAlignment="Left" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Artikel löschen</Button>
+
                 </StackPanel>
             </UniformGrid>
         </Grid>
