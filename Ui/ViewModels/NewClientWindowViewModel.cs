@@ -23,8 +23,6 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public ICommand AddClient { get; }
         public RelayCommand CloseWindow { get; }
 
-        private ClientCollectionViewModel clientCollection;
-
         AdministrationViewModel AdministrationViewModel;
 
         public NewClientWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
@@ -33,7 +31,6 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             CloseWindow = new RelayCommand(param => CloseWPFWindow(param));
 
             AdministrationViewModel = givenAdministrationViewModel;
-            clientCollection = AdministrationViewModel.Clients;
         }
 
         private void AddClientMethod()
@@ -48,7 +45,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
                 ZipCode = ZipCode,
                 City = City
             };
-            clientCollection.Add(cvm);
+            AdministrationViewModel.Clients.Add(cvm);
 
         }
         private void CloseWPFWindow(object param)

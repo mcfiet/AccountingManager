@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
@@ -16,7 +17,20 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
     public class OfferWindowViewModel : INotifyPropertyChanged
     {
 
-        public ClientViewModel SelectedClient { get; set; }
+        private ClientViewModel selectedClient;
+        public ClientViewModel SelectedClient
+        {
+            get
+            {
+                return selectedClient;
+            }
+            set
+            {
+                selectedClient = value;
+                IncomingOffer.Text = "Sehr geehrte/r " + selectedClient.Name + ",\n\ngerne bieten wir Ihnen folgende Produkte an.";
+                OnPropertyChanged("SelectedClient");
+            }
+        }
         private OfferViewModel incomingOffer;
         public OfferViewModel IncomingOffer
         {
@@ -34,6 +48,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public ICommand ConvertToOrderCommand { get; }
         public ICommand OpenAddOfferItemWindowCommand { get; }
         public ICommand ExportPdfCommand { get; }
+        public ICommand AddOffer { get; }
         public ICommand DeletePositionsCommand { get; }
         public AdministrationViewModel AdministrationViewModel { get; set; }
         public OfferWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
@@ -42,7 +57,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             OpenAddOfferItemWindowCommand = new RelayCommand(OpenAddPositionWindowWithParameter);
             DeletePositionsCommand = new RelayCommand(DeletePositionsCommandMethod);
             ExportPdfCommand = new RelayCommand(ExportPdf);
-
+            AddOffer = new RelayCommand(param => AddOfferMethod(param));
             AdministrationViewModel = givenAdministrationViewModel;
         }
 
@@ -96,6 +111,14 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             messageObject.OfferMessage = IncomingOffer;
             Messenger.Instance.Send<OpenAddOfferItemWindowMessage>(messageObject);
 
+        }
+
+        private void AddOfferMethod(object param)
+        {
+            IncomingOffer.Client = SelectedClient;
+            AdministrationViewModel.Offers.Add(IncomingOffer);
+            Window window = (Window)param;
+            window.Close();
         }
 
         protected void OnPropertyChanged(string propertyName)

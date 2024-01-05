@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
 {
     [Serializable]
-    public abstract class Accounting : INotifyPropertyChanged
+    public class Accounting : INotifyPropertyChanged
     {
 
         private bool isSelected;

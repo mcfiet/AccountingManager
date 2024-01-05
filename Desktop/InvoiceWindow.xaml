@@ -8,7 +8,7 @@
         Title="InvoiceWindow"        
         SizeToContent="Width"
         Height="800"
-        Background="white"
+        Background="BlanchedAlmond"
         FontFamily="Arial">
     <Window.DataContext>
         <Binding Source="{StaticResource ViewModelLocator}" Path="TheInvoiceWindowViewmodel"></Binding>

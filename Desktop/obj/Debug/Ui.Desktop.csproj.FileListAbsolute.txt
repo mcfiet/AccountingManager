@@ -140,8 +140,6 @@ C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientap
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\Ui.Desktop.pdb
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\NewOfferWindow.g.cs
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\NewOfferWindow.baml
-E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\NewOfferWindow.g.cs
-E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\NewOfferWindow.baml
 C:\Users\Olli Dell HA\Documents\2023-testprojekte\awp-fiete-13-11-2023\Desktop\bin\Debug\Ui.Desktop.exe.config
 C:\Users\Olli Dell HA\Documents\2023-testprojekte\awp-fiete-13-11-2023\Desktop\bin\Debug\Ui.Desktop.exe
 C:\Users\Olli Dell HA\Documents\2023-testprojekte\awp-fiete-13-11-2023\Desktop\bin\Debug\Ui.Desktop.pdb

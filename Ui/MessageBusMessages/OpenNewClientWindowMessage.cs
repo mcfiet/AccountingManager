@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace De.HsFlensburg.ClientApp078.Logic.Ui.MessageBusMessages
 {
-    public class OpenNewOfferItemWindowMessage
+    public class OpenNewClientWindowMessage
     {
         public string Message { get; set; }
     }

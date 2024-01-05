@@ -6,38 +6,54 @@
         xmlns:local="clr-namespace:De.HsFlensburg.ClientApp078.Ui.Desktop"
         mc:Ignorable="d"
         Title="OfferWindow"
+        x:Name="ThisWindow"
         SizeToContent="Width"
         Height="800"
-        Background="white"
+        Background="AliceBlue"
         FontFamily="Arial">
     <Window.DataContext>
         <Binding Source="{StaticResource ViewModelLocator}" Path="TheOfferWindowViewmodel"></Binding>
     </Window.DataContext>
     <ScrollViewer>
         <Grid>
+
             <StackPanel Margin="30">
+
+                <StackPanel  Margin="0 0 0 30">
+                    <Label Style="{DynamicResource H1}">Kunden</Label>
+                    <DataGrid SelectedItem="{Binding SelectedClient}"
+                           Name ="clientDataGrid"
+                           ItemsSource="{Binding Path = AdministrationViewModel.Clients}" 
+                           AutoGenerateColumns="False"
+                              IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Id}" Header="Kundennr."></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Name}" Header="Name"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
                 <UniformGrid  Grid.Column="0" Columns="2">
 
                     <StackPanel  Margin="0 0 20 0">
                         <StackPanel Margin="0 15 0 0">
                             <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Kundennr.</Label>
-                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding IncomingOffer.Client.Id}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
+                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding SelectedClient.Id}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
                         </StackPanel>
 
 
                         <StackPanel Margin="0 15 0 0">
                             <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Name</Label>
-                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding IncomingOffer.Client.Name}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
+                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding SelectedClient.Name}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
                         </StackPanel>
 
                         <StackPanel Margin="0 15 0 0">
                             <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Straße</Label>
-                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding IncomingOffer.Client.Street}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
+                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding SelectedClient.Street}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
                         </StackPanel>
 
                         <StackPanel Margin="0 15 0 0">
                             <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">PLZ und Ort</Label>
-                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding IncomingOffer.Client.ZipCode}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
+                            <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding SelectedClient.ZipCode}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
                         </StackPanel>
 
                     </StackPanel>
@@ -87,20 +103,23 @@
                     </DataGrid>
 
                     <UniformGrid HorizontalAlignment="Left" VerticalAlignment="Center" Columns="2">
-                        <Button Command="{Binding DeletePositionsCommand}" HorizontalAlignment="Left" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Positionen löschen</Button>
-
-                        <Button Command="{Binding OpenAddOfferItemWindowCommand}" HorizontalAlignment="Right" Style="{DynamicResource RoundeButton}">Position hinzufügen</Button>
+                        <Button Command="{Binding OpenAddOfferItemWindowCommand}" HorizontalAlignment="Left" Style="{DynamicResource RoundeButton}">Position hinzufügen</Button>
+                        <Button Command="{Binding DeletePositionsCommand}" HorizontalAlignment="Right" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Positionen löschen</Button>
                     </UniformGrid>
                     <TextBlock Text="Gesamtpreis:" TextAlignment="Right"></TextBlock>
                     <TextBlock Text="{Binding IncomingOffer.TotalPrice}" TextAlignment="Right"></TextBlock>
 
                 </StackPanel>
-                <UniformGrid  Grid.Column="0" Columns="2" Margin="0 50 0 0">
-                    <Grid Width="NaN" Height="NaN" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <UniformGrid  Grid.Column="0" Columns="3" Margin="0 50 0 0">
+                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Button Command="{Binding ExportPdfCommand}" Style="{DynamicResource RoundeButton}">als PDF exportieren</Button>
                     </Grid>
-                    <Grid Width="NaN" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Button Command="{Binding ConvertToOrderCommand}" Style="{DynamicResource RoundeButton}">Auftrag erteilen</Button>
+
+                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Button Background="YellowGreen" Command="{Binding AddOffer}" CommandParameter="{Binding ElementName=ThisWindow}" Style="{DynamicResource RoundeButton}">Offer hinzufügen</Button>
+                    </Grid>
+                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Button Background="LightYellow"  Command="{Binding ConvertToOrderCommand}" Style="{DynamicResource RoundeButton}">Auftrag erteilen</Button>
                     </Grid>
                 </UniformGrid>
             </StackPanel>

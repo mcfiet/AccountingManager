@@ -1,5 +1,6 @@
 ﻿using De.HsFlensburg.ClientApp078.Logic.Ui.MessageBusMessages;
 using De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels;
+using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
 using De.HsFlensburg.ClientApp078.Services.MessageBusWithParameter;
 using System;
 using System.Collections.Generic;
@@ -22,15 +23,11 @@ namespace De.HsFlensburg.ClientApp078.Ui.Desktop.MessageBusLogic
         private void InitMessengerWithParameter()
         {
 
-            Messenger.Instance.Register<OpenNewOfferWindowMessage>(this, delegate (OpenNewOfferWindowMessage messageObject)
-            {
-                NewOfferWindow myWindow = new NewOfferWindow();
-                myWindow.ShowDialog();
-            });
             Messenger.Instance.Register<OpenOfferWindowMessage>(this, delegate (OpenOfferWindowMessage messageObject)
             {
                 OfferWindow myWindow = new OfferWindow();
                 ((OfferWindowViewModel)myWindow.DataContext).IncomingOffer = messageObject.IncomingOffer;
+                ((OfferWindowViewModel)myWindow.DataContext).SelectedClient = messageObject.IncomingOffer.Client;
 
                 myWindow.ShowDialog();
             });
@@ -57,7 +54,7 @@ namespace De.HsFlensburg.ClientApp078.Ui.Desktop.MessageBusLogic
 
                 myWindow.ShowDialog();
             });
-            Messenger.Instance.Register<OpenNewOfferItemWindowMessage>(this, delegate (OpenNewOfferItemWindowMessage messageObject)
+            Messenger.Instance.Register<OpenNewClientWindowMessage>(this, delegate (OpenNewClientWindowMessage messageObject)
             {
                 NewClientWindow myWindow = new NewClientWindow();
                 ((NewClientWindowViewModel)myWindow.DataContext).IncomingMessage = messageObject.Message;

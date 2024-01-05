@@ -66,8 +66,13 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         }
         private void OpenNewOfferWindowMethodWithParameter()
         {
-            OpenNewOfferWindowMessage messageObject = new OpenNewOfferWindowMessage();
-            Messenger.Instance.Send<OpenNewOfferWindowMessage>(messageObject);
+            OpenOfferWindowMessage messageObject = new OpenOfferWindowMessage();
+            messageObject.IncomingOffer = new OfferViewModel();
+            messageObject.IncomingOffer.OfferId = AdministrationViewModel.Model.getOfferIdFromCreation();
+            messageObject.IncomingOffer.Date = DateTime.Now;
+            messageObject.IncomingOffer.SetOfferNr(messageObject.IncomingOffer.OfferId);
+            messageObject.IncomingOffer.Client = new ClientViewModel();
+            Messenger.Instance.Send<OpenOfferWindowMessage>(messageObject);
         }
         private void OpenOfferWindowMethodWithParameter()
         {

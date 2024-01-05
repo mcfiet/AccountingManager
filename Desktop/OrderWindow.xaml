@@ -8,7 +8,7 @@
         Title="OrderWindow"        
         SizeToContent="Width"
         Height="800"
-        Background="white"
+        Background="LightYellow"
         FontFamily="Arial">
     <Window.DataContext>
         <Binding Source="{StaticResource ViewModelLocator}" Path="TheOrderWindowViewmodel"></Binding>
@@ -94,7 +94,7 @@
                         <Button Command="{Binding ExportPdfCommand}" Style="{DynamicResource RoundeButton}">als PDF exportieren</Button>
                     </Grid>
                     <Grid Width="NaN" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Button Command="{Binding ConvertToInvoiceCommand}" Style="{DynamicResource RoundeButton}">Rechnung schreiben</Button>
+                        <Button Background="BlanchedAlmond" Command="{Binding ConvertToInvoiceCommand}" Style="{DynamicResource RoundeButton}">Rechnung schreiben</Button>
                     </Grid>
                 </UniformGrid>
             </StackPanel>

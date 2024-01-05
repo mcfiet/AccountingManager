@@ -6,7 +6,6 @@
         mc:Ignorable="d"
         Title="MainWindow" 
         SizeToContent="Width"
-        Height="800"
         Background="white"
         FontFamily="Arial">
     <Window.Resources>
@@ -20,89 +19,114 @@
     </Window.IsEnabled >
     <ScrollViewer>
         <Grid>
-            <UniformGrid  Grid.Column="0" Columns="2">
-                <StackPanel  Margin="50, 20">
-                    <StackPanel.Resources>
-                        <Style TargetType="{x:Type Button}">
-                            <Setter Property="Margin" Value="10"/>
-                        </Style>
-                    </StackPanel.Resources>
-                    <UniformGrid Columns="2">
-                        <Button Command="{Binding OpenNewOfferWindowCommand, Mode=OneWay}" HorizontalAlignment="Left" Style="{DynamicResource RoundeButton}">Neues Angebot anlegen</Button>
-                        <Button Command="{Binding OpenOfferWindowCommand, Mode=OneWay}" HorizontalAlignment="Right" Style="{DynamicResource RoundeButton}">Angebot öffnen</Button>
-                    </UniformGrid>
-                    <Button Command="{Binding OpenOrderWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Auftrag öffnen</Button>
-                    <Button Command="{Binding OpenInvoiceWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Rechnung öffnen</Button>
+            <StackPanel Margin="30">
+                <TabControl>
+                    <TabItem Header="Angebote">
+                        <StackPanel Background="AliceBlue">
+                            <StackPanel Margin="10">
+                                <Label Style="{DynamicResource H1}">Angebote</Label>
+                                <UniformGrid Columns="3" Margin="0 0 0 30">
+                                    <Button Command="{Binding OpenNewOfferWindowCommand, Mode=OneWay}" HorizontalAlignment="Left" Style="{DynamicResource RoundeButton}">Neues Angebot anlegen</Button>
+                                    <Button Command="{Binding OpenOfferWindowCommand, Mode=OneWay}" HorizontalAlignment="Left" Style="{DynamicResource RoundeButton}">Markiertes Angebot öffnen</Button>
+                                    <Button Command="{Binding DeleteOffersCommand}" HorizontalAlignment="Left" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Angebote löschen</Button>
+                                </UniformGrid>
+                                <DataGrid
+                                Name ="offerDataGrid"
+                                ItemsSource="{Binding Path = AdministrationViewModel.Offers}" 
+                                SelectedItem="{Binding SelectedOffer}"
+                                AutoGenerateColumns="False"
+                                CanUserAddRows="False"
+                                >
+                                    <DataGrid.Columns>
+                                        <DataGridCheckBoxColumn IsReadOnly="False" Binding="{Binding IsSelected}" Header="Auswählen" />
+                                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding OfferNr}" Header="Angebotsnr."></DataGridTextColumn>
+                                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding Reference}" Header="Betreff"></DataGridTextColumn>
+                                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding Date, StringFormat=dd.MM.yyyy}" Header="Datum"></DataGridTextColumn>
+                                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding Client.Name}" Header="Kunde"></DataGridTextColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </StackPanel>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Header="Aufträge">
+                        <StackPanel Background="LightYellow">
+                            <StackPanel Margin="10">
+                                <Label Style="{DynamicResource H1}">Aufträge</Label>
+                                <UniformGrid Columns="3" Margin="0 0 0 30">
+                                    <Button Command="{Binding OpenOrderWindowCommand, Mode=OneWay}" HorizontalAlignment="Left" Style="{DynamicResource RoundeButton}">Ausgewählten Auftrag öffnen</Button>
+                                    <Button Command="{Binding DeleteOrdersCommand}" HorizontalAlignment="Left" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Aufträge löschen</Button>
+                                </UniformGrid>
+                                <DataGrid
+                                Name ="orderDataGrid"
+                                ItemsSource="{Binding Path = AdministrationViewModel.Orders}" 
+                                SelectedItem="{Binding SelectedOrder}"
+                                AutoGenerateColumns="False"
+                                CanUserAddRows="False"
+                                >
+                                    <DataGrid.Columns>
+                                        <DataGridCheckBoxColumn IsReadOnly="False" Binding="{Binding IsSelected}" Header="Auswählen" />
+
+                                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding OrderNr}" Header="Auftragsnr."></DataGridTextColumn>
+                                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding Reference}" Header="Betreff"></DataGridTextColumn>
+                                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding Date}" Header="Datum"></DataGridTextColumn>
+                                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding Client.Name}" Header="Kunde"></DataGridTextColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </StackPanel>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Header="Rechnungen">
+                        <StackPanel Background="BlanchedAlmond">
+                            <StackPanel Margin="10">
+                                <Label Style="{DynamicResource H1}">Rechnungen</Label>
+                                <UniformGrid Columns="3" Margin="0 0 0 30">
+                                    <Button Command="{Binding DeleteInvoicesCommand}" HorizontalAlignment="Left" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Rechnungen löschen</Button>
+                                    <Button Command="{Binding OpenInvoiceWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Rechnung öffnen</Button>
+                                </UniformGrid>
+                                <DataGrid
+                                Name ="invoiceDataGrid"
+                                ItemsSource="{Binding Path = AdministrationViewModel.Invoices}" 
+                                SelectedItem="{Binding SelectedInvoice}"
+                                AutoGenerateColumns="False"
+                                CanUserAddRows="False"
+                                >
+                                    <DataGrid.Columns>
+                                        <DataGridCheckBoxColumn IsReadOnly="False" Binding="{Binding IsSelected}" Header="Auswählen" />
+
+                                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding OrderNr}" Header="Auftragsnr."></DataGridTextColumn>
+                                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding InvoiceNr}" Header="Rechnungsnr."></DataGridTextColumn>
+                                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding Reference}" Header="Betreff"></DataGridTextColumn>
+                                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding Date}" Header="Datum"></DataGridTextColumn>
+                                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding Client.Name}" Header="Kunde"></DataGridTextColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </StackPanel>
+                        </StackPanel>
+                    </TabItem>
+                </TabControl>
+                <TabControl>
+                        <TabItem Header="Angebote">
+                        <StackPanel Background="AliceBlue">
+                        </StackPanel>
+                        </TabItem>
+                        <TabItem Header="Aufträge">
+                        <StackPanel Background="LightYellow">
+                        </StackPanel>
+                        </TabItem>
+                        <TabItem Header="Rechnungen">
+                        <StackPanel Background="BlanchedAlmond">
+                        </StackPanel>
+                        </TabItem>
+                    </TabControl>
 
                     <UniformGrid Columns="4">
-                        <Button Command="{Binding OpenClientsWindowCommand, Mode=OneWay}" HorizontalAlignment="Left" Style="{DynamicResource RoundeButton}">Kunden</Button>
-                        <Button Command="{Binding OpenArticlesWindowCommand, Mode=OneWay}" HorizontalAlignment="Left" Style="{DynamicResource RoundeButton}">Artikel</Button>
-                        <Button Command="{Binding SaveCommand}" HorizontalAlignment="Right" Style="{DynamicResource RoundeButton}">Save</Button>
-                        <Button Command="{Binding LoadCommand}" HorizontalAlignment="Right" Style="{DynamicResource RoundeButton}">Load</Button>
+                    <Button Command="{Binding OpenClientsWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Kunden</Button>
+                    <Button Command="{Binding OpenArticlesWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Artikel</Button>
+                    <Button Command="{Binding LoadCommand}" Style="{DynamicResource RoundeButton}">Load</Button>
+                    <Button Command="{Binding SaveCommand}" Style="{DynamicResource RoundeButton}">Save</Button>
 
-                    </UniformGrid>
-                </StackPanel>
-                <StackPanel>
-                    <Label Style="{DynamicResource H1}">Angebote</Label>
-                    <DataGrid
-                        Name ="offerDataGrid"
-                        ItemsSource="{Binding Path = AdministrationViewModel.Offers}" 
-                        SelectedItem="{Binding SelectedOffer}"
-                        AutoGenerateColumns="False"
-                        CanUserAddRows="False"
-                        >
-                        <DataGrid.Columns>
-                            <DataGridCheckBoxColumn IsReadOnly="False" Binding="{Binding IsSelected}" Header="Auswählen" />
-                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding OfferNr}" Header="Angebotsnr."></DataGridTextColumn>
-                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding Reference}" Header="Betreff"></DataGridTextColumn>
-                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding Date, StringFormat=dd.MM.yyyy}" Header="Datum"></DataGridTextColumn>
-                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding Client.Name}" Header="Kunde"></DataGridTextColumn>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                    <Button Command="{Binding DeleteOffersCommand}" HorizontalAlignment="Left" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Angebote löschen</Button>
-
-                    <Label Style="{DynamicResource H1}">Aufträge</Label>
-                    <DataGrid
-                        Name ="orderDataGrid"
-                        ItemsSource="{Binding Path = AdministrationViewModel.Orders}" 
-                        SelectedItem="{Binding SelectedOrder}"
-                        AutoGenerateColumns="False"
-                        CanUserAddRows="False"
-                        >
-                        <DataGrid.Columns>
-                            <DataGridCheckBoxColumn IsReadOnly="False" Binding="{Binding IsSelected}" Header="Auswählen" />
-
-                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding OrderNr}" Header="Auftragsnr."></DataGridTextColumn>
-                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding Reference}" Header="Betreff"></DataGridTextColumn>
-                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding Date}" Header="Datum"></DataGridTextColumn>
-                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding Client.Name}" Header="Kunde"></DataGridTextColumn>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                    <Button Command="{Binding DeleteOrdersCommand}" HorizontalAlignment="Left" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Aufträge löschen</Button>
-
-
-                    <Label Style="{DynamicResource H1}">Rechnungen</Label>
-                    <DataGrid
-                        Name ="invoiceDataGrid"
-                        ItemsSource="{Binding Path = AdministrationViewModel.Invoices}" 
-                        SelectedItem="{Binding SelectedInvoice}"
-                        AutoGenerateColumns="False"
-                        CanUserAddRows="False"
-                        >
-                        <DataGrid.Columns>
-                            <DataGridCheckBoxColumn IsReadOnly="False" Binding="{Binding IsSelected}" Header="Auswählen" />
-
-                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding OrderNr}" Header="Auftragsnr."></DataGridTextColumn>
-                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding InvoiceNr}" Header="Rechnungsnr."></DataGridTextColumn>
-                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding Reference}" Header="Betreff"></DataGridTextColumn>
-                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding Date}" Header="Datum"></DataGridTextColumn>
-                            <DataGridTextColumn IsReadOnly="True" Binding="{Binding Client.Name}" Header="Kunde"></DataGridTextColumn>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                    <Button Command="{Binding DeleteInvoicesCommand}" HorizontalAlignment="Left" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Rechnungen löschen</Button>
-
-                </StackPanel>
-            </UniformGrid>
+                </UniformGrid>
+            </StackPanel>
         </Grid>
     </ScrollViewer>
 </Window>

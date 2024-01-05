@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects.Accounting">
+    <Position X="11.5" Y="7.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACQAAAgkAAgIAAAQAAAgAAAQAIJAAAADQAAAgQ=</HashCode>
+      <FileName>BusinessObjects\Accounting.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects.AccountingNumber">
+    <Position X="7.75" Y="9" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAABAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\AccountingNumber.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects.Administration">
+    <Position X="7" Y="3.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>IAEAAAEIBAAQAAAAACAgAAAAAAAAAAAAgAAAALAAwCA=</HashCode>
+      <FileName>BusinessObjects\Administration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects.Article" BaseTypeListCollapsed="true">
+    <Position X="23.75" Y="3.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAAAQAQAgEAAAIAAAAAQAgAAEAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>BusinessObjects\Article.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects.ArticleCollection">
+    <Position X="23.75" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\ArticleCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects.Client" BaseTypeListCollapsed="true">
+    <Position X="20" Y="3.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAQAQAAAAEAAIIAAACAQAgEAEAgBBAAIAAAAAAgA=</HashCode>
+      <FileName>BusinessObjects\Client.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects.ClientCollection">
+    <Position X="20" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\ClientCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects.Invoice" Collapsed="true">
+    <Position X="14" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAABAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>BusinessObjects\Invoice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects.InvoiceCollection">
+    <Position X="13.75" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\InvoiceCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects.Offer">
+    <Position X="10" Y="3.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEABAABAAQAIAAAAAAAgAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>BusinessObjects\Offer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects.OfferCollection">
+    <Position X="10" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\OfferCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects.Order" Collapsed="true">
+    <Position X="14" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EABAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAABAAQAA=</HashCode>
+      <FileName>BusinessObjects\Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects.OrderCollection">
+    <Position X="13.75" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\OrderCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects.Position" BaseTypeListCollapsed="true">
+    <Position X="16.25" Y="3.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAEAAAIAAAAAAAkgAAQBKAAAAAgAAAAAA=</HashCode>
+      <FileName>BusinessObjects\Position.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects.PositionCollection">
+    <Position X="16.25" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\PositionCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

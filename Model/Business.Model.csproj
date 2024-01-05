@@ -48,7 +48,6 @@
     <Compile Include="BusinessObjects\ArticleCollection.cs" />
     <Compile Include="BusinessObjects\Client.cs" />
     <Compile Include="BusinessObjects\ClientCollection.cs" />
-    <Compile Include="BusinessObjects\Genre.cs" />
     <Compile Include="BusinessObjects\Invoice.cs" />
     <Compile Include="BusinessObjects\InvoiceCollection.cs" />
     <Compile Include="BusinessObjects\Offer.cs" />
@@ -58,6 +57,9 @@
     <Compile Include="BusinessObjects\Order.cs" />
     <Compile Include="BusinessObjects\OrderCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

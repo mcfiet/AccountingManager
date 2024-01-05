@@ -20,14 +20,12 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public ICommand AddArticle { get; }
         public RelayCommand CloseWindow { get; }
 
-        private ArticleCollectionViewModel articleCollection;
         private AdministrationViewModel AdministrationViewModel;
         public NewArticleWindowViewModel(AdministrationViewModel givenAdministrationViewmodel)
         {
             AddArticle = new RelayCommand(AddArticleMethod); 
             CloseWindow = new RelayCommand(param => CloseWPFWindow(param));
             AdministrationViewModel = givenAdministrationViewmodel;
-            articleCollection = AdministrationViewModel.Articles;
         }
 
         private void AddArticleMethod()
@@ -39,7 +37,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
                 Description = Description,
                 Price = Price
             };
-            articleCollection.Add(cvm);
+            AdministrationViewModel.Articles.Add(cvm);
         }
         private void CloseWPFWindow(object param)
         {

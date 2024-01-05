@@ -64,8 +64,8 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 
         private void OpenNewClientWindowMethod()
         {
-            OpenNewOfferItemWindowMessage messageObject = new OpenNewOfferItemWindowMessage();
-            Messenger.Instance.Send<OpenNewOfferItemWindowMessage>(messageObject);
+            OpenNewClientWindowMessage messageObject = new OpenNewClientWindowMessage();
+            Messenger.Instance.Send<OpenNewClientWindowMessage>(messageObject);
         }
         private void ExportClientsToXmlFileMethod()
         {
