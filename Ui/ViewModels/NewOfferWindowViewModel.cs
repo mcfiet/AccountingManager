@@ -1,4 +1,5 @@
-﻿using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
+﻿using De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects;
+using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
 using System;
 using System.ComponentModel;
 using System.Windows.Input;
@@ -58,12 +59,14 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         {
             OfferViewModel cvm = new OfferViewModel
             {
-                OfferNr = AdministrationViewModel.Model.getOfferIdFromCreation(),
+                OfferId = AdministrationViewModel.Model.getOfferIdFromCreation(),
                 Reference = Reference,
                 Date = Date,
                 Text = Text,
                 Client = SelectedClient,
             };
+
+            cvm.SetOfferNr(cvm.OfferId);
 
             AdministrationViewModel.Offers.Add(cvm);
         }

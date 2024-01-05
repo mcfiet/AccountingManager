@@ -70,7 +70,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         private void ExportClientsToXmlFileMethod()
         {
             XmlBuilder xmlBuilder = new XmlBuilder();
-            xmlBuilder.ExportClientCollectionToHtmlFile(AdministrationViewModel.Clients.Model);
+            xmlBuilder.ExportClientCollectionToXMLFile(AdministrationViewModel.Clients.Model);
         }
         private void CloseWPFWindow(object param)
         {

@@ -79,15 +79,15 @@ namespace De.HsFlensburg.ClientApp078.Services.PdfExport
         {
             if (isOffer(accounting))
             {
-                return "Angebot-" + ((Offer)accounting).OfferNr;
+                return ((Offer)accounting).OfferNr;
             }
             if (isInvoice(accounting))
             {
-                return "Rechnung-" + ((Invoice)accounting).InvoiceNr;
+                return ((Invoice)accounting).InvoiceNr;
             }
             if (isOrder(accounting))
             {
-                return "Auftrag-" + ((Order)accounting).OrderNr;
+                return ((Order)accounting).OrderNr;
             }
 
             return "";
@@ -105,17 +105,17 @@ namespace De.HsFlensburg.ClientApp078.Services.PdfExport
         {
             if(isOffer(accounting))
             {
-                doc.Add(new Paragraph(new Text("Angebot Nr. " + ((Offer)accounting).OfferNr)));
+                doc.Add(new Paragraph(new Text("Angebot Nr. " + ((Offer)accounting).OfferNr)).SetBold());
 
             }
             if(isOrder(accounting))
             {
-                doc.Add(new Paragraph(new Text("Auftrag Nr. " + ((Order)accounting).OrderNr)));
+                doc.Add(new Paragraph(new Text("Auftrag Nr. " + ((Order)accounting).OrderNr)).SetBold());
 
             }
             if(isInvoice(accounting))
             {
-                doc.Add(new Paragraph(new Text("Rechnung Nr. " + ((Invoice)accounting).InvoiceNr)));
+                doc.Add(new Paragraph(new Text("Rechnung Nr. " + ((Invoice)accounting).InvoiceNr)).SetBold());
 
             }
 

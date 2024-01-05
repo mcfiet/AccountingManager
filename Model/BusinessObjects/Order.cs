@@ -10,6 +10,41 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
     public class Order : Accounting
     {
 
-        public int OrderNr { get; set; }
+
+        private int orderId;
+        public int OrderId
+        {
+            get
+            {
+                return orderId;
+            }
+            set
+            {
+                orderId = value;
+                OnPropertyChanged("OrderId");
+
+            }
+        }
+
+        private string orderNr;
+
+        public string OrderNr
+        {
+            get
+            {
+                return orderNr;
+            }
+            set
+            {
+                orderNr = value;
+                OnPropertyChanged("OrderNr");
+            }
+        }
+
+        public string getOrderNr(int id)
+        {
+            return AccountingNumber.CreateOrderNrFromId(id + 1);
+        }
+
     }
 }

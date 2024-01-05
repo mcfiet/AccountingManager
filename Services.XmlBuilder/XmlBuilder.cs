@@ -11,36 +11,46 @@ namespace Services.XmlBuilder
 {
     public class XmlBuilder
     {
-        private ClientCollection clientCollection;
-        public void ExportClientCollectionToHtmlFile(ClientCollection clientCollection)
+        public void ExportClientCollectionToXMLFile(ClientCollection clientCollection)
         {
-            this.clientCollection = clientCollection;
-            ExportXmlTextToFile(clientCollection);
-        }
-        private void ExportXmlTextToFile(ClientCollection clientCollection)
-        {
-            XmlWriter xmlWriter = getDir();
+            XmlWriter xmlWriter = getDir("clients");
 
-            foreach (var client in clientCollection)
+            xmlWriter.WriteStartDocument();
+            xmlWriter.WriteStartElement("clients");
+
+            foreach (Client client in clientCollection)
             {
                 writeClient(xmlWriter, client);
             }
 
-            CloseDocument(xmlWriter);
+            xmlWriter.WriteEndElement();
+            xmlWriter.WriteEndDocument();
+            xmlWriter.Close();
         }
-
-        private static void CloseDocument(XmlWriter xmlWriter)
+        
+        public void ExportArticleCollectionToXMLFile(ArticleCollection articleCollection)
         {
+            XmlWriter xmlWriter = getDir("article");
+
+            xmlWriter.WriteStartDocument();
+            xmlWriter.WriteStartElement("article");
+
+            foreach (Article article in articleCollection)
+            {
+                writeArticle(xmlWriter, article);
+            }
+
             xmlWriter.WriteEndElement();
             xmlWriter.WriteEndDocument();
             xmlWriter.Close();
         }
 
-        private static XmlWriter getDir()
+
+        private static XmlWriter getDir(string filename)
         {
             SaveFileDialog sfd = new SaveFileDialog
             {
-                FileName = "Kunden",
+                FileName = filename,
                 DefaultExt = ".xml",
 
                 Filter = "XML (*.xml)|*.xml",
@@ -49,8 +59,6 @@ namespace Services.XmlBuilder
             string dir = sfd.FileName;
             XmlWriterSettings settings = WriterSettings();
             XmlWriter xmlWriter = XmlWriter.Create(dir, settings);
-            xmlWriter.WriteStartDocument();
-            xmlWriter.WriteStartElement("clients");
             return xmlWriter;
         }
 
@@ -65,7 +73,7 @@ namespace Services.XmlBuilder
 
         private static void writeClient(XmlWriter xmlWriter, Client client)
         {
-            xmlWriter.WriteStartElement("Kunde");
+            xmlWriter.WriteStartElement("client");
             xmlWriter.WriteAttributeString("clientID", client.Id.ToString());
             writeElement(xmlWriter, "Name", client.Name);
             xmlWriter.WriteStartElement("Adresse");
@@ -74,6 +82,15 @@ namespace Services.XmlBuilder
             writeElement(xmlWriter, "PLZ", client.ZipCode.ToString());
             writeElement(xmlWriter, "Ort", client.City);
             xmlWriter.WriteEndElement();
+            xmlWriter.WriteEndElement();
+        }
+        private static void writeArticle(XmlWriter xmlWriter, Article article)
+        {
+            xmlWriter.WriteStartElement("article");
+            xmlWriter.WriteAttributeString("articleID", article.ArticleNr.ToString());
+            writeElement(xmlWriter, "Name", article.Name);
+            writeElement(xmlWriter, "Description", article.Description);
+            writeElement(xmlWriter, "Price", article.Price.ToString());
             xmlWriter.WriteEndElement();
         }
 

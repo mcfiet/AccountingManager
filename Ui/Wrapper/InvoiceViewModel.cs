@@ -37,7 +37,19 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
             }
         }
 
-        public int OrderNr
+        public int OrderId
+        {
+            get
+            {
+                return Model.OrderId;
+            }
+            set
+            {
+                Model.OrderId = value;
+
+            }
+        }
+        public string OrderNr
         {
             get
             {
@@ -50,7 +62,20 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
             }
         }
 
-        public int InvoiceNr
+        public int InvoiceId
+        {
+            get
+            {
+                return Model.InvoiceId;
+            }
+            set
+            {
+                Model.InvoiceId = value;
+
+            }
+        }
+
+        public string InvoiceNr
         {
             get
             {
@@ -59,10 +84,13 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
             set
             {
                 Model.InvoiceNr = value;
-
             }
         }
 
+        public void SetInvoiceNr(int id)
+        {
+            InvoiceNr = Model.getInvoiceNr(id);
+        }
         public string Reference
         {
             get

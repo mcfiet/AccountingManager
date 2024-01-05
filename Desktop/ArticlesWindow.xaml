@@ -28,6 +28,7 @@
                     </StackPanel.Resources>
                     <Button Command="{Binding OpenNewArticleWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Neuen Artikel hinzufügen</Button>
                     <Button Command="{Binding ImportArticlesCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">XML importieren</Button>
+                    <Button Command="{Binding ExportArticlesCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">XML exportieren</Button>
                     <Button Command="{Binding CloseWindow}" CommandParameter="{Binding ElementName=ThisWindow}"  Style="{DynamicResource RoundeButton}">Fenster schließen</Button>
 
                 </StackPanel>

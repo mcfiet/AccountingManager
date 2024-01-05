@@ -12,8 +12,23 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
     {
 
 
-        private int offerNr;
-        public int OfferNr
+        private int offerId;
+        public int OfferId
+        {
+            get
+            {
+                return offerId;
+            }
+            set
+            {
+                offerId = value;
+                OnPropertyChanged("OfferNr");
+
+            }
+        }
+        private string offerNr;
+
+        public string OfferNr
         {
             get
             {
@@ -23,8 +38,12 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
             {
                 offerNr = value;
                 OnPropertyChanged("OfferNr");
-
             }
+        }
+
+        public string getOfferNr(int id)
+        {
+            return AccountingNumber.CreateOfferNrFromId(id+1);
         }
 
       

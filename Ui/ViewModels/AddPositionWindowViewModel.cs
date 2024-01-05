@@ -91,17 +91,17 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             } else if (IncomingOrder != null)
             {
                 IncomingOrder.Positions.Add(position);
-                for (int i = 0; i < IncomingOffer.Positions.Count; i++)
+                for (int i = 0; i < IncomingOrder.Positions.Count; i++)
                 {
-                    IncomingOffer.Positions[i].PositionNr = i + 1;
+                    IncomingOrder.Positions[i].PositionNr = i + 1;
                 }
                 OnPropertyChanged("IncomingOrder");
             } else if (IncomingInvoice != null)
             {
                 IncomingInvoice.Positions.Add(position);
-                for (int i = 0; i < IncomingOffer.Positions.Count; i++)
+                for (int i = 0; i < IncomingInvoice.Positions.Count; i++)
                 {
-                    IncomingOffer.Positions[i].PositionNr = i + 1;
+                    IncomingInvoice.Positions[i].PositionNr = i + 1;
                 }
                 OnPropertyChanged("IncomingInvoice");
             }

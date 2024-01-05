@@ -54,15 +54,16 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         {
             InvoiceViewModel invoice = new InvoiceViewModel()
             {
+                OrderId = IncomingOrder.OrderId,
                 OrderNr = IncomingOrder.OrderNr,
-                InvoiceNr = AdministrationViewModel.Model.getInvoiceIdFromCreation(),
+                InvoiceId = AdministrationViewModel.Model.getInvoiceIdFromCreation(),
                 Positions = IncomingOrder.Positions,
                 Reference = IncomingOrder.Reference,
                 Date = IncomingOrder.Date,
                 Text = IncomingOrder.Text,
                 Client = IncomingOrder.Client
             };
-
+            invoice.SetInvoiceNr(invoice.InvoiceId);
             invoice.Model.setPositonId(IncomingOrder.Model.getPositonId());
 
             AdministrationViewModel.Invoices.Add(invoice);

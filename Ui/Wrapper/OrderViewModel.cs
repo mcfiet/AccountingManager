@@ -37,7 +37,20 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
             }
         }
 
-        public int OrderNr
+        public int OrderId
+        {
+            get
+            {
+                return Model.OrderId;
+            }
+            set
+            {
+                Model.OrderId = value;
+
+            }
+        }
+
+        public string OrderNr
         {
             get
             {
@@ -46,10 +59,13 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
             set
             {
                 Model.OrderNr = value;
-
             }
         }
 
+        public void SetOrderNr(int id)
+        {
+            OrderNr = Model.getOrderNr(id);
+        }
         public string Reference
         {
             get

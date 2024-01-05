@@ -70,14 +70,14 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         {
             OrderViewModel order = new OrderViewModel()
             {
-                OrderNr = AdministrationViewModel.Model.getOrderIdFromCreation(),
+                OrderId = AdministrationViewModel.Model.getOrderIdFromCreation(),
                 Positions = IncomingOffer.Positions,
                 Reference = IncomingOffer.Reference,
                 Date = IncomingOffer.Date,
                 Text = IncomingOffer.Text,
                 Client = IncomingOffer.Client
             };
-
+            order.SetOrderNr(order.OrderId);
             order.Model.setPositonId(IncomingOffer.Model.getPositonId());
 
             AdministrationViewModel.Orders.Add(order);

@@ -20,16 +20,16 @@ namespace Services.XmlImport
 
             ClientCollection clients = new ClientCollection();
 
-            foreach (XElement XmlClient in XmlClients.Elements("Kunde"))
+            foreach (XElement XmlClient in XmlClients.Elements("client"))
             {
                 Client client = new Client();
                 client.Id = int.Parse(XmlClient.Attribute("clientID").Value);
-                client.Name = XmlClient.Element("Name").Value;
-                XElement clientAddress = XmlClient.Element("Adresse");
-                client.Street = clientAddress.Element("Straße").Value;
-                client.HouseNumber = int.Parse(clientAddress.Element("Hausnummer").Value);
-                client.ZipCode = int.Parse(clientAddress.Element("PLZ").Value);
-                client.City = clientAddress.Element("Ort").Value;
+                client.Name = XmlClient.Element("name").Value;
+                XElement clientAddress = XmlClient.Element("adress");
+                client.Street = clientAddress.Element("street").Value;
+                client.HouseNumber = int.Parse(clientAddress.Element("housenumber").Value);
+                client.ZipCode = int.Parse(clientAddress.Element("zipcode").Value);
+                client.City = clientAddress.Element("city").Value;
                 clients.Add(client);
             }
             return clients;

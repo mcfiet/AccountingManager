@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessObjects\Accounting.cs" />
+    <Compile Include="BusinessObjects\AccountingNumber.cs" />
     <Compile Include="BusinessObjects\Administration.cs" />
     <Compile Include="BusinessObjects\Article.cs" />
     <Compile Include="BusinessObjects\ArticleCollection.cs" />

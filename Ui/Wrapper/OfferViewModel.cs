@@ -38,7 +38,20 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
             }
         }
 
-        public int OfferNr
+        public int OfferId
+        {
+            get
+            {
+                return Model.OfferId;
+            }
+            set
+            {
+                Model.OfferId = value;
+
+            }
+        }
+
+        public string OfferNr
         {
             get
             {
@@ -47,9 +60,14 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
             set
             {
                 Model.OfferNr = value;
-
             }
         }
+
+        public void SetOfferNr(int id)
+        {
+            OfferNr = Model.getOfferNr(id);
+        }
+
 
         public string Reference
         {

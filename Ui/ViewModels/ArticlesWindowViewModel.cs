@@ -1,6 +1,7 @@
 ﻿using De.HsFlensburg.ClientApp078.Logic.Ui.MessageBusMessages;
 using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
 using De.HsFlensburg.ClientApp078.Services.MessageBusWithParameter;
+using Services.XmlBuilder;
 using Services.XmlImport;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
     {
         public ICommand OpenNewArticleWindowCommand { get; }
         public ICommand ImportArticlesCommand { get; }
+        public ICommand ExportArticlesCommand { get; }
         public RelayCommand DeleteArticlesCommand { get; }
         public RelayCommand CloseWindow { get; }
 
@@ -39,6 +41,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 
             OpenNewArticleWindowCommand = new RelayCommand(OpenNewArticleWindowMethodWithParameter);
             ImportArticlesCommand = new RelayCommand(ImportArticles); 
+            ExportArticlesCommand = new RelayCommand(ExportArticlesToXmlFileMethod); 
             DeleteArticlesCommand = new RelayCommand(DeleteArticlesCommandMethod);
 
             CloseWindow = new RelayCommand(param => CloseWPFWindow(param));
@@ -73,6 +76,12 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             AdministrationViewModel.Model.Articles = xmlImport.ImportArticles();
             OnPropertyChanged("AdministrationViewModel");
 
+        }
+
+        private void ExportArticlesToXmlFileMethod()
+        {
+            XmlBuilder xmlBuilder = new XmlBuilder();
+            xmlBuilder.ExportArticleCollectionToXMLFile(AdministrationViewModel.Articles.Model);
         }
         protected void OnPropertyChanged(string propertyName)
         {
