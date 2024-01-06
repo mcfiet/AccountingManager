@@ -76,7 +76,7 @@
                 <StackPanel>
                     <Label Style="{DynamicResource H1}">Positionen</Label>
                     <DataGrid 
-                           Name ="offerItemsDataGrid"
+                           Name ="positionssDataGrid"
                            ItemsSource="{Binding IncomingInvoice.Positions}" 
                            AutoGenerateColumns="False">
                         <DataGrid.Columns>

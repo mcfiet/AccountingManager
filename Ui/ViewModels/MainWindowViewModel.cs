@@ -3,33 +3,43 @@ using De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper;
 using De.HsFlensburg.ClientApp078.Services.MessageBusWithParameter;
 using De.HsFlensburg.ClientApp078.Services.SerializationService;
 using Microsoft.Win32;
+using Services.XmlBuilder;
+using Services.XmlImport;
 using System;
 using System.ComponentModel;
 using System.Windows.Input;
 
 namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 {
-    public class MainWindowViewModel
+    public class MainWindowViewModel : INotifyPropertyChanged
     {
         private ModelFileHandler modelFileHandler;
         private string pathForSerialization;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public ICommand SaveCommand { get; private set; }
-        public ICommand LoadCommand { get; private set; }
-
-        public ICommand OpenNewOfferWindowCommand { get; private set; }
-        public ICommand OpenOfferWindowCommand { get; private set; }
-        public ICommand OpenOrderWindowCommand { get; private set; }
-        public ICommand OpenInvoiceWindowCommand { get; private set; }
-        public ICommand OpenClientsWindowCommand { get; private set; }
-        public ICommand OpenArticlesWindowCommand { get; private set; }
-        public ICommand DeleteOffersCommand { get; private set; }
-        public ICommand DeleteOrdersCommand { get; private set; }
-        public ICommand DeleteInvoicesCommand { get; private set; }
+        public RelayCommand SaveCommand { get; private set; }
+        public RelayCommand LoadCommand { get; private set; }
+        public RelayCommand OpenNewOfferWindowCommand { get; private set; }
+        public RelayCommand OpenOfferWindowCommand { get; private set; }
+        public RelayCommand OpenOrderWindowCommand { get; private set; }
+        public RelayCommand OpenInvoiceWindowCommand { get; private set; }
+        public RelayCommand DeleteOffersCommand { get; private set; }
+        public RelayCommand DeleteOrdersCommand { get; private set; }
+        public RelayCommand DeleteInvoicesCommand { get; private set; }
+        public RelayCommand OpenNewArticleWindowCommand { get; private set; }
+        public RelayCommand ImportArticlesCommand { get; private set; }
+        public RelayCommand ExportArticlesCommand { get; private set; }
+        public RelayCommand DeleteArticlesCommand { get; private set; }
+        public RelayCommand OpenNewClientWindowCommand { get; private set; }
+        public RelayCommand ExportClientsToXmlCommand { get; private set; }
+        public RelayCommand ImportClientsCommand { get; private set; }
+        public RelayCommand DeleteClientsCommand { get; private set; }
+        public RelayCommand ConvertToOrderCommand { get; private set; }
+        public RelayCommand ConvertToInvoiceCommand { get; private set; }
 
         public AdministrationViewModel AdministrationViewModel { get; set; }
+
         public OfferViewModel SelectedOffer { get; set; }
         public OrderViewModel SelectedOrder { get; set; }
         public InvoiceViewModel SelectedInvoice { get; set; }
@@ -52,18 +62,24 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             OpenOfferWindowCommand = new RelayCommand(OpenOfferWindowMethodWithParameter);
             OpenOrderWindowCommand = new RelayCommand(OpenOrderWindowMethodWithParameter);
             OpenInvoiceWindowCommand = new RelayCommand(OpenInvoiceWindowMethodWithParameter);
-            OpenClientsWindowCommand = new RelayCommand(OpenClientsWindowMethodWithParameter);
-            OpenArticlesWindowCommand = new RelayCommand(OpenArticlesWindowMethodWithParameter);
             DeleteOffersCommand = new RelayCommand(DeleteOffersCommandMethod);
             DeleteOrdersCommand = new RelayCommand(DeleteOrdersCommandMethod);
             DeleteInvoicesCommand = new RelayCommand(DeleteInvoicesCommandMethod);
+
+            OpenNewArticleWindowCommand = new RelayCommand(OpenNewArticleWindowMethodWithParameter);
+            ImportArticlesCommand = new RelayCommand(ImportArticles);
+            ExportArticlesCommand = new RelayCommand(ExportArticlesToXmlFileMethod);
+            DeleteArticlesCommand = new RelayCommand(DeleteArticlesCommandMethod);
+
+            OpenNewClientWindowCommand = new RelayCommand(OpenNewClientWindowMethod);
+            ExportClientsToXmlCommand = new RelayCommand(ExportClientsToXmlFileMethod);
+            ImportClientsCommand = new RelayCommand(ImportClients);
+            DeleteClientsCommand = new RelayCommand(DeleteClientsCommandMethod);
+
+            ConvertToOrderCommand = new RelayCommand(ConvertToOrderCommandMethodWithParameter);
+            ConvertToInvoiceCommand = new RelayCommand(ConvertToInvoiceMethodWithParameter);
         }
 
-        private void OpenClientsWindowMethodWithParameter()
-        {
-            OpenClientsWindowMessage messageObject = new OpenClientsWindowMessage();
-            Messenger.Instance.Send<OpenClientsWindowMessage>(messageObject);
-        }
         private void OpenNewOfferWindowMethodWithParameter()
         {
             OpenOfferWindowMessage messageObject = new OpenOfferWindowMessage();
@@ -91,11 +107,6 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             OpenInvoiceWindowMessage messageObject = new OpenInvoiceWindowMessage();
             messageObject.IncomingInvoice = SelectedInvoice;
             Messenger.Instance.Send<OpenInvoiceWindowMessage>(messageObject);
-        }
-        private void OpenArticlesWindowMethodWithParameter()
-        {
-            OpenArticlesWindowMessage messageObject = new OpenArticlesWindowMessage();
-            Messenger.Instance.Send<OpenArticlesWindowMessage>(messageObject);
         }
 
         private void SaveModel()
@@ -166,6 +177,109 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
                 }
             }
 
+        }
+
+
+
+        private void DeleteArticlesCommandMethod()
+        {
+            for (int i = 0; i < AdministrationViewModel.Articles.Count; i++)
+            {
+                if (AdministrationViewModel.Articles[i].IsSelected)
+                {
+                    AdministrationViewModel.Articles.RemoveAt(i);
+                }
+            }
+        }
+
+        private void OpenNewArticleWindowMethodWithParameter()
+        {
+            OpenNewArticleWindowMessage messageObject = new OpenNewArticleWindowMessage();
+            Messenger.Instance.Send<OpenNewArticleWindowMessage>(messageObject);
+        }
+
+        private void ImportArticles()
+        {
+            XmlImport xmlImport = new XmlImport();
+            AdministrationViewModel.Model.Articles = xmlImport.ImportArticles();
+            OnPropertyChanged("AdministrationViewModel");
+
+        }
+
+        private void ExportArticlesToXmlFileMethod()
+        {
+            XmlBuilder xmlBuilder = new XmlBuilder();
+            xmlBuilder.ExportArticleCollectionToXMLFile(AdministrationViewModel.Articles.Model);
+        }
+
+
+
+
+        private void DeleteClientsCommandMethod()
+        {
+            for (int i = 0; i < AdministrationViewModel.Clients.Count; i++)
+            {
+                if (AdministrationViewModel.Clients[i].IsSelected)
+                {
+                    AdministrationViewModel.Clients.RemoveAt(i);
+                }
+            }
+        }
+
+        private void OpenNewClientWindowMethod()
+        {
+            OpenNewClientWindowMessage messageObject = new OpenNewClientWindowMessage();
+            Messenger.Instance.Send<OpenNewClientWindowMessage>(messageObject);
+        }
+        private void ExportClientsToXmlFileMethod()
+        {
+            XmlBuilder xmlBuilder = new XmlBuilder();
+            xmlBuilder.ExportClientCollectionToXMLFile(AdministrationViewModel.Clients.Model);
+        }
+
+        private void ImportClients()
+        {
+            XmlImport xmlImport = new XmlImport();
+            AdministrationViewModel.Model.Clients = xmlImport.ImportClients();
+            OnPropertyChanged("AdministrationViewModel");
+
+        }
+
+        private void ConvertToOrderCommandMethodWithParameter()
+        {
+            OrderViewModel order = new OrderViewModel()
+            {
+                OrderId = AdministrationViewModel.Model.getOrderIdFromCreation(),
+                Positions = SelectedOffer.Positions,
+                Reference = SelectedOffer.Reference,
+                Date = SelectedOffer.Date,
+                Text = SelectedOffer.Text,
+                Client = SelectedOffer.Client
+            };
+            order.SetOrderNr(order.OrderId);
+            order.Model.setPositonId(SelectedOffer.Model.getPositonId());
+
+            AdministrationViewModel.Orders.Add(order);
+        }
+
+
+        private void ConvertToInvoiceMethodWithParameter()
+        {
+            InvoiceViewModel invoice = new InvoiceViewModel()
+            {
+                OrderId = SelectedOrder.OrderId,
+                OrderNr = SelectedOrder.OrderNr,
+                InvoiceId = AdministrationViewModel.Model.getInvoiceIdFromCreation(),
+                Positions = SelectedOrder.Positions,
+                Reference = SelectedOrder.Reference,
+                Date = SelectedOrder.Date,
+                Text = SelectedOrder.Text,
+                Client = SelectedOrder.Client
+            };
+            invoice.SetInvoiceNr(invoice.InvoiceId);
+            invoice.Model.setPositonId(SelectedOrder.Model.getPositonId());
+
+            AdministrationViewModel.Invoices.Add(invoice);
         }
 
 

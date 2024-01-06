@@ -25,8 +25,8 @@ namespace De.HsFlensburg.ClientApp078.Services.PdfExport
                 {
                     Document doc = new Document(pdf);
                     PageSize ps = pdf.GetDefaultPageSize();
-                    Table layout, OfferDetails, OfferItems, details;
-                    AddTables(out layout, out OfferDetails, out OfferItems, out details);
+                    Table layout, OfferDetails, Positions, details;
+                    AddTables(out layout, out OfferDetails, out Positions, out details);
 
                     AddSenderReceiptBlock(accounting, layout);
                     AddHeaderContactDetails(OfferDetails);
@@ -40,7 +40,7 @@ namespace De.HsFlensburg.ClientApp078.Services.PdfExport
                     doc.Add(layout);
 
                     AddOfferNumberAndText(accounting, doc);
-                    AddPositions(accounting, doc, OfferItems);
+                    AddPositions(accounting, doc, Positions);
                     AddSignature(doc, accounting);
                     AddFooterCompanyDetails(details);
                     details.SetFixedPosition(doc.GetLeftMargin(), doc.GetBottomMargin(), ps.GetWidth() - doc.GetLeftMargin() - doc.GetRightMargin());
@@ -93,11 +93,11 @@ namespace De.HsFlensburg.ClientApp078.Services.PdfExport
             return "";
         }
 
-        private static void AddTables(out Table layout, out Table OfferDetails, out Table OfferItems, out Table details)
+        private static void AddTables(out Table layout, out Table OfferDetails, out Table Positions, out Table details)
         {
             layout = new Table(2, false);
             OfferDetails = new Table(2, false);
-            OfferItems = new Table(5, false);
+            Positions = new Table(5, false);
             details = new Table(3, false);
         }
 
@@ -178,16 +178,16 @@ namespace De.HsFlensburg.ClientApp078.Services.PdfExport
             details.AddCell(companyDetails);
         }
 
-        private static void AddPositions(Accounting accounting, Document doc, Table OfferItems)
+        private static void AddPositions(Accounting accounting, Document doc, Table Positions)
         {
-            OfferItems.SetMarginTop(5);
-            AddOfferItemsTableHaders(OfferItems);
-            AddOfferItemsTableValues(accounting, OfferItems);
+            Positions.SetMarginTop(5);
+            AddOfferItemsTableHaders(Positions);
+            AddOfferItemsTableValues(accounting, Positions);
 
-            doc.Add(OfferItems);
+            doc.Add(Positions);
         }
 
-        private static void AddOfferItemsTableValues(Accounting accounting, Table OfferItems)
+        private static void AddOfferItemsTableValues(Accounting accounting, Table Positions)
         {
             foreach (Position item in accounting.Positions)
             {
@@ -212,15 +212,15 @@ namespace De.HsFlensburg.ClientApp078.Services.PdfExport
                     .SetBorder(Border.NO_BORDER)
                     .Add(new Paragraph(new Text(item.TotalPrice.ToString())));
 
-                OfferItems.AddCell(offerItemNumber);
-                OfferItems.AddCell(article);
-                OfferItems.AddCell(quantity);
-                OfferItems.AddCell(articlePrice);
-                OfferItems.AddCell(totalPrice);
+                Positions.AddCell(offerItemNumber);
+                Positions.AddCell(article);
+                Positions.AddCell(quantity);
+                Positions.AddCell(articlePrice);
+                Positions.AddCell(totalPrice);
             }
         }
 
-        private static void AddOfferItemsTableHaders(Table OfferItems)
+        private static void AddOfferItemsTableHaders(Table Positions)
         {
             Cell offerItemsDes = new Cell(1, 1)
                                                     .Add(new Paragraph("Positionsnr."));
@@ -236,11 +236,11 @@ namespace De.HsFlensburg.ClientApp078.Services.PdfExport
             Cell totalPriceDes = new Cell(1, 1)
                     .Add(new Paragraph("Gesamtpreis"));
 
-            OfferItems.AddCell(offerItemsDes);
-            OfferItems.AddCell(articlesDes);
-            OfferItems.AddCell(quantityDes);
-            OfferItems.AddCell(articlePriceDes);
-            OfferItems.AddCell(totalPriceDes);
+            Positions.AddCell(offerItemsDes);
+            Positions.AddCell(articlesDes);
+            Positions.AddCell(quantityDes);
+            Positions.AddCell(articlePriceDes);
+            Positions.AddCell(totalPriceDes);
         }
 
         private static void AddOfferDetailsBlock(Accounting accounting, Table OfferDetails)

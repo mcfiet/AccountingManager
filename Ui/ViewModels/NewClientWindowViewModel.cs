@@ -20,7 +20,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public int HouseNumber { get; set; }
         public int ZipCode { get; set; }
         public string City { get; set; }
-        public ICommand AddClient { get; }
+        public RelayCommand AddClient { get; }
         public RelayCommand CloseWindow { get; }
 
         AdministrationViewModel AdministrationViewModel;

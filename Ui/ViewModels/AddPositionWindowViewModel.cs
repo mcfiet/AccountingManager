@@ -21,25 +21,10 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public int Quantity { get; set; }
         public int TotalPrice { get; set; }
 
-        public OfferViewModel SelectedOffer { get; set; }
-        public AdministrationViewModel AdministrationViewModel { get; set; }
-
-        public AddPositionWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
-        {
-            AddPositionCommand = new RelayCommand(AddPositionMethod);
-            CloseWindow = new RelayCommand(param => CloseWPFWindow(param));
-            AdministrationViewModel = givenAdministrationViewModel;
-
-        }
-
-        private void CloseWPFWindow(object param)
-        {
-            Window window = (Window)param;
-            window.Close();
-        }
-
         public RelayCommand AddPositionCommand { get; }
         public RelayCommand CloseWindow { get; }
+
+
         public OfferViewModel incomingOffer;
         public OfferViewModel IncomingOffer
         {
@@ -70,6 +55,24 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
                 OnPropertyChanged("IncomingInvoice");
             }
         }
+
+        public OfferViewModel SelectedOffer { get; set; }
+        public AdministrationViewModel AdministrationViewModel { get; set; }
+
+        public AddPositionWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
+        {
+            AddPositionCommand = new RelayCommand(AddPositionMethod);
+            CloseWindow = new RelayCommand(param => CloseWPFWindow(param));
+            AdministrationViewModel = givenAdministrationViewModel;
+
+        }
+
+        private void CloseWPFWindow(object param)
+        {
+            Window window = (Window)param;
+            window.Close();
+        }
+
 
         private void AddPositionMethod()
         {

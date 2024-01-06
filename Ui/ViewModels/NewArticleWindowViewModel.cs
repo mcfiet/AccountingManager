@@ -17,7 +17,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public String Description { get; set; }
         public int Price { get; set; }
 
-        public ICommand AddArticle { get; }
+        public RelayCommand AddArticle { get; }
         public RelayCommand CloseWindow { get; }
 
         private AdministrationViewModel AdministrationViewModel;

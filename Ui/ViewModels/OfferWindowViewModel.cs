@@ -45,15 +45,13 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             }
         }
 
-        public ICommand ConvertToOrderCommand { get; }
-        public ICommand OpenAddOfferItemWindowCommand { get; }
-        public ICommand ExportPdfCommand { get; }
-        public ICommand AddOffer { get; }
-        public ICommand DeletePositionsCommand { get; }
+        public RelayCommand OpenAddOfferItemWindowCommand { get; }
+        public RelayCommand ExportPdfCommand { get; }
+        public RelayCommand AddOffer { get; }
+        public RelayCommand DeletePositionsCommand { get; }
         public AdministrationViewModel AdministrationViewModel { get; set; }
         public OfferWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
-            ConvertToOrderCommand = new RelayCommand(ConvertToOrderCommandMethodWithParameter);
             OpenAddOfferItemWindowCommand = new RelayCommand(OpenAddPositionWindowWithParameter);
             DeletePositionsCommand = new RelayCommand(DeletePositionsCommandMethod);
             ExportPdfCommand = new RelayCommand(ExportPdf);
@@ -81,22 +79,6 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         }
 
 
-        private void ConvertToOrderCommandMethodWithParameter()
-        {
-            OrderViewModel order = new OrderViewModel()
-            {
-                OrderId = AdministrationViewModel.Model.getOrderIdFromCreation(),
-                Positions = IncomingOffer.Positions,
-                Reference = IncomingOffer.Reference,
-                Date = IncomingOffer.Date,
-                Text = IncomingOffer.Text,
-                Client = IncomingOffer.Client
-            };
-            order.SetOrderNr(order.OrderId);
-            order.Model.setPositonId(IncomingOffer.Model.getPositonId());
-
-            AdministrationViewModel.Orders.Add(order);
-        }
 
         private void ExportPdf()
         {

@@ -176,10 +176,6 @@ C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientap
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\ClientsWindow.baml
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\ArticlesWindow.g.cs
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\ArticlesWindow.baml
-E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\ArticlesWindow.g.cs
-E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\ClientsWindow.g.cs
-E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\ArticlesWindow.baml
-E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\ClientsWindow.baml
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\OfferWindow.g.cs
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\OfferWindow.baml
 C:\Users\Fiete-Laptop\Documents\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\OfferWindow.g.cs

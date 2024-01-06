@@ -87,7 +87,7 @@
                 <StackPanel>
                     <Label Style="{DynamicResource H1}">Positionen</Label>
                     <DataGrid 
-                           Name ="offerItemsDataGrid"
+                           Name ="positionssDataGrid"
                            ItemsSource="{Binding IncomingOffer.Positions}" 
                            AutoGenerateColumns="False"
                         CanUserAddRows="False"
@@ -110,16 +110,13 @@
                     <TextBlock Text="{Binding IncomingOffer.TotalPrice}" TextAlignment="Right"></TextBlock>
 
                 </StackPanel>
-                <UniformGrid  Grid.Column="0" Columns="3" Margin="0 50 0 0">
-                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <UniformGrid  Grid.Column="0" Columns="2" Margin="0 50 0 0">
+                    <Grid HorizontalAlignment="Left">
                         <Button Command="{Binding ExportPdfCommand}" Style="{DynamicResource RoundeButton}">als PDF exportieren</Button>
                     </Grid>
 
-                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid HorizontalAlignment="Right">
                         <Button Background="YellowGreen" Command="{Binding AddOffer}" CommandParameter="{Binding ElementName=ThisWindow}" Style="{DynamicResource RoundeButton}">Offer hinzufügen</Button>
-                    </Grid>
-                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Button Background="LightYellow"  Command="{Binding ConvertToOrderCommand}" Style="{DynamicResource RoundeButton}">Auftrag erteilen</Button>
                     </Grid>
                 </UniformGrid>
             </StackPanel>

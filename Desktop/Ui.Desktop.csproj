@@ -59,14 +59,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ArticlesWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ClientsWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="InvoiceWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -81,12 +73,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ArticlesWindow.xaml.cs">
-      <DependentUpon>ArticlesWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ClientsWindow.xaml.cs">
-      <DependentUpon>ClientsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="InvoiceWindow.xaml.cs">
       <DependentUpon>InvoiceWindow.xaml</DependentUpon>

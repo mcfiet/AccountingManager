@@ -71,7 +71,7 @@
                 <StackPanel>
                     <Label Style="{DynamicResource H1}">Positionen</Label>
                     <DataGrid 
-                           Name ="offerItemsDataGrid"
+                           Name ="positionssDataGrid"
                            ItemsSource="{Binding IncomingOrder.Positions}" 
                            AutoGenerateColumns="False">
                         <DataGrid.Columns>
@@ -89,14 +89,7 @@
                     <TextBlock Text="Gesamtpreis:" TextAlignment="Right"></TextBlock>
                     <TextBlock Text="{Binding IncomingOrder.TotalPrice}" TextAlignment="Right"></TextBlock>
                 </StackPanel>
-                <UniformGrid  Grid.Column="0" Columns="2" Margin="0 50 0 0">
-                    <Grid Width="NaN" Height="NaN" HorizontalAlignment="Left" VerticalAlignment="Center">
-                        <Button Command="{Binding ExportPdfCommand}" Style="{DynamicResource RoundeButton}">als PDF exportieren</Button>
-                    </Grid>
-                    <Grid Width="NaN" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Button Background="BlanchedAlmond" Command="{Binding ConvertToInvoiceCommand}" Style="{DynamicResource RoundeButton}">Rechnung schreiben</Button>
-                    </Grid>
-                </UniformGrid>
+                <Button Command="{Binding ExportPdfCommand}" Style="{DynamicResource RoundeButton}">als PDF exportieren</Button>
             </StackPanel>
         </Grid>
     </ScrollViewer>

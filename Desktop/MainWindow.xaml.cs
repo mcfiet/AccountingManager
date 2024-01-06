@@ -27,5 +27,9 @@ namespace De.HsFlensburg.ClientApp078.Ui.Desktop
             InitializeComponent();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

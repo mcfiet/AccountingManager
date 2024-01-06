@@ -25,10 +25,12 @@
                         <StackPanel Background="AliceBlue">
                             <StackPanel Margin="10">
                                 <Label Style="{DynamicResource H1}">Angebote</Label>
-                                <UniformGrid Columns="3" Margin="0 0 0 30">
-                                    <Button Command="{Binding OpenNewOfferWindowCommand, Mode=OneWay}" HorizontalAlignment="Left" Style="{DynamicResource RoundeButton}">Neues Angebot anlegen</Button>
-                                    <Button Command="{Binding OpenOfferWindowCommand, Mode=OneWay}" HorizontalAlignment="Left" Style="{DynamicResource RoundeButton}">Markiertes Angebot öffnen</Button>
-                                    <Button Command="{Binding DeleteOffersCommand}" HorizontalAlignment="Left" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Angebote löschen</Button>
+                                <UniformGrid Columns="4" Margin="0 0 0 30">
+                                    <Button Command="{Binding OpenNewOfferWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Neues Angebot anlegen</Button>
+                                    <Button Command="{Binding OpenOfferWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Markiertes Angebot öffnen</Button>
+                                    <Button Background="LightYellow"  Command="{Binding ConvertToOrderCommand}" Style="{DynamicResource RoundeButton}">Auftrag erteilen</Button>
+                                    <Button Command="{Binding DeleteOffersCommand}" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Angebote löschen</Button>
+
                                 </UniformGrid>
                                 <DataGrid
                                 Name ="offerDataGrid"
@@ -53,8 +55,9 @@
                             <StackPanel Margin="10">
                                 <Label Style="{DynamicResource H1}">Aufträge</Label>
                                 <UniformGrid Columns="3" Margin="0 0 0 30">
-                                    <Button Command="{Binding OpenOrderWindowCommand, Mode=OneWay}" HorizontalAlignment="Left" Style="{DynamicResource RoundeButton}">Ausgewählten Auftrag öffnen</Button>
-                                    <Button Command="{Binding DeleteOrdersCommand}" HorizontalAlignment="Left" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Aufträge löschen</Button>
+                                    <Button Command="{Binding OpenOrderWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}" Content="Markierten Auftrag öffnen"/>
+                                    <Button Background="BlanchedAlmond" Command="{Binding ConvertToInvoiceCommand}" Style="{DynamicResource RoundeButton}">Rechnung schreiben</Button>
+                                    <Button Command="{Binding DeleteOrdersCommand}" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Aufträge löschen</Button>
                                 </UniformGrid>
                                 <DataGrid
                                 Name ="orderDataGrid"
@@ -80,8 +83,8 @@
                             <StackPanel Margin="10">
                                 <Label Style="{DynamicResource H1}">Rechnungen</Label>
                                 <UniformGrid Columns="3" Margin="0 0 0 30">
+                                    <Button Command="{Binding OpenInvoiceWindowCommand, Mode=OneWay}" HorizontalAlignment="Left" Style="{DynamicResource RoundeButton}" Click="Button_Click" Content="Markierte Rechnung öffnen"/>
                                     <Button Command="{Binding DeleteInvoicesCommand}" HorizontalAlignment="Left" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Rechnungen löschen</Button>
-                                    <Button Command="{Binding OpenInvoiceWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Rechnung öffnen</Button>
                                 </UniformGrid>
                                 <DataGrid
                                 Name ="invoiceDataGrid"
@@ -104,26 +107,69 @@
                         </StackPanel>
                     </TabItem>
                 </TabControl>
-                <TabControl>
-                        <TabItem Header="Angebote">
-                        <StackPanel Background="AliceBlue">
-                        </StackPanel>
-                        </TabItem>
-                        <TabItem Header="Aufträge">
-                        <StackPanel Background="LightYellow">
-                        </StackPanel>
-                        </TabItem>
-                        <TabItem Header="Rechnungen">
-                        <StackPanel Background="BlanchedAlmond">
-                        </StackPanel>
-                        </TabItem>
-                    </TabControl>
+                <TabControl Margin="0 30 0 0">
+                    <TabItem Header="Artikel">
+                        <StackPanel>
+                            <UniformGrid Columns="4" Margin="0 0 0 30">
+                                <Button Command="{Binding OpenNewArticleWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Neuen Artikel hinzufügen</Button>
+                                <Button Command="{Binding ImportArticlesCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">XML importieren</Button>
+                                <Button Command="{Binding ExportArticlesCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">XML exportieren</Button>
+                                <Button Command="{Binding DeleteArticlesCommand}" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Artikel löschen</Button>
+                            </UniformGrid>
+                            <Label Style="{DynamicResource H1}">Artikel</Label>
+                            <DataGrid
+                                Name ="articlesDataGrid"
+                                ItemsSource="{Binding Path = AdministrationViewModel.Articles}"  
+                                AutoGenerateColumns="False"
+                                CanUserAddRows="False"
+                                >
+                                <DataGrid.Columns>
+                                    <DataGridCheckBoxColumn IsReadOnly="False" Binding="{Binding IsSelected}" Header="Auswählen" />
 
-                    <UniformGrid Columns="4">
-                    <Button Command="{Binding OpenClientsWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Kunden</Button>
-                    <Button Command="{Binding OpenArticlesWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Artikel</Button>
+                                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding ArticleNr}" Header="Articlenr."></DataGridTextColumn>
+                                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Name}" Header="Name"></DataGridTextColumn>
+                                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Description}" Header="Beschreibung" MaxWidth="150">
+                                        <DataGridTextColumn.ElementStyle>
+                                            <Style>
+                                                <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                                            </Style>
+                                        </DataGridTextColumn.ElementStyle>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn Binding="{Binding Price}" Header="Preis"></DataGridTextColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Header="Kunden">
+                        <StackPanel>
+                            <UniformGrid Columns="4" Margin="0 0 0 30">
+                                <Button Command="{Binding OpenNewClientWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Neuen Kunden anlegen</Button>
+                                <Button Command="{Binding ImportClientsCommand}" CommandParameter="{Binding ElementName=ThisWindow}"  Style="{DynamicResource RoundeButton}">XML importieren</Button>
+                                <Button Command="{Binding ExportClientsToXmlCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">XML exportieren</Button>
+                                <Button Command="{Binding DeleteClientsCommand}" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Kunden löschen</Button>
+                            </UniformGrid>
+                            <Label Style="{DynamicResource H1}">Kunden</Label>
+                            <DataGrid
+                                Name ="clientDataGrid"
+                                ItemsSource="{Binding Path = AdministrationViewModel.Clients}" 
+                                AutoGenerateColumns="False"
+                                CanUserAddRows="False"
+                                >
+                                <DataGrid.Columns>
+                                    <DataGridCheckBoxColumn IsReadOnly="False" Binding="{Binding IsSelected}" Header="Auswählen" />
+
+                                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Id}" Header="Kundennr."></DataGridTextColumn>
+                                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Name}" Header="Name"></DataGridTextColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
+                    </TabItem>
+                </TabControl>
+
+                <UniformGrid Columns="4">
                     <Button Command="{Binding LoadCommand}" Style="{DynamicResource RoundeButton}">Load</Button>
-                    <Button Command="{Binding SaveCommand}" Style="{DynamicResource RoundeButton}">Save</Button>
+                    <Button Command="{Binding SaveCommand}" Margin="10 20 0 0" Style="{DynamicResource RoundeButton}">Save</Button>
 
                 </UniformGrid>
             </StackPanel>

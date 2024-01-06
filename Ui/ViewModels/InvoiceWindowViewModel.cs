@@ -25,8 +25,8 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             }
         }
 
-        public ICommand OpenAddOfferItemWindowCommand { get; }
-        public ICommand ExportPdfCommand { get; }
+        public RelayCommand OpenAddOfferItemWindowCommand { get; }
+        public RelayCommand ExportPdfCommand { get; }
         public ClientCollectionViewModel ClientList { get; set; }
         public OfferCollectionViewModel OfferList { get; set; }
         public OrderCollectionViewModel OrderList { get; set; }
