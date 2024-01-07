@@ -26,6 +26,7 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
 
             }
         }
+
         private string offerNr;
 
         public string OfferNr
@@ -40,23 +41,27 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
                 OnPropertyChanged("OfferNr");
             }
         }
+        
+        private bool isOrder;
+
+        public bool IsOrder
+        {
+            get
+            {
+                return isOrder;
+            }
+            set
+            {
+                isOrder = value;
+                OnPropertyChanged("IsOrder");
+            }
+        }
+
+        
 
         public string getOfferNr(int id)
         {
             return AccountingNumber.CreateOfferNrFromId(id+1);
         }
-
-      
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-
-        [field: NonSerialized]
-        public event PropertyChangedEventHandler PropertyChanged;
-
-
     }
 }

@@ -18,6 +18,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui
         public InvoiceWindowViewModel TheInvoiceWindowViewmodel { get; set; }
         public AdministrationViewModel TheAdministrationViewModel { get; set; }
         public AddPositionWindowViewModel TheAddPositionWindowViewModel { get; set; }
+        public ErrorWindowViewModel TheErrorWindowViewModel { get; set; }
         public ViewModelLocator()
         {
             TheAdministrationViewModel = new AdministrationViewModel();
@@ -30,6 +31,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui
 
             TheMainWindowViewModel = new MainWindowViewModel(TheAdministrationViewModel);
             TheAddPositionWindowViewModel = new AddPositionWindowViewModel(TheAdministrationViewModel);
+            TheErrorWindowViewModel = new ErrorWindowViewModel(TheAdministrationViewModel);
         }
     }
 }

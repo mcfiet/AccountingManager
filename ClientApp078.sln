@@ -29,11 +29,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.MessageBusWithPara
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.PdfExport", "Services.PdfExport\Services.PdfExport.csproj", "{7FB3F3D8-DB27-4124-977B-6F294365B460}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{86DA14C5-34BD-4FBF-B209-12A7153C3669}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\! DEVONIQ\SVG\Wortbildmarke.png = ..\..\! DEVONIQ\SVG\Wortbildmarke.png
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.XmlBuilder", "Services.XmlBuilder\Services.XmlBuilder.csproj", "{41840241-A4DC-474E-A5EC-DA10E0308F82}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.XmlImport", "Services.XmlImport\Services.XmlImport.csproj", "{7CF3AEE9-3948-42BD-B174-53A95E5B64C5}"

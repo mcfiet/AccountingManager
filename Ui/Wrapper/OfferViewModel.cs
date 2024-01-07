@@ -116,10 +116,9 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
             }
             set
             {
-                this.Model.Client = value.Model;
+                Model.Client = value.Model;
             }
         }
-
 
         public float TotalPrice
         {
@@ -128,5 +127,18 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
                 return Model.TotalPrice;
             }            
         }
+
+        public bool IsOrder
+        {
+            get
+            {
+                return Model.IsOrder;
+            }
+            set
+            {
+                Model.IsOrder = value;
+            }
+        }
+
     }
 }

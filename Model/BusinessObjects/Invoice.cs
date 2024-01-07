@@ -39,9 +39,25 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
             }
         }
 
+        private bool payed;
+        public bool Payed
+        {
+            get
+            {
+                return payed;
+            }
+            set
+            {
+                payed = value;
+                OnPropertyChanged("Payed");
+            }
+        }
+
         public string getInvoiceNr(int id)
         {
             return AccountingNumber.CreateInvoiceNrFromId(id + 1);
         }
+
+
     }
 }

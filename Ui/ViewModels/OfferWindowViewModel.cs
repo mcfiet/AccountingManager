@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
@@ -50,6 +51,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public RelayCommand AddOffer { get; }
         public RelayCommand DeletePositionsCommand { get; }
         public AdministrationViewModel AdministrationViewModel { get; set; }
+        public Button NewBtn;
         public OfferWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
             OpenAddOfferItemWindowCommand = new RelayCommand(OpenAddPositionWindowWithParameter);
@@ -57,6 +59,13 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             ExportPdfCommand = new RelayCommand(ExportPdf);
             AddOffer = new RelayCommand(param => AddOfferMethod(param));
             AdministrationViewModel = givenAdministrationViewModel;
+            NewBtn = new Button
+            {
+                Content = "Angebot hinzufügen",
+                Name = "AddOfferBtn",
+                Style = (Style)Application.Current.TryFindResource("RoundeButton"),
+                Command = AddOffer,
+            };
         }
 
         private void DeletePositionsCommandMethod()
@@ -100,6 +109,13 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             IncomingOffer.Client = SelectedClient;
             AdministrationViewModel.Offers.Add(IncomingOffer);
             Window window = (Window)param;
+            object wantedNode = window.FindName("OfferButtons");
+            if (wantedNode is Grid)
+            {
+                Grid wantedChild = wantedNode as Grid;
+                wantedChild.Children.Remove(NewBtn);
+            }
+           
             window.Close();
         }
 

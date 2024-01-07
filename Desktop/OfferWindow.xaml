@@ -114,9 +114,7 @@
                     <Grid HorizontalAlignment="Left">
                         <Button Command="{Binding ExportPdfCommand}" Style="{DynamicResource RoundeButton}">als PDF exportieren</Button>
                     </Grid>
-
-                    <Grid HorizontalAlignment="Right">
-                        <Button Background="YellowGreen" Command="{Binding AddOffer}" CommandParameter="{Binding ElementName=ThisWindow}" Style="{DynamicResource RoundeButton}">Offer hinzufügen</Button>
+                    <Grid HorizontalAlignment="Right" x:Name="OfferButtons">
                     </Grid>
                 </UniformGrid>
             </StackPanel>

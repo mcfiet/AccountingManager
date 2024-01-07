@@ -206,3 +206,5 @@ E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\AddPos
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\AddPositionWindow.baml
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Services.XmlImport.dll
 E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\bin\Debug\Services.XmlImport.pdb
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\ErrorWindow.g.cs
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Desktop\obj\Debug\ErrorWindow.baml

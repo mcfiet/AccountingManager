@@ -23,8 +23,11 @@
                             <StackPanel Margin="10">
                                 <Label Style="{DynamicResource H1}">Angebote</Label>
                                 <UniformGrid Columns="4" Margin="0 0 0 30">
-                                    <Button Command="{Binding Commands.DeleteOffersCommand}" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Angebote löschen</Button>
                                     <Button Command="{Binding Commands.OpenNewOfferWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Neues Angebot anlegen</Button>
+                                    <Button Command="{Binding Commands.OpenOfferWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Markiertes Angebot öffnen</Button>
+                                    <Button Background="LightYellow"  Command="{Binding Commands.ConvertToOrderCommand}" Style="{DynamicResource RoundeButton}">Auftrag erteilen</Button>
+                                    <Button Command="{Binding Commands.DeleteOffersCommand}" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Angebote löschen</Button>
+
                                 </UniformGrid>
                                 <DataGrid
                                 Name ="offerDataGrid"
@@ -37,7 +40,7 @@
                                         <DataGridTemplateColumn>
                                             <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>
-                                                    <Button Command="{Binding DataContext.Commands.OpenOfferCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" CommandParameter="{Binding}">Öffnen</Button>
+                                                    <Button Click="ShowHideDetails">Details</Button>
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
@@ -46,13 +49,6 @@
                                         <DataGridTextColumn IsReadOnly="True" Binding="{Binding Reference}" Header="Betreff"></DataGridTextColumn>
                                         <DataGridTextColumn IsReadOnly="True" Binding="{Binding Date, StringFormat=dd.MM.yyyy}" Header="Datum"></DataGridTextColumn>
                                         <DataGridTextColumn IsReadOnly="True" Binding="{Binding Client.Name}" Header="Kunde"></DataGridTextColumn>
-                                        <DataGridTemplateColumn>
-                                            <DataGridTemplateColumn.CellTemplate>
-                                                <DataTemplate>
-                                                    <Button Background="LightYellow"  Command="{Binding DataContext.Commands.ConvertToOrderCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" CommandParameter="{Binding}">Auftrag erteilen</Button>
-                                                </DataTemplate>
-                                            </DataGridTemplateColumn.CellTemplate>
-                                        </DataGridTemplateColumn>
                                         <DataGridCheckBoxColumn IsReadOnly="True" Binding="{Binding IsOrder}" Header="Umgewandelt in Auftrag" />
                                     </DataGrid.Columns>
                                 </DataGrid>
@@ -64,6 +60,8 @@
                             <StackPanel Margin="10">
                                 <Label Style="{DynamicResource H1}">Aufträge</Label>
                                 <UniformGrid Columns="3" Margin="0 0 0 30">
+                                    <Button Command="{Binding Commands.OpenOrderWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}" Content="Markierten Auftrag öffnen"/>
+                                    <Button Background="BlanchedAlmond" Command="{Binding Commands.ConvertToInvoiceCommand}" Style="{DynamicResource RoundeButton}">Rechnung schreiben</Button>
                                     <Button Command="{Binding Commands.DeleteOrdersCommand}" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Aufträge löschen</Button>
                                 </UniformGrid>
                                 <DataGrid
@@ -74,25 +72,11 @@
                                 CanUserAddRows="False"
                                 >
                                     <DataGrid.Columns>
-                                        <DataGridTemplateColumn>
-                                            <DataGridTemplateColumn.CellTemplate>
-                                                <DataTemplate>
-                                                    <Button Command="{Binding DataContext.Commands.OpenOrderCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" CommandParameter="{Binding}">Öffnen</Button>
-                                                </DataTemplate>
-                                            </DataGridTemplateColumn.CellTemplate>
-                                        </DataGridTemplateColumn>
                                         <DataGridCheckBoxColumn IsReadOnly="False" Binding="{Binding IsSelected}" Header="Auswählen" />
                                         <DataGridTextColumn IsReadOnly="True" Binding="{Binding OrderNr}" Header="Auftragsnr."></DataGridTextColumn>
                                         <DataGridTextColumn IsReadOnly="True" Binding="{Binding Reference}" Header="Betreff"></DataGridTextColumn>
                                         <DataGridTextColumn IsReadOnly="True" Binding="{Binding Date}" Header="Datum"></DataGridTextColumn>
                                         <DataGridTextColumn IsReadOnly="True" Binding="{Binding Client.Name}" Header="Kunde"></DataGridTextColumn>
-                                        <DataGridTemplateColumn>
-                                            <DataGridTemplateColumn.CellTemplate>
-                                                <DataTemplate>
-                                                    <Button Background="LightYellow"  Command="{Binding DataContext.Commands.ConvertToInvoiceCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" CommandParameter="{Binding}">Rechnung schreiben</Button>
-                                                </DataTemplate>
-                                            </DataGridTemplateColumn.CellTemplate>
-                                        </DataGridTemplateColumn>
                                         <DataGridCheckBoxColumn IsReadOnly="True" Binding="{Binding IsInvoice}" Header="Umgewandelt in Rechnung" />
 
                                     </DataGrid.Columns>
@@ -105,6 +89,7 @@
                             <StackPanel Margin="10">
                                 <Label Style="{DynamicResource H1}">Rechnungen</Label>
                                 <UniformGrid Columns="3" Margin="0 0 0 30">
+                                    <Button Command="{Binding Commands.OpenInvoiceWindowCommand, Mode=OneWay}" HorizontalAlignment="Left" Style="{DynamicResource RoundeButton}" Click="Button_Click" Content="Markierte Rechnung öffnen"/>
                                     <Button Command="{Binding Commands.DeleteInvoicesCommand}" HorizontalAlignment="Left" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Rechnungen löschen</Button>
                                 </UniformGrid>
                                 <DataGrid
@@ -127,13 +112,6 @@
                                         </Style>
                                     </DataGrid.RowStyle>
                                     <DataGrid.Columns>
-                                        <DataGridTemplateColumn>
-                                            <DataGridTemplateColumn.CellTemplate>
-                                                <DataTemplate>
-                                                    <Button Command="{Binding DataContext.Commands.OpenInvoiceCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" CommandParameter="{Binding}">Öffnen</Button>
-                                                </DataTemplate>
-                                            </DataGridTemplateColumn.CellTemplate>
-                                        </DataGridTemplateColumn>
                                         <DataGridCheckBoxColumn IsReadOnly="False" Binding="{Binding IsSelected}" Header="Auswählen" />
 
                                         <DataGridTextColumn IsReadOnly="True" Binding="{Binding OrderNr}" Header="Auftragsnr."></DataGridTextColumn>

@@ -23,7 +23,9 @@
                         Name ="articleDataGrid"
                         SelectedItem="{Binding SelectedArticle}"
                         ItemsSource="{Binding Path = AdministrationViewModel.Articles}" 
-                        AutoGenerateColumns="False">
+                        AutoGenerateColumns="False"
+                        IsReadOnly="True"
+                        >
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding ArticleNr}" Header="Articlenr."></DataGridTextColumn>
                             <DataGridTextColumn Binding="{Binding Name}" Header="Name"></DataGridTextColumn>

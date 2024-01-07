@@ -113,7 +113,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
             }
             set
             {
-                this.Model.Client = value.Model;
+                Model.Client = value.Model;
             }
         }
 
@@ -125,5 +125,18 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
                 return Model.TotalPrice;
             }
         }
+
+        public bool IsInvoice
+        {
+            get
+            {
+                return Model.IsInvoice;
+            }
+            set
+            {
+                Model.IsInvoice = value;
+            }
+        }
+
     }
 }

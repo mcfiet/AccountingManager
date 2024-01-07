@@ -96,9 +96,7 @@
 
                 </StackPanel>
                 <UniformGrid  Grid.Column="0" Columns="2" Margin="0 50 0 0">
-                    <Grid Width="NaN" Height="NaN" HorizontalAlignment="Left" VerticalAlignment="Center">
-                        <Button Command="{Binding ExportPdfCommand}" Style="{DynamicResource RoundeButton}">als PDF exportieren</Button>
-                    </Grid>
+                    <Button Command="{Binding ExportPdfCommand}" Style="{DynamicResource RoundeButton}">als PDF exportieren</Button>
                 </UniformGrid>
             </StackPanel>
         </Grid>

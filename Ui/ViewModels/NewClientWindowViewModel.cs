@@ -12,7 +12,6 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 {
     public class NewClientWindowViewModel
     {
-        public String IncomingMessage { get; set; }
 
         public string Name { get; set; }
 
@@ -35,7 +34,6 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 
         private void AddClientMethod()
         {
-            Console.Out.WriteLine(IncomingMessage);
             ClientViewModel cvm = new ClientViewModel
             {
                 Id = AdministrationViewModel.Model.getClientIdFromCreation(),

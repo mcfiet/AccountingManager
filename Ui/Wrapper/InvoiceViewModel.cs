@@ -138,7 +138,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
             }
             set
             {
-                this.Model.Client = value.Model;
+                Model.Client = value.Model;
             }
         }
 
@@ -148,6 +148,18 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
             get
             {
                 return Model.TotalPrice;
+            }
+        }
+
+        public bool Payed
+        {
+            get
+            {
+                return Model.Payed;
+            }
+            set
+            {
+                Model.Payed = value;
             }
         }
     }

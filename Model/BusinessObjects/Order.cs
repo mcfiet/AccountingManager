@@ -40,6 +40,20 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
                 OnPropertyChanged("OrderNr");
             }
         }
+        private bool isInvoice;
+        public bool IsInvoice
+        {
+            get
+            {
+                return isInvoice;
+            }
+            set
+            {
+                isInvoice = value;
+                OnPropertyChanged("IsInvoice");
+            }
+        }
+
 
         public string getOrderNr(int id)
         {
