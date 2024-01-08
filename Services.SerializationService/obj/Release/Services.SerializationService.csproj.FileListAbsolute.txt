@@ -1,0 +1,9 @@
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.SerializationService\bin\Release\Services.SerializationService.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.SerializationService\bin\Release\Services.SerializationService.pdb
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.SerializationService\bin\Release\Business.Model.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.SerializationService\bin\Release\Business.Model.pdb
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.SerializationService\obj\Release\Services.SerializationService.csproj.AssemblyReference.cache
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.SerializationService\obj\Release\Services.SerializationService.csproj.CoreCompileInputs.cache
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.SerializationService\obj\Release\Services.SerializationService.csproj.CopyComplete
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.SerializationService\obj\Release\Services.SerializationService.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.SerializationService\obj\Release\Services.SerializationService.pdb

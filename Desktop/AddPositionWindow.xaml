@@ -22,23 +22,18 @@
                     <DataGrid
                         Name ="articleDataGrid"
                         SelectedItem="{Binding SelectedArticle}"
-                        ItemsSource="{Binding Path = AdministrationViewModel.Articles}" 
+                        ItemsSource="{Binding Path = TheAdministrationViewModel.Articles}" 
                         AutoGenerateColumns="False"
                         IsReadOnly="True"
                         >
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding ArticleNr}" Header="Articlenr."></DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Id}" Header="Articlenr."></DataGridTextColumn>
                             <DataGridTextColumn Binding="{Binding Name}" Header="Name"></DataGridTextColumn>
                             <DataGridTextColumn Binding="{Binding Description}" Header="Beschreibung"></DataGridTextColumn>
                             <DataGridTextColumn Binding="{Binding Price}" Header="Preis"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </StackPanel>
-                <StackPanel Margin="0 20 0 0">
-                    <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Positionsnr.</Label>
-                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding OfferItemNr}" VerticalAlignment="Center"  IsReadOnly="True"></TextBox>
-                </StackPanel>
-
                 <StackPanel Margin="0 20 0 0">
                     <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Artikel</Label>
                     <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=articleDataGrid, Path=SelectedItem.Name}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
@@ -53,17 +48,11 @@
                     <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Einzelpreis</Label>
                     <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ElementName=articleDataGrid, Path=SelectedItem.Price}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
                 </StackPanel>
-                <!--
-                <StackPanel Margin="0 20 0 0">
-                    <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Gesamtpreis</Label>
-                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding TotalPrice}" VerticalAlignment="Center" IsReadOnly = "True" ></TextBox>
-                </StackPanel>
-                -->
                 <Grid Width="NaN" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 50 0 0">
                     <Button Command="{Binding AddPositionCommand}" Style="{DynamicResource RoundeButton}">Position hinzufügen</Button>
                 </Grid>
                 <Grid Width="NaN" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 50 0 0">
-                    <Button Command="{Binding CloseWindow}" CommandParameter="{Binding ElementName=ThisWindow}"  Style="{DynamicResource RoundeButton}">Fenster schließen</Button>
+                    <Button Command="{Binding CloseWindowCommand}" CommandParameter="{Binding ElementName=ThisWindow}"  Style="{DynamicResource RoundeButton}">Fenster schließen</Button>
                 </Grid>
             </StackPanel>
         </Grid>

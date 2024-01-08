@@ -59,7 +59,7 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
 
         
 
-        public string getOfferNr(int id)
+        public string GetOfferNr(int id)
         {
             return AccountingNumber.CreateOfferNrFromId(id+1);
         }

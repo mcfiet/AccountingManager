@@ -64,7 +64,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
 
         public void SetOrderNr(int id)
         {
-            OrderNr = Model.getOrderNr(id);
+            OrderNr = Model.GetOrderNr(id);
         }
         public string Reference
         {

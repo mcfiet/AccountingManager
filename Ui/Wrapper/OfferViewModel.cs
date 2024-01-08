@@ -65,7 +65,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
 
         public void SetOfferNr(int id)
         {
-            OfferNr = Model.getOfferNr(id);
+            OfferNr = Model.GetOfferNr(id);
         }
 
 

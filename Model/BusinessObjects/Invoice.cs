@@ -39,21 +39,21 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
             }
         }
 
-        private bool payed;
-        public bool Payed
+        private bool isPayed;
+        public bool IsPayed
         {
             get
             {
-                return payed;
+                return isPayed;
             }
             set
             {
-                payed = value;
-                OnPropertyChanged("Payed");
+                isPayed = value;
+                OnPropertyChanged("IsPayed");
             }
         }
 
-        public string getInvoiceNr(int id)
+        public string GetInvoiceNr(int id)
         {
             return AccountingNumber.CreateInvoiceNrFromId(id + 1);
         }

@@ -10,7 +10,6 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 {
     public class ErrorWindowViewModel : INotifyPropertyChanged
     {
-        public AdministrationViewModel AdministrationViewModel { get; set; }
         private string errorMessage;
         public string ErrorMessage
         {
@@ -25,9 +24,8 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             }
         }
 
-        public ErrorWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
+        public ErrorWindowViewModel()
         {
-            AdministrationViewModel = givenAdministrationViewModel;
         }
 
 

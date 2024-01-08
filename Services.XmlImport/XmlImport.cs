@@ -43,7 +43,7 @@ namespace Services.XmlImport
             foreach (XElement XmlArticle in XmlArticles.Elements("article"))
             {
                 Article article = new Article();
-                article.ArticleNr = int.Parse(XmlArticle.Attribute("articleID").Value);
+                article.Id = int.Parse(XmlArticle.Attribute("articleID").Value);
                 article.Name = XmlArticle.Element("Name").Value;
                 article.Description = XmlArticle.Element("Description").Value;
                 article.Price = int.Parse(XmlArticle.Element("Price").Value);

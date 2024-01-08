@@ -22,15 +22,15 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
                 Model.IsSelected = value;
             }
         }
-        public int ArticleNr
+        public int Id
         {
             get
             {
-                return Model.ArticleNr;
+                return Model.Id;
             }
             set
             {
-                Model.ArticleNr = value;
+                Model.Id = value;
 
             }
         }

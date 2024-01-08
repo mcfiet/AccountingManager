@@ -17,14 +17,11 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
     {
         private ModelFileHandler modelFileHandler;
 
-        public AdministrationViewModel AdministrationViewModel { get; set; }
-        public OfferViewModel SelectedOffer { get; set; }
-        public OrderViewModel SelectedOrder { get; set; }
-        public InvoiceViewModel SelectedInvoice { get; set; }
+        public AdministrationViewModel TheAdministrationViewModel { get; set; }
         public MainWindowCommands Commands { get; }
         public MainWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
-            AdministrationViewModel = givenAdministrationViewModel;
+            TheAdministrationViewModel = givenAdministrationViewModel;
             modelFileHandler = new ModelFileHandler();
             Commands = new MainWindowCommands(this);
         }
@@ -35,7 +32,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 
             messageObject.IncomingOffer = new OfferViewModel()
             {
-                OfferId = AdministrationViewModel.Model.getOfferIdFromCreation(),
+                OfferId = TheAdministrationViewModel.Model.GetOfferIdFromCreation(),
                 Date = DateTime.Now,
                 Client = new ClientViewModel()
             };
@@ -43,86 +40,51 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             messageObject.NewOffer = true;
             Messenger.Instance.Send<OpenOfferWindowMessage>(messageObject);
         }
-        public void OpenOfferWindowMethodWithParameter()
-        {
-            if (SelectedOffer == null)
-            {
-                OpenErrorWindowMessage messageObject = new OpenErrorWindowMessage();
-                messageObject.Message = "Kein Angebot ausgewählt";
-                Messenger.Instance.Send<OpenErrorWindowMessage>(messageObject);
-            }
-            else
-            {
-                OpenOfferWindowMessage messageObject = new OpenOfferWindowMessage();
-                messageObject.IncomingOffer = SelectedOffer;
-                Messenger.Instance.Send<OpenOfferWindowMessage>(messageObject);
-            }
-
-        }
         public void OpenOfferMethodWithParameter(object param)
         {
             OfferViewModel offer = (OfferViewModel)param;
-            if (offer == null)
-            {
-                OpenErrorWindowMessage messageObject = new OpenErrorWindowMessage();
-                messageObject.Message = "Kein Angebot ausgewählt";
-                Messenger.Instance.Send<OpenErrorWindowMessage>(messageObject);
-            }
-            else
-            {
-                OpenOfferWindowMessage messageObject = new OpenOfferWindowMessage();
-                messageObject.IncomingOffer = offer;
-                Messenger.Instance.Send<OpenOfferWindowMessage>(messageObject);
-            }
+            OpenOfferWindowMessage messageObject = new OpenOfferWindowMessage();
+            messageObject.IncomingOffer = offer;
+            Messenger.Instance.Send<OpenOfferWindowMessage>(messageObject);
 
         }
 
-        public void ConvertToOrderCommandMethodWithParameter(object param)
+        public void ConvertToOrderMethodWithParameter(object param)
         {
             OfferViewModel offer = (OfferViewModel)param;
-            if (offer != null)
+            if (!offer.IsOrder)
             {
-                if (!offer.IsOrder)
+                OrderViewModel order = new OrderViewModel()
                 {
-                    OrderViewModel order = new OrderViewModel()
-                    {
-                        OrderId = AdministrationViewModel.Model.getOrderIdFromCreation(),
-                        Positions = offer.Positions,
-                        Reference = offer.Reference,
-                        Date = offer.Date,
-                        Text = offer.Text,
-                        Client = offer.Client,
-                    };
-                    offer.IsOrder = true;
+                    OrderId = TheAdministrationViewModel.Model.GetOrderIdFromCreation(),
+                    Positions = offer.Positions,
+                    Reference = offer.Reference,
+                    Date = offer.Date,
+                    Text = offer.Text,
+                    Client = offer.Client,
+                };
+                offer.IsOrder = true;
 
-                    order.SetOrderNr(order.OrderId);
-                    order.Model.setPositonId(offer.Model.getPositonId());
-                    AdministrationViewModel.Orders.Add(order);
-                    OnPropertyChanged("AdministrationViewModel");
-                }
-                else
-                {
-                    OpenErrorWindowMessage messageObject = new OpenErrorWindowMessage();
-                    messageObject.Message = "Auftrag ist schon eine Rechnung";
-                    Messenger.Instance.Send<OpenErrorWindowMessage>(messageObject);
-                }
+                order.SetOrderNr(order.OrderId);
+                order.Model.setPositonId(offer.Model.getPositonId());
+                TheAdministrationViewModel.Orders.Add(order);
+                OnPropertyChanged("TheAdministrationViewModel");
             }
             else
             {
                 OpenErrorWindowMessage messageObject = new OpenErrorWindowMessage();
-                messageObject.Message = "Kein Angebot ausgewählt";
+                messageObject.Message = "Auftrag ist schon ein Auftrag";
                 Messenger.Instance.Send<OpenErrorWindowMessage>(messageObject);
             }
-
         }
 
-        public void DeleteOffersCommandMethod()
+        public void DeleteOffersMethod()
         {
-            for (int i = 0; i < AdministrationViewModel.Offers.Count; i++)
+            for (int i = 0; i < TheAdministrationViewModel.Offers.Count; i++)
             {
-                if (AdministrationViewModel.Offers[i].IsSelected)
+                if (TheAdministrationViewModel.Offers[i].IsSelected)
                 {
-                    AdministrationViewModel.Offers.RemoveAt(i);
+                    TheAdministrationViewModel.Offers.RemoveAt(i);
                 }
             }
 
@@ -131,71 +93,51 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public void OpenOrderWindowMethodWithParameter(object param)
         {
             OrderViewModel order = (OrderViewModel)param;
-            if (order != null)
-            {
-                OpenOrderWindowMessage messageObject = new OpenOrderWindowMessage();
-                messageObject.IncomingOrder = order;
-                Messenger.Instance.Send<OpenOrderWindowMessage>(messageObject);
-            }
-            else
-            {
-                OpenErrorWindowMessage messageObject = new OpenErrorWindowMessage();
-                messageObject.Message = "Kein Auftrag ausgewählt";
-                Messenger.Instance.Send<OpenErrorWindowMessage>(messageObject);
-            }
-
+            OpenOrderWindowMessage messageObject = new OpenOrderWindowMessage();
+            messageObject.IncomingOrder = order;
+            Messenger.Instance.Send<OpenOrderWindowMessage>(messageObject);
         }
 
         public void ConvertToInvoiceMethodWithParameter(object param)
         {
             OrderViewModel order = (OrderViewModel)param;
-            if (order != null)
+            if (!order.IsInvoice)
             {
-                if (!order.IsInvoice)
+                InvoiceViewModel invoice = new InvoiceViewModel()
                 {
-                    InvoiceViewModel invoice = new InvoiceViewModel()
-                    {
-                        OrderId = order.OrderId,
-                        OrderNr = order.OrderNr,
-                        InvoiceId = AdministrationViewModel.Model.getInvoiceIdFromCreation(),
-                        Positions = order.Positions,
-                        Reference = order.Reference,
-                        Date = order.Date,
-                        Text = order.Text,
-                        Client = order.Client
-                    };
-                    order.IsInvoice = true;
-                    invoice.SetInvoiceNr(invoice.InvoiceId);
-                    invoice.Model.setPositonId(order.Model.getPositonId());
+                    OrderId = order.OrderId,
+                    OrderNr = order.OrderNr,
+                    InvoiceId = TheAdministrationViewModel.Model.GetInvoiceIdFromCreation(),
+                    Positions = order.Positions,
+                    Reference = order.Reference,
+                    Date = order.Date,
+                    Text = order.Text,
+                    Client = order.Client
+                };
+                order.IsInvoice = true;
+                invoice.SetInvoiceNr(invoice.InvoiceId);
+                invoice.Model.setPositonId(order.Model.getPositonId());
 
-                    AdministrationViewModel.Invoices.Add(invoice);
-                    OnPropertyChanged("AdministrationViewModel");
-                }
-                else
-                {
-                    OpenErrorWindowMessage messageObject = new OpenErrorWindowMessage();
-                    messageObject.Message = "Angebot ist schon ein Auftrag";
-                    Messenger.Instance.Send<OpenErrorWindowMessage>(messageObject);
-                }
-
+                TheAdministrationViewModel.Invoices.Add(invoice);
+                OnPropertyChanged("TheAdministrationViewModel");
             }
             else
             {
                 OpenErrorWindowMessage messageObject = new OpenErrorWindowMessage();
-                messageObject.Message = "Kein Auftrag ausgewählt";
+                messageObject.Message = "Angebot ist schon ein Auftrag";
                 Messenger.Instance.Send<OpenErrorWindowMessage>(messageObject);
             }
 
         }
 
-        public void DeleteOrdersCommandMethod()
+        public void DeleteOrdersMethod()
         {
 
-            for (int i = 0; i < AdministrationViewModel.Orders.Count; i++)
+            for (int i = 0; i < TheAdministrationViewModel.Orders.Count; i++)
             {
-                if (AdministrationViewModel.Orders[i].IsSelected)
+                if (TheAdministrationViewModel.Orders[i].IsSelected)
                 {
-                    AdministrationViewModel.Orders.RemoveAt(i);
+                    TheAdministrationViewModel.Orders.RemoveAt(i);
                 }
             }
 
@@ -204,29 +146,19 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public void OpenInvoiceWindowMethodWithParameter(object param)
         {
             InvoiceViewModel invoice = (InvoiceViewModel)param;
-            if (invoice != null)
-            {
-                OpenInvoiceWindowMessage messageObject = new OpenInvoiceWindowMessage();
-                messageObject.IncomingInvoice = invoice;
-                Messenger.Instance.Send<OpenInvoiceWindowMessage>(messageObject);
-            }
-            else
-            {
-                OpenErrorWindowMessage messageObject = new OpenErrorWindowMessage();
-                messageObject.Message = "Keine Rechnung ausgewählt";
-                Messenger.Instance.Send<OpenErrorWindowMessage>(messageObject);
-            }
-
+            OpenInvoiceWindowMessage messageObject = new OpenInvoiceWindowMessage();
+            messageObject.IncomingInvoice = invoice;
+            Messenger.Instance.Send<OpenInvoiceWindowMessage>(messageObject);
         }
 
-        public void DeleteInvoicesCommandMethod()
+        public void DeleteInvoicesMethod()
         {
 
-            for (int i = 0; i < AdministrationViewModel.Invoices.Count; i++)
+            for (int i = 0; i < TheAdministrationViewModel.Invoices.Count; i++)
             {
-                if (AdministrationViewModel.Invoices[i].IsSelected)
+                if (TheAdministrationViewModel.Invoices[i].IsSelected)
                 {
-                    AdministrationViewModel.Invoices.RemoveAt(i);
+                    TheAdministrationViewModel.Invoices.RemoveAt(i);
                 }
             }
 
@@ -241,25 +173,25 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public void ImportArticles()
         {
             XmlImport xmlImport = new XmlImport();
-            AdministrationViewModel.Model.Articles = xmlImport.ImportArticles();
-            OnPropertyChanged("AdministrationViewModel");
+            TheAdministrationViewModel.Model.Articles = xmlImport.ImportArticles();
+            OnPropertyChanged("TheAdministrationViewModel");
 
         }
 
         public void ExportArticlesToXmlFileMethod()
         {
             XmlBuilder xmlBuilder = new XmlBuilder();
-            xmlBuilder.ExportArticleCollectionToXMLFile(AdministrationViewModel.Articles.Model);
+            xmlBuilder.ExportArticleCollectionToXMLFile(TheAdministrationViewModel.Articles.Model);
         }
 
 
-        public void DeleteArticlesCommandMethod()
+        public void DeleteArticlesMethod()
         {
-            for (int i = 0; i < AdministrationViewModel.Articles.Count; i++)
+            for (int i = 0; i < TheAdministrationViewModel.Articles.Count; i++)
             {
-                if (AdministrationViewModel.Articles[i].IsSelected)
+                if (TheAdministrationViewModel.Articles[i].IsSelected)
                 {
-                    AdministrationViewModel.Articles.RemoveAt(i);
+                    TheAdministrationViewModel.Articles.RemoveAt(i);
                 }
             }
         }
@@ -273,24 +205,24 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public void ImportClients()
         {
             XmlImport xmlImport = new XmlImport();
-            AdministrationViewModel.Model.Clients = xmlImport.ImportClients();
-            OnPropertyChanged("AdministrationViewModel");
+            TheAdministrationViewModel.Model.Clients = xmlImport.ImportClients();
+            OnPropertyChanged("TheAdministrationViewModel");
 
         }
 
         public void ExportClientsToXmlFileMethod()
         {
             XmlBuilder xmlBuilder = new XmlBuilder();
-            xmlBuilder.ExportClientCollectionToXMLFile(AdministrationViewModel.Clients.Model);
+            xmlBuilder.ExportClientCollectionToXMLFile(TheAdministrationViewModel.Clients.Model);
         }
 
-        public void DeleteClientsCommandMethod()
+        public void DeleteClientsMethod()
         {
-            for (int i = 0; i < AdministrationViewModel.Clients.Count; i++)
+            for (int i = 0; i < TheAdministrationViewModel.Clients.Count; i++)
             {
-                if (AdministrationViewModel.Clients[i].IsSelected)
+                if (TheAdministrationViewModel.Clients[i].IsSelected)
                 {
-                    AdministrationViewModel.Clients.RemoveAt(i);
+                    TheAdministrationViewModel.Clients.RemoveAt(i);
                 }
             }
         }
@@ -306,7 +238,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             };
             Nullable<bool> result = ofd.ShowDialog();
             string dir = ofd.FileName;
-            AdministrationViewModel.Model = modelFileHandler.ReadModelFromFile(dir);
+            TheAdministrationViewModel.Model = modelFileHandler.ReadModelFromFile(dir);
         }
 
         public void SaveModel()
@@ -322,7 +254,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             Nullable<bool> result = sfd.ShowDialog();
 
             string dir = System.IO.Path.Combine(sfd.FileName);
-            modelFileHandler.WriteModelToFile(dir, AdministrationViewModel.Model);
+            modelFileHandler.WriteModelToFile(dir, TheAdministrationViewModel.Model);
         }
 
 

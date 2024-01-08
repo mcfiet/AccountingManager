@@ -10,7 +10,6 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
     public class InvoiceWindowViewModel : INotifyPropertyChanged
     {
 
-        public ClientViewModel SelectedClient { get; set; }
         private InvoiceViewModel incomingInvoice;
         public InvoiceViewModel IncomingInvoice
         {
@@ -25,35 +24,36 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             }
         }
 
-        public RelayCommand OpenAddOfferItemWindowCommand { get; }
+        public RelayCommand OpenAddPositionWindowCommand { get; }
         public RelayCommand ExportPdfCommand { get; }
-        public ClientCollectionViewModel ClientList { get; set; }
-        public OfferCollectionViewModel OfferList { get; set; }
-        public OrderCollectionViewModel OrderList { get; set; }
-        public AdministrationViewModel Administration { get; set; }
-        public InvoiceWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
+        public RelayCommand DeletePositionsCommand { get; }
+
+        public InvoiceWindowViewModel()
         {
-            OpenAddOfferItemWindowCommand = new RelayCommand(OpenAddPositionWindowWithParameter);
+            OpenAddPositionWindowCommand = new RelayCommand(OpenAddPositionWindowWithParameter);
+            DeletePositionsCommand = new RelayCommand(DeletePositionsMethod);
             ExportPdfCommand = new RelayCommand(ExportPdf);
-
-            Administration = givenAdministrationViewModel;
-
-            OfferList = Administration.Offers;
-            OrderList = Administration.Orders;
-            ClientList = Administration.Clients;
         }
 
-        protected void OnPropertyChanged(string propertyName)
+
+        private void DeletePositionsMethod()
         {
-            if (PropertyChanged != null)
+
+            for (int i = 0; i < IncomingInvoice.Positions.Count; i++)
             {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                if (IncomingInvoice.Positions[i].IsSelected)
+                {
+                    IncomingInvoice.Positions.RemoveAt(i);
+                }
             }
+            for (int i = 0; i < IncomingInvoice.Positions.Count; i++)
+            {
+                IncomingInvoice.Positions[i].PositionNr = i + 1;
+
+            }
+
+            OnPropertyChanged("IncomingInvoice");
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-
 
         private void ExportPdf()
         {
@@ -70,5 +70,14 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             Messenger.Instance.Send<OpenAddOfferItemWindowMessage>(messageObject);
 
         }
+        protected void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

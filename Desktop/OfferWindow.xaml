@@ -23,7 +23,7 @@
                     <Label Style="{DynamicResource H1}">Kunden</Label>
                     <DataGrid SelectedItem="{Binding SelectedClient}"
                            Name ="clientDataGrid"
-                           ItemsSource="{Binding Path = AdministrationViewModel.Clients}" 
+                           ItemsSource="{Binding Path = TheAdministrationViewModel.Clients}" 
                            AutoGenerateColumns="False"
                               IsReadOnly="True">
                         <DataGrid.Columns>
@@ -90,7 +90,7 @@
                            Name ="positionssDataGrid"
                            ItemsSource="{Binding IncomingOffer.Positions}" 
                            AutoGenerateColumns="False"
-                        CanUserAddRows="False"
+                           CanUserAddRows="False"
                            >
                         <DataGrid.Columns>
                             <DataGridCheckBoxColumn Binding="{Binding IsSelected}" Header="Auswählen" />
@@ -103,7 +103,7 @@
                     </DataGrid>
 
                     <UniformGrid HorizontalAlignment="Left" VerticalAlignment="Center" Columns="2">
-                        <Button Command="{Binding OpenAddOfferItemWindowCommand}" HorizontalAlignment="Left" Style="{DynamicResource RoundeButton}">Position hinzufügen</Button>
+                        <Button Command="{Binding OpenAddPositionWindowCommand}" HorizontalAlignment="Left" Style="{DynamicResource RoundeButton}">Position hinzufügen</Button>
                         <Button Command="{Binding DeletePositionsCommand}" HorizontalAlignment="Right" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Positionen löschen</Button>
                     </UniformGrid>
                     <TextBlock Text="Gesamtpreis:" TextAlignment="Right"></TextBlock>

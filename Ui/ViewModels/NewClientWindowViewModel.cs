@@ -22,28 +22,28 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public RelayCommand AddClient { get; }
         public RelayCommand CloseWindow { get; }
 
-        AdministrationViewModel AdministrationViewModel;
+        AdministrationViewModel TheAdministrationViewModel { get; set; }
 
         public NewClientWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
             AddClient = new RelayCommand(AddClientMethod);
             CloseWindow = new RelayCommand(param => CloseWPFWindow(param));
 
-            AdministrationViewModel = givenAdministrationViewModel;
+            TheAdministrationViewModel = givenAdministrationViewModel;
         }
 
         private void AddClientMethod()
         {
             ClientViewModel cvm = new ClientViewModel
             {
-                Id = AdministrationViewModel.Model.getClientIdFromCreation(),
+                Id = TheAdministrationViewModel.Model.GetClientIdFromCreation(),
                 Name = Name,
                 Street = Street,
                 HouseNumber = HouseNumber,
                 ZipCode = ZipCode,
                 City = City
             };
-            AdministrationViewModel.Clients.Add(cvm);
+            TheAdministrationViewModel.Clients.Add(cvm);
 
         }
         private void CloseWPFWindow(object param)

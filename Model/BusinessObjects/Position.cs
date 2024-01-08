@@ -39,20 +39,7 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
             }
         }
 
-        private Article article;
-        public Article Article
-        {
-            get
-            {
-                return article;
-            }
-            set
-            {
-                article = value;
-                OnPropertyChanged("Article");
-
-            }
-        }
+        public Article Article { get; set; }
 
         private int quantity;
         public int Quantity
@@ -72,7 +59,7 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
         {
             get
             {
-                return quantity * article.Price;
+                return quantity * Article.Price;
             }
         }
 

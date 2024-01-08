@@ -26,19 +26,19 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
         }
 
 
-        private int offerItemId;
+        private int positionId;
 
         public int getPositionIdFromCreation()
         {
-            return offerItemId++;
+            return positionId++;
         }
         public void setPositonId(int id)
         {
-            offerItemId = id;
+            positionId = id;
         }
         public int getPositonId()
         {
-            return offerItemId;
+            return positionId;
         }
         public PositionCollection Positions { get; set; }
         public Accounting()
@@ -92,20 +92,7 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
 
             }
         }
-        private Client client;
-        public Client Client
-        {
-            get
-            {
-                return client;
-            }
-            set
-            {
-                client = value;
-                OnPropertyChanged("Client");
-
-            }
-        }
+        public Client Client { get; set; }
 
         public float TotalPrice
         {

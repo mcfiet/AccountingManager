@@ -17,12 +17,6 @@
     <Grid>
         <Grid>
             <StackPanel Margin="50, 20" >
-                <!--
-                <StackPanel Margin="0 15 0 0">
-                    <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">ArticleNr</Label>
-                    <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding ArticleNr}" VerticalAlignment="Center"></TextBox>
-                </StackPanel>
-                -->
                 <StackPanel Margin="0 15 0 0">
                     <Label Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" HorizontalAlignment="Left">Name</Label>
                     <TextBox Style="{DynamicResource TextBoxStyle}" Text="{Binding Name}" VerticalAlignment="Center"></TextBox>

@@ -10,7 +10,6 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
     public class OrderWindowViewModel : INotifyPropertyChanged
     {
 
-        public ClientViewModel SelectedClient { get; set; }
         private OrderViewModel incomingOrder;
         public OrderViewModel IncomingOrder
         {
@@ -25,28 +24,35 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             }
         }
 
-        public RelayCommand OpenAddOfferItemWindowCommand { get; }
+        public RelayCommand OpenAddPositionWindowCommand { get; }
         public RelayCommand ExportPdfCommand { get; }
-        public AdministrationViewModel AdministrationViewModel { get; set; }
-        public OrderWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
+        public RelayCommand DeletePositionsCommand { get; }
+        public OrderWindowViewModel()
         {
             
-            OpenAddOfferItemWindowCommand = new RelayCommand(OpenAddPositionWindowWithParameter);
+            OpenAddPositionWindowCommand = new RelayCommand(OpenAddPositionWindowWithParameter);
+            DeletePositionsCommand = new RelayCommand(DeletePositionsMethod);
             ExportPdfCommand = new RelayCommand(ExportPdf);
-
-            AdministrationViewModel = givenAdministrationViewModel;
         }
 
-        protected void OnPropertyChanged(string propertyName)
+        private void DeletePositionsMethod()
         {
-            if (PropertyChanged != null)
+
+            for (int i = 0; i < IncomingOrder.Positions.Count; i++)
             {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                if (IncomingOrder.Positions[i].IsSelected)
+                {
+                    IncomingOrder.Positions.RemoveAt(i);
+                }
             }
+            for (int i = 0; i < IncomingOrder.Positions.Count; i++)
+            {
+                IncomingOrder.Positions[i].PositionNr = i + 1;
+
+            }
+
+            OnPropertyChanged("IncomingOrder");
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
 
         private void ExportPdf()
         {
@@ -63,5 +69,15 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             Messenger.Instance.Send<OpenAddOfferItemWindowMessage>(messageObject);
 
         }
+        protected void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
     }
 }

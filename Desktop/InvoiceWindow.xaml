@@ -78,8 +78,11 @@
                     <DataGrid 
                            Name ="positionssDataGrid"
                            ItemsSource="{Binding IncomingInvoice.Positions}" 
-                           AutoGenerateColumns="False">
+                           AutoGenerateColumns="False"
+                           CanUserAddRows="False"
+                        >
                         <DataGrid.Columns>
+                            <DataGridCheckBoxColumn Binding="{Binding IsSelected}" Header="Auswählen" />
                             <DataGridTextColumn Binding="{Binding PositionNr}" Header="Positionsnr."></DataGridTextColumn>
                             <DataGridTextColumn Binding="{Binding Article.Name}" Header="Artikel"></DataGridTextColumn>
                             <DataGridTextColumn Binding="{Binding Quantity}" Header="Anzahl"></DataGridTextColumn>
@@ -87,10 +90,10 @@
                             <DataGridTextColumn Binding="{Binding TotalPrice}" Header="Gesamtpreis"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
-
-                    <Grid Width="NaN" Height="NaN" HorizontalAlignment="Left" VerticalAlignment="Center">
-                        <Button Command="{Binding OpenAddOfferItemWindowCommand}" Style="{DynamicResource RoundeButton}">Position hinzufügen</Button>
-                    </Grid>
+                    <UniformGrid HorizontalAlignment="Left" VerticalAlignment="Center" Columns="2">
+                        <Button Command="{Binding OpenAddPositionWindowCommand}" Style="{DynamicResource RoundeButton}">Position hinzufügen</Button>
+                        <Button Command="{Binding DeletePositionsCommand}" HorizontalAlignment="Right" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Positionen löschen</Button>
+                    </UniformGrid>
                     <TextBlock Text="Gesamtpreis:" TextAlignment="Right"></TextBlock>
                     <TextBlock Text="{Binding IncomingInvoice.TotalPrice}" TextAlignment="Right"></TextBlock>
 

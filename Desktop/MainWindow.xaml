@@ -28,8 +28,7 @@
                                 </UniformGrid>
                                 <DataGrid
                                 Name ="offerDataGrid"
-                                ItemsSource="{Binding Path = AdministrationViewModel.Offers}" 
-                                SelectedItem="{Binding SelectedOffer}"
+                                ItemsSource="{Binding Path = TheAdministrationViewModel.Offers}" 
                                 AutoGenerateColumns="False"
                                 CanUserAddRows="False"
                                 >
@@ -68,8 +67,7 @@
                                 </UniformGrid>
                                 <DataGrid
                                 Name ="orderDataGrid"
-                                ItemsSource="{Binding Path = AdministrationViewModel.Orders}" 
-                                SelectedItem="{Binding SelectedOrder}"
+                                ItemsSource="{Binding Path = TheAdministrationViewModel.Orders}" 
                                 AutoGenerateColumns="False"
                                 CanUserAddRows="False"
                                 >
@@ -84,7 +82,7 @@
                                         <DataGridCheckBoxColumn IsReadOnly="False" Binding="{Binding IsSelected}" Header="Auswählen" />
                                         <DataGridTextColumn IsReadOnly="True" Binding="{Binding OrderNr}" Header="Auftragsnr."></DataGridTextColumn>
                                         <DataGridTextColumn IsReadOnly="True" Binding="{Binding Reference}" Header="Betreff"></DataGridTextColumn>
-                                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding Date}" Header="Datum"></DataGridTextColumn>
+                                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding Date, StringFormat=dd.MM.yyyy}" Header="Datum"></DataGridTextColumn>
                                         <DataGridTextColumn IsReadOnly="True" Binding="{Binding Client.Name}" Header="Kunde"></DataGridTextColumn>
                                         <DataGridTemplateColumn>
                                             <DataGridTemplateColumn.CellTemplate>
@@ -109,18 +107,17 @@
                                 </UniformGrid>
                                 <DataGrid
                                 Name ="invoiceDataGrid"
-                                ItemsSource="{Binding Path = AdministrationViewModel.Invoices}" 
-                                SelectedItem="{Binding SelectedInvoice}"
+                                ItemsSource="{Binding Path = TheAdministrationViewModel.Invoices}" 
                                 AutoGenerateColumns="False"
                                 CanUserAddRows="False"
                                 >
                                     <DataGrid.RowStyle>
                                         <Style TargetType="DataGridRow">
                                             <Style.Triggers>
-                                                <DataTrigger Binding="{Binding Payed}" Value="false">
+                                                <DataTrigger Binding="{Binding IsPayed}" Value="false">
                                                     <Setter Property="Background" Value="Red"></Setter>
                                                 </DataTrigger>
-                                                <DataTrigger Binding="{Binding Payed}" Value="true">
+                                                <DataTrigger Binding="{Binding IsPayed}" Value="true">
                                                     <Setter Property="Background" Value="Green"></Setter>
                                                 </DataTrigger>
                                             </Style.Triggers>
@@ -139,9 +136,9 @@
                                         <DataGridTextColumn IsReadOnly="True" Binding="{Binding OrderNr}" Header="Auftragsnr."></DataGridTextColumn>
                                         <DataGridTextColumn IsReadOnly="True" Binding="{Binding InvoiceNr}" Header="Rechnungsnr."></DataGridTextColumn>
                                         <DataGridTextColumn IsReadOnly="True" Binding="{Binding Reference}" Header="Betreff"></DataGridTextColumn>
-                                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding Date}" Header="Datum"></DataGridTextColumn>
+                                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding Date, StringFormat=dd.MM.yyyy}" Header="Datum"></DataGridTextColumn>
                                         <DataGridTextColumn IsReadOnly="True" Binding="{Binding Client.Name}" Header="Kunde"></DataGridTextColumn>
-                                        <DataGridCheckBoxColumn IsReadOnly="False" Binding="{Binding Payed}" Header="Bezahlt" />
+                                        <DataGridCheckBoxColumn IsReadOnly="False" Binding="{Binding IsPayed}" Header="Bezahlt" />
                                     </DataGrid.Columns>
                                 </DataGrid>
                             </StackPanel>
@@ -154,20 +151,20 @@
                             <UniformGrid Columns="4" Margin="0 0 0 30">
                                 <Button Command="{Binding Commands.OpenNewArticleWindowCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">Neuen Artikel hinzufügen</Button>
                                 <Button Command="{Binding Commands.ImportArticlesCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">XML importieren</Button>
-                                <Button Command="{Binding Commands.ExportArticlesCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">XML exportieren</Button>
+                                <Button Command="{Binding Commands.ExportArticlesToXmlCommand, Mode=OneWay}" Style="{DynamicResource RoundeButton}">XML exportieren</Button>
                                 <Button Command="{Binding Commands.DeleteArticlesCommand}" Background="Red" Foreground="White" Style="{DynamicResource RoundeButton}">Ausgewählte Artikel löschen</Button>
                             </UniformGrid>
                             <Label Style="{DynamicResource H1}">Artikel</Label>
                             <DataGrid
                                 Name ="articlesDataGrid"
-                                ItemsSource="{Binding Path = AdministrationViewModel.Articles}"  
+                                ItemsSource="{Binding Path = TheAdministrationViewModel.Articles}"  
                                 AutoGenerateColumns="False"
                                 CanUserAddRows="False"
                                 >
                                 <DataGrid.Columns>
                                     <DataGridCheckBoxColumn IsReadOnly="False" Binding="{Binding IsSelected}" Header="Auswählen" />
 
-                                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding ArticleNr}" Header="Articlenr."></DataGridTextColumn>
+                                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Id}" Header="Articlenr."></DataGridTextColumn>
                                     <DataGridTextColumn IsReadOnly="True" Binding="{Binding Name}" Header="Name"></DataGridTextColumn>
                                     <DataGridTextColumn IsReadOnly="True" Binding="{Binding Description}" Header="Beschreibung" MaxWidth="150">
                                         <DataGridTextColumn.ElementStyle>
@@ -193,7 +190,7 @@
                             <Label Style="{DynamicResource H1}">Kunden</Label>
                             <DataGrid
                                 Name ="clientDataGrid"
-                                ItemsSource="{Binding Path = AdministrationViewModel.Clients}" 
+                                ItemsSource="{Binding Path = TheAdministrationViewModel.Clients}" 
                                 AutoGenerateColumns="False"
                                 CanUserAddRows="False"
                                 >

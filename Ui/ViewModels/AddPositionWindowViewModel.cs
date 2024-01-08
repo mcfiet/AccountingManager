@@ -16,13 +16,11 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public int OfferItemNr { get; set; }
         public ArticleViewModel SelectedArticle { get; set; }
         public int Quantity { get; set; }
-        public int TotalPrice { get; set; }
 
         public RelayCommand AddPositionCommand { get; }
-        public RelayCommand CloseWindow { get; }
+        public RelayCommand CloseWindowCommand { get; }
 
 
         public OfferViewModel incomingOffer;
@@ -56,14 +54,13 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             }
         }
 
-        public OfferViewModel SelectedOffer { get; set; }
-        public AdministrationViewModel AdministrationViewModel { get; set; }
+        public AdministrationViewModel TheAdministrationViewModel { get; set; }
 
         public AddPositionWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
             AddPositionCommand = new RelayCommand(AddPositionMethod);
-            CloseWindow = new RelayCommand(param => CloseWPFWindow(param));
-            AdministrationViewModel = givenAdministrationViewModel;
+            CloseWindowCommand = new RelayCommand(param => CloseWPFWindow(param));
+            TheAdministrationViewModel = givenAdministrationViewModel;
 
         }
 
@@ -79,7 +76,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 
             PositionViewModel position = new PositionViewModel
             {
-                Article = SelectedArticle.Model,
+                Article = SelectedArticle,
                 Quantity = Quantity
             };
 

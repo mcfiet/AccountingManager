@@ -31,23 +31,23 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
             Articles = new ArticleCollection(); 
         }
 
-        public int getOfferIdFromCreation()
+        public int GetOfferIdFromCreation()
         {
             return offerId++;
         }
-        public int getOrderIdFromCreation()
+        public int GetOrderIdFromCreation()
         {
             return orderId++;
         }
-        public int getInvoiceIdFromCreation()
+        public int GetInvoiceIdFromCreation()
         {
             return invoiceId++;
         }
-        public int getClientIdFromCreation()
+        public int GetClientIdFromCreation()
         {
             return clientId++;
         }
-        public int getArticleIdFromCreation()
+        public int GetArticleIdFromCreation()
         {
             return articleId++;
         }

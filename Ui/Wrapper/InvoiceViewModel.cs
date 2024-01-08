@@ -89,7 +89,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
 
         public void SetInvoiceNr(int id)
         {
-            InvoiceNr = Model.getInvoiceNr(id);
+            InvoiceNr = Model.GetInvoiceNr(id);
         }
         public string Reference
         {
@@ -151,15 +151,15 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
             }
         }
 
-        public bool Payed
+        public bool IsPayed
         {
             get
             {
-                return Model.Payed;
+                return Model.IsPayed;
             }
             set
             {
-                Model.Payed = value;
+                Model.IsPayed = value;
             }
         }
     }

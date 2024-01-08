@@ -55,7 +55,7 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
         }
 
 
-        public string getOrderNr(int id)
+        public string GetOrderNr(int id)
         {
             return AccountingNumber.CreateOrderNrFromId(id + 1);
         }

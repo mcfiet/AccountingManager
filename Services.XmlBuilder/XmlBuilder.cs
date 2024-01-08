@@ -87,7 +87,7 @@ namespace Services.XmlBuilder
         private static void writeArticle(XmlWriter xmlWriter, Article article)
         {
             xmlWriter.WriteStartElement("article");
-            xmlWriter.WriteAttributeString("articleID", article.ArticleNr.ToString());
+            xmlWriter.WriteAttributeString("articleID", article.Id.ToString());
             writeElement(xmlWriter, "Name", article.Name);
             writeElement(xmlWriter, "Description", article.Description);
             writeElement(xmlWriter, "Price", article.Price.ToString());

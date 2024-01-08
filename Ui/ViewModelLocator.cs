@@ -24,14 +24,14 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui
             TheAdministrationViewModel = new AdministrationViewModel();
 
             TheOfferWindowViewmodel = new OfferWindowViewModel(TheAdministrationViewModel);
-            TheOrderWindowViewmodel = new OrderWindowViewModel(TheAdministrationViewModel);
-            TheInvoiceWindowViewmodel = new InvoiceWindowViewModel(TheAdministrationViewModel);
+            TheOrderWindowViewmodel = new OrderWindowViewModel();
+            TheInvoiceWindowViewmodel = new InvoiceWindowViewModel();
             TheNewClientWindowViewModel = new NewClientWindowViewModel(TheAdministrationViewModel);
             TheNewArticleWindowViewModel = new NewArticleWindowViewModel(TheAdministrationViewModel);
 
             TheMainWindowViewModel = new MainWindowViewModel(TheAdministrationViewModel);
             TheAddPositionWindowViewModel = new AddPositionWindowViewModel(TheAdministrationViewModel);
-            TheErrorWindowViewModel = new ErrorWindowViewModel(TheAdministrationViewModel);
+            TheErrorWindowViewModel = new ErrorWindowViewModel();
         }
     }
 }

@@ -46,29 +46,29 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             }
         }
 
-        public RelayCommand OpenAddOfferItemWindowCommand { get; }
+        public RelayCommand OpenAddPositionWindowCommand { get; }
         public RelayCommand ExportPdfCommand { get; }
-        public RelayCommand AddOffer { get; }
+        public RelayCommand AddOfferCommand { get; }
         public RelayCommand DeletePositionsCommand { get; }
-        public AdministrationViewModel AdministrationViewModel { get; set; }
-        public Button NewBtn;
+        public AdministrationViewModel TheAdministrationViewModel { get; set; }
+        public Button NewBtn { get; set; }
         public OfferWindowViewModel(AdministrationViewModel givenAdministrationViewModel)
         {
-            OpenAddOfferItemWindowCommand = new RelayCommand(OpenAddPositionWindowWithParameter);
-            DeletePositionsCommand = new RelayCommand(DeletePositionsCommandMethod);
+            OpenAddPositionWindowCommand = new RelayCommand(OpenAddPositionWindowWithParameter);
+            DeletePositionsCommand = new RelayCommand(DeletePositionsMethod);
             ExportPdfCommand = new RelayCommand(ExportPdf);
-            AddOffer = new RelayCommand(param => AddOfferMethod(param));
-            AdministrationViewModel = givenAdministrationViewModel;
+            AddOfferCommand = new RelayCommand(param => AddOfferMethod(param));
+            TheAdministrationViewModel = givenAdministrationViewModel;
             NewBtn = new Button
             {
                 Content = "Angebot hinzufügen",
                 Name = "AddOfferBtn",
                 Style = (Style)Application.Current.TryFindResource("RoundeButton"),
-                Command = AddOffer,
+                Command = AddOfferCommand,
             };
         }
 
-        private void DeletePositionsCommandMethod()
+        private void DeletePositionsMethod()
         {
 
             for (int i = 0; i < IncomingOffer.Positions.Count; i++)
@@ -107,7 +107,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         private void AddOfferMethod(object param)
         {
             IncomingOffer.Client = SelectedClient;
-            AdministrationViewModel.Offers.Add(IncomingOffer);
+            TheAdministrationViewModel.Offers.Add(IncomingOffer);
             Window window = (Window)param;
             object wantedNode = window.FindName("OfferButtons");
             if (wantedNode is Grid)

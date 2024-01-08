@@ -1,0 +1,6 @@
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Model\bin\Release\Business.Model.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Model\bin\Release\Business.Model.pdb
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Model\obj\Release\Business.Model.csproj.AssemblyReference.cache
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Model\obj\Release\Business.Model.csproj.CoreCompileInputs.cache
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Model\obj\Release\Business.Model.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Model\obj\Release\Business.Model.pdb

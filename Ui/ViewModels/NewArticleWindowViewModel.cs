@@ -12,7 +12,6 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
 {
     public class NewArticleWindowViewModel
     {
-        public int ArticleNr { get; set; }
         public String Name { get; set; }
         public String Description { get; set; }
         public int Price { get; set; }
@@ -20,24 +19,25 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
         public RelayCommand AddArticle { get; }
         public RelayCommand CloseWindow { get; }
 
-        private AdministrationViewModel AdministrationViewModel;
+        private AdministrationViewModel TheAdministrationViewModel { get; set; }
+        
         public NewArticleWindowViewModel(AdministrationViewModel givenAdministrationViewmodel)
         {
             AddArticle = new RelayCommand(AddArticleMethod); 
             CloseWindow = new RelayCommand(param => CloseWPFWindow(param));
-            AdministrationViewModel = givenAdministrationViewmodel;
+            TheAdministrationViewModel = givenAdministrationViewmodel;
         }
 
         private void AddArticleMethod()
         {
             ArticleViewModel cvm = new ArticleViewModel
             {
-                ArticleNr = AdministrationViewModel.Model.getArticleIdFromCreation(),
+                Id = TheAdministrationViewModel.Model.GetArticleIdFromCreation(),
                 Name = Name,
                 Description = Description,
                 Price = Price
             };
-            AdministrationViewModel.Articles.Add(cvm);
+            TheAdministrationViewModel.Articles.Add(cvm);
         }
         private void CloseWPFWindow(object param)
         {

@@ -1,0 +1,5 @@
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.MessageBusWithParameter\bin\Release\Services.MessageBusWithParameter.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.MessageBusWithParameter\bin\Release\Services.MessageBusWithParameter.pdb
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.MessageBusWithParameter\obj\Release\Services.MessageBusWithParameter.csproj.CoreCompileInputs.cache
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.MessageBusWithParameter\obj\Release\Services.MessageBusWithParameter.dll
+E:\Git\anwendungsprogrammierung-hausarbeit-clientapp078\Services.MessageBusWithParameter\obj\Release\Services.MessageBusWithParameter.pdb

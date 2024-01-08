@@ -55,18 +55,18 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
                 return Model.TotalPrice;
             }
         }
-
-        public Article Article
+        public ArticleViewModel Article
         {
             get
             {
-                return Model.Article;
+                var article = new ArticleViewModel();
+                article.Model = Model.Article;
+                return article;
             }
             set
             {
-                Model.Article = value;
-
+                Model.Article = value.Model;
             }
-        }        
+        }   
     }
 }

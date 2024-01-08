@@ -26,16 +26,16 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
             }
         }
 
-        private int articleNr;
-        public int ArticleNr
+        private int id;
+        public int Id
         {
             get
             {
-                return articleNr;
+                return id;
             }
             set
             {
-                articleNr = value;
+                id = value;
                 OnPropertyChanged("articleNr");
 
             }
