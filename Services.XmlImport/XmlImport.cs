@@ -24,7 +24,7 @@ namespace Services.XmlImport
             {
                 Client client = new Client();
                 client.Id = int.Parse(XmlClient.Attribute("clientID").Value);
-                client.Name = XmlClient.Element("name").Value;
+                client.FirstName = XmlClient.Element("name").Value;
                 XElement clientAddress = XmlClient.Element("adress");
                 client.Street = clientAddress.Element("street").Value;
                 client.HouseNumber = int.Parse(clientAddress.Element("housenumber").Value);

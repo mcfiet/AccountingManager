@@ -283,7 +283,7 @@ namespace De.HsFlensburg.ClientApp078.Services.PdfExport
             Cell Client = new Cell(1, 1)
                                     .SetBorder(Border.NO_BORDER)
                                     .Add(new Paragraph("DEVONIQ" + " · " + "Lüdemannstraße 47" + " · " + "24114 Kiel").SetFontSize(8))
-                                    .Add(new Paragraph(accounting.Client.Name))
+                                    .Add(new Paragraph(accounting.Client.FirstName))
                                     .Add(new Paragraph(accounting.Client.Street + " " + accounting.Client.HouseNumber))
                                     .Add(new Paragraph(accounting.Client.ZipCode + " " + accounting.Client.City));
 

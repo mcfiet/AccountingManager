@@ -55,13 +55,13 @@
             <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
             <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
             <Setter Property="Foreground" Value="#142645"/>
-            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="BorderThickness" Value="2"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Padding" Value="15" />
             <Setter Property="FontFamily" Value="Roboto"/>
             <Setter Property="FontWeight" Value="Bold" />
-            <Setter Property="Margin" Value="0 20 0 0" />
+            <Setter Property="Margin" Value="10" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">

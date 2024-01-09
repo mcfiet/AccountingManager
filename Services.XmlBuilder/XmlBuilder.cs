@@ -75,7 +75,7 @@ namespace Services.XmlBuilder
         {
             xmlWriter.WriteStartElement("client");
             xmlWriter.WriteAttributeString("clientID", client.Id.ToString());
-            writeElement(xmlWriter, "Name", client.Name);
+            writeElement(xmlWriter, "Name", client.FirstName);
             xmlWriter.WriteStartElement("Adresse");
             writeElement(xmlWriter, "Straße", client.Street);
             writeElement(xmlWriter, "Hausnummer", client.HouseNumber.ToString());

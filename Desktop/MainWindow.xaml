@@ -44,7 +44,7 @@
                                         <DataGridTextColumn IsReadOnly="True" Binding="{Binding OfferNr}" Header="Angebotsnr."></DataGridTextColumn>
                                         <DataGridTextColumn IsReadOnly="True" Binding="{Binding Reference}" Header="Betreff"></DataGridTextColumn>
                                         <DataGridTextColumn IsReadOnly="True" Binding="{Binding Date, StringFormat=dd.MM.yyyy}" Header="Datum"></DataGridTextColumn>
-                                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding Client.Name}" Header="Kunde"></DataGridTextColumn>
+                                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding Client.LastName}" Header="Kunde"></DataGridTextColumn>
                                         <DataGridTemplateColumn>
                                             <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>
@@ -83,7 +83,7 @@
                                         <DataGridTextColumn IsReadOnly="True" Binding="{Binding OrderNr}" Header="Auftragsnr."></DataGridTextColumn>
                                         <DataGridTextColumn IsReadOnly="True" Binding="{Binding Reference}" Header="Betreff"></DataGridTextColumn>
                                         <DataGridTextColumn IsReadOnly="True" Binding="{Binding Date, StringFormat=dd.MM.yyyy}" Header="Datum"></DataGridTextColumn>
-                                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding Client.Name}" Header="Kunde"></DataGridTextColumn>
+                                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding Client.LastName}" Header="Kunde"></DataGridTextColumn>
                                         <DataGridTemplateColumn>
                                             <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>
@@ -137,7 +137,7 @@
                                         <DataGridTextColumn IsReadOnly="True" Binding="{Binding InvoiceNr}" Header="Rechnungsnr."></DataGridTextColumn>
                                         <DataGridTextColumn IsReadOnly="True" Binding="{Binding Reference}" Header="Betreff"></DataGridTextColumn>
                                         <DataGridTextColumn IsReadOnly="True" Binding="{Binding Date, StringFormat=dd.MM.yyyy}" Header="Datum"></DataGridTextColumn>
-                                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding Client.Name}" Header="Kunde"></DataGridTextColumn>
+                                        <DataGridTextColumn IsReadOnly="True" Binding="{Binding Client.LastName}" Header="Kunde"></DataGridTextColumn>
                                         <DataGridCheckBoxColumn IsReadOnly="False" Binding="{Binding IsPayed}" Header="Bezahlt" />
                                     </DataGrid.Columns>
                                 </DataGrid>
@@ -198,7 +198,7 @@
                                     <DataGridCheckBoxColumn IsReadOnly="False" Binding="{Binding IsSelected}" Header="Auswählen" />
 
                                     <DataGridTextColumn IsReadOnly="True" Binding="{Binding Id}" Header="Kundennr."></DataGridTextColumn>
-                                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Name}" Header="Name"></DataGridTextColumn>
+                                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding LastName}" Header="Name"></DataGridTextColumn>
                                 </DataGrid.Columns>
                             </DataGrid>
                         </StackPanel>
@@ -207,7 +207,7 @@
 
                 <UniformGrid Columns="4">
                     <Button Command="{Binding Commands.LoadCommand}" Style="{DynamicResource RoundeButton}">Load</Button>
-                    <Button Command="{Binding Commands.SaveCommand}" Margin="10 20 0 0" Style="{DynamicResource RoundeButton}">Save</Button>
+                    <Button Command="{Binding Commands.SaveCommand}" Style="{DynamicResource RoundeButton}">Save</Button>
 
                 </UniformGrid>
             </StackPanel>

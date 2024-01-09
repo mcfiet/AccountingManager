@@ -28,7 +28,7 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             set
             {
                 selectedClient = value;
-                IncomingOffer.Text = "Sehr geehrte/r " + selectedClient.Name + ",\n\ngerne bieten wir Ihnen folgende Produkte an.";
+                IncomingOffer.Text = "Sehr geehrte/r " + selectedClient.LastName + ",\n\ngerne bieten wir Ihnen folgende Produkte an.";
                 OnPropertyChanged("SelectedClient");
             }
         }

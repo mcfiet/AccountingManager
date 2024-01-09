@@ -39,8 +39,15 @@ namespace De.HsFlensburg.ClientApp078.Ui.Desktop.MessageBusLogic
                     if (wantedNode is Grid)
                     {
                         Grid wantedChild = wantedNode as Grid;
+                        try
+                        {
+                            wantedChild.Children.Add(((OfferWindowViewModel)myWindow.DataContext).NewBtn);
 
-                        wantedChild.Children.Add(((OfferWindowViewModel)myWindow.DataContext).NewBtn);
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine("Button bereits erstellt: " + e);
+                        }
                     }
                 }
 

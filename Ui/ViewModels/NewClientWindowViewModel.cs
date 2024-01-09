@@ -13,7 +13,8 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
     public class NewClientWindowViewModel
     {
 
-        public string Name { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
 
         public string Street { get; set; }
         public int HouseNumber { get; set; }
@@ -37,7 +38,8 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.ViewModels
             ClientViewModel cvm = new ClientViewModel
             {
                 Id = TheAdministrationViewModel.Model.GetClientIdFromCreation(),
-                Name = Name,
+                FirstName = FirstName,
+                LastName = LastName,
                 Street = Street,
                 HouseNumber = HouseNumber,
                 ZipCode = ZipCode,

@@ -40,17 +40,32 @@ namespace De.HsFlensburg.ClientApp078.Business.Model.BusinessObjects
             }
         }
 
-        private String name;
-        public String Name
+        private String firstName;
+        public String FirstName
         {
             get
             {
-                return name;
+                return firstName;
             }
             set
             {
-                name = value;
-                OnPropertyChanged("Name");
+                firstName = value;
+                OnPropertyChanged("FirstName");
+
+            }
+        }
+        
+        private String lastName;
+        public String LastName
+        {
+            get
+            {
+                return lastName;
+            }
+            set
+            {
+                lastName = value;
+                OnPropertyChanged("LastName");
 
             }
         }

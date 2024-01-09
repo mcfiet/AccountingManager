@@ -31,15 +31,28 @@ namespace De.HsFlensburg.ClientApp078.Logic.Ui.Wrapper
             }
         }
 
-        public String Name
+        public String FirstName
         {
             get
             {
-                return Model.Name;
+                return Model.FirstName;
             }
             set
             {
-                Model.Name = value;
+                Model.FirstName = value;
+            }
+        }
+        
+
+        public String LastName
+        {
+            get
+            {
+                return Model.LastName;
+            }
+            set
+            {
+                Model.LastName = value;
             }
         }
 
