@@ -1,7 +1,7 @@
 # AccountingManager
 
 ## About
-This C# Windows app manages offers, orders, and invoices with shared properties via inheritance. It supports adding/importing/exporting clients and articles via XML, creating and converting documents, and exporting to PDF. Data is handled with SerializationService, and item positions are managed within documents.
+This C# Windows AWP Application manages offers, orders, and invoices with shared properties via inheritance. It supports adding/importing/exporting clients and articles via XML, creating and converting documents, and exporting to PDF. Data is handled with SerializationService, and item positions are managed within documents.
 
 ## Colors:
 
