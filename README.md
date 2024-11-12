@@ -1,4 +1,4 @@
-# anwendungsprogrammierung-hausarbeit-clientapp078
+# AccountingManager
 
 ### Colors:
 
